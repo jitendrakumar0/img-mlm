@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+[page-name=homePage] {
+    &.homePage {
+        // Hero Section Start
+        & .main-banner {
+            
+    padding: 236px 0px 130px 0px;
+            position: relative;
+            overflow: hidden;
+            &:before {
+                content: '';
+                background-image: url(../images/banner-right-image.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: absolute;
+                right: 0;
+                top: 100px;
+                width: 819px;
+                height: 674px;
+            }
+            &:after {
+                content: '';
+                background-image: url(../img/bgImg/mlmImage.svg);
+                background-repeat: no-repeat;
+                position: absolute;
+                left: 0;
+                top: 100px;
+                width: 267px;
+                height: 532px;
+            }
+            .item {
+                &.header-text {
+                margin-right: 45px;
+                & .decription {
+                    font-size: 14px;
+                    line-height: 28px;
+                    margin: 20px 0px;
+                }
+                & .down-buttons{
+                    display: inline-flex;
+                    & .call-button {
+                        & a {
+                            
+                        }
+                        & .callIcon {
+                            width: 44px;
+                            height: 44px;
+                            padding: 12px;
+                            display: inline-block;
+                            text-align: center;
+                            line-height: 46px;
+                            border-radius: 50%;
+                            background: $theme1;
+                            color: #fff;
+                            font-size: 20px;
+                        }
+                    }
+                }
+                }
+            }
+        }
+        // & .heroSection {
+        //     background-image:url(../img/bgImg/heorBgImg.svg);
+        //     background-repeat: no-repeat;
+        //     background-size: cover;
+        //     background-position: center;
+        //     padding: 120px 0;
+        //     & .heroSliderOuter {
+        //         & .heroTxt{
+        //             font-size: 20px;
+        //         }
+        //         & ul {
+        //             & li {
+        //                 font-size: 14px;
+        //                 &::before {
+        //                     content: "";
+        //                     background-image: url(../img/icons/double-arrow.svg);
+        //                     width: 10px;
+        //                     height: 10px;
+        //                     display: block;
+        //                     background-repeat: no-repeat;
+        //                     background-position: center;
+        //                     filter: invert(1);
+        //                 }
+        //             }
+        //         }
+        //     }
+        //     & .heroImgOuter {
+        //         width: 400px;
+        //         // border-radius: 63% 37% 30% 70% / 50% 45% 55% 50%;
+        //         // background-color: $gray-200;
+        //         animation-name: flo;
+        //         animation-duration: 5s;
+        //         animation-iteration-count: infinite;
+        //         & img {
+        //             object-fit: cover;
+        //             // border-radius: 63% 37% 30% 70% / 50% 45% 55% 50%; 
+        //         }
+        //         @keyframes flo{
+        //             50%{
+        //               transform: translateY(30px);
+        //             }
+        //           }
+        //     }
+        //     & .owl-dots {
+        //         display: flex;
+        //         gap: 8px;
+        //         position: absolute;
+        //         bottom: -30px;
+        //         & .owl-dot {
+        //          & span {
+        //             width: 12px;
+        //             height: 12px;
+        //             display: block;
+        //             background-color: $theme1;
+        //             border-radius: 50px;
+        //             transition: ease-in-out .3s;
+        //          }
+        //          &.active {
+        //             & span {
+        //                 width: 36px;
+        //                 background-color: $white;
+        //              }
+        //          }
+        //         }
+        //     }
+        // }
+        // Hero Section End
+    }
+}

@@ -4,7 +4,7 @@
         <a class="navbar-brand" href="index.html">
             <img class="w-100" src="assets/img/logo/logo.png" alt="">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -12,25 +12,168 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Company
+                    </a>
+                    <ul class="dropdown-menu border-0 shadow-sm p-0 overflow-hidden ">
+                      <li><a class="dropdown-item" href="#">ABOUT VESTIGE</a></li>
+                      <li><a class="dropdown-item" href="#">MANAGEMENT</a></li>
+                      <li><a class="dropdown-item" href="#">BUSINESS OPPORTUNITY</a></li>
+                      <li><a class="dropdown-item" href="#">SUCCESS STORIES</a></li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Products
+                    </a>
+                    <ul class="dropdown-menu border-0 shadow-sm p-0 overflow-hidden ">
+                      <li><a class="dropdown-item" href="#">HEALTH SUPPLEMENTS</a></li>
+                      <li><a class="dropdown-item" href="#">AYURVEDA</a></li>
+                      <li><a class="dropdown-item" href="#">AIR PURIFIER</a></li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Project</a>
+                <li class="nav-item brands dropdown">
+                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Brands
+                    </a>
+                    <ul class="dropdown-menu border-0 shadow-sm p-0 overflow-hidden ">
+                      <li><a class="dropdown-item" href="#"><img src="assets/img/logo/logo.png" alt=""></a></li>
+                      <li><a class="dropdown-item" href="#"><img src="assets/img/logo/logo.png" alt=""></a></li>
+                      <li><a class="dropdown-item" href="#"><img src="assets/img/logo/logo.png" alt=""></a></li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Blog</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Schedule
+                    </a>
+                    <ul class="dropdown-menu border-0 shadow-sm p-0 overflow-hidden ">
+                      <li><a class="dropdown-item" href="#">ONLINE TRAINING SCHEDULE</a></li>
+                      <li><a class="dropdown-item" href="#">TRAINING REQUEST</a></li>
+                      <li><a class="dropdown-item" href="#">CNT EVENT SCHEDULE</a></li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact Us</a>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="#">News</a>
+                </li> -->
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="#">Gallery</a>
+                </li> -->
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="#">Branches</a>
+                </li> -->
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Downloads
+                    </a>
+                    <ul class="dropdown-menu border-0 shadow-sm p-0 overflow-hidden ">
+                      <li><a class="dropdown-item" href="#">DOWNLOADS</a></li>
+                      <li><a class="dropdown-item" href="#">COMPLIANCE-DOCUMENTS</a></li>
+                    </ul>
+                </li> -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        CAREER
+                    </a>
+                    <ul class="dropdown-menu border-0 shadow-sm p-0 overflow-hidden ">
+                      <li><a class="dropdown-item" href="#">WORK CULTURE</a></li>
+                      <li><a class="dropdown-item" href="#">VESTIGE VALUES</a></li>
+                      <li><a class="dropdown-item" href="#">COMPETITIVE COMPENSATION</a></li>
+                      <li><a class="dropdown-item" href="#">FUN @VESTIGE</a></li>
+                      <li><a class="dropdown-item" href="#">VESTIGE HEART TO HEART</a></li>
+                      <li><a class="dropdown-item" href="#">EMPLOYEE BENEFITS PREPOSITION</a></li>
+                      <li><a class="dropdown-item" href="#">CURRENT OPENINGS</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>
-        <div class="loginBtn">
-            <button type="button" class="btn btn-theme1 btnStyle1 rounded-pill text-white px-5">Login</button>
-        </div>
+        <div class="loginBtn d-flex align-items-center">
+            <button type="button" class="btn btn-theme1 btnStyle1 rounded-pill text-white px-4 d-none  d-lg-block ">Login</button>
+            <button type="button" class="btn btn-transperant rounded-pill text-white p-0 d-lg-none "><img src="assets/img/icons/loginIcon.svg" alt=""></button>
+            <button class="btn  d-lg-none ms-3 ms-lg-0 p-0 border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><img src="assets/img/icons/menuBarRed.svg" alt=""></button>
     </div>
 </nav>
+
+<div class="offcanvas offcanvas-start mobileHeader d-lg-none" data-bs-scroll="false" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <div class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
+        <img class="w-100" src="assets/img/logo/logo.png" alt="">
+    </div>
+    <button type="button" class="btn-close shadow-none border-0" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="mobileMenu">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" role="button" data-bs-toggle="collapse" href="#Company" role="button" aria-expanded="false" aria-controls="Company">
+                    Company
+                </a>
+                <div class="collapse collapseOuter" id="Company">
+                    <ul class="list-unstyled p-2 overflow-hidden">
+                      <li><a class="collapseItem d-flex align-items-center gap-1 text-decoration-none" href="#">ABOUT VESTIGE</a></li>
+                      <li><a class="collapseItem d-flex align-items-center gap-1 text-decoration-none" href="#">MANAGEMENT</a></li>
+                      <li><a class="collapseItem d-flex align-items-center gap-1 text-decoration-none" href="#">BUSINESS OPPORTUNITY</a></li>
+                      <li><a class="collapseItem d-flex align-items-center gap-1 text-decoration-none" href="#">SUCCESS STORIES</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#products" role="button" aria-expanded="false" aria-controls="products">
+                    Products
+                </a>
+                <div class="collapse collapseOuter" id="products">
+                    <ul class="list-unstyled p-2 overflow-hidden">
+                    <li><a class="collapseItem d-flex align-items-center gap-1 text-decoration-none" href="#">HEALTH SUPPLEMENTS</a></li>
+                    <li><a class="collapseItem d-flex align-items-center gap-1 text-decoration-none" href="#">AYURVEDA</a></li>
+                    <li><a class="collapseItem d-flex align-items-center gap-1 text-decoration-none" href="#">AIR PURIFIER</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item brands">
+                <a class="nav-link" data-bs-toggle="collapse" href="#brands" role="button" aria-expanded="false" aria-controls="brands">
+                    Brands
+                </a>
+                <div class="collapse collapseOuter" id="brands">
+                    <ul class="list-unstyled p-2 overflow-hidden">
+                    <li><a class="collapseItem d-flex align-items-center gap-1 text-decoration-none" href="#"><img src="assets/img/logo/logo.png" alt=""></a></li>
+                    <li><a class="collapseItem d-flex align-items-center gap-1 text-decoration-none" href="#"><img src="assets/img/logo/logo.png" alt=""></a></li>
+                    <li><a class="collapseItem d-flex align-items-center gap-1 text-decoration-none" href="#"><img src="assets/img/logo/logo.png" alt=""></a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"data-bs-toggle="collapse" href="#schedule" role="button" aria-expanded="false" aria-controls="schedule">
+                    Schedule
+                </a>
+                <div class="collapse collapseOuter" id="schedule">
+                    <ul class="list-unstyled p-2 overflow-hidden">
+                    <li><a class="collapseItem d-flex align-items-center gap-1 text-decoration-none" href="#">ONLINE TRAINING SCHEDULE</a></li>
+                    <li><a class="collapseItem d-flex align-items-center gap-1 text-decoration-none" href="#">TRAINING REQUEST</a></li>
+                    <li><a class="collapseItem d-flex align-items-center gap-1 text-decoration-none" href="#">CNT EVENT SCHEDULE</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"data-bs-toggle="collapse" href="#career" role="button" aria-expanded="false" aria-controls="career">
+                    CAREER
+                </a>
+                
+                <div class="collapse collapseOuter" id="career">
+                    <ul class="list-unstyled p-2 overflow-hidden">
+                    <li><a class="collapseItem d-flex align-items-center gap-1 text-decoration-none" href="#">WORK CULTURE</a></li>
+                    <li><a class="collapseItem d-flex align-items-center gap-1 text-decoration-none" href="#">VESTIGE VALUES</a></li>
+                    <li><a class="collapseItem d-flex align-items-center gap-1 text-decoration-none" href="#">COMPETITIVE COMPENSATION</a></li>
+                    <li><a class="collapseItem d-flex align-items-center gap-1 text-decoration-none" href="#">FUN @VESTIGE</a></li>
+                    <li><a class="collapseItem d-flex align-items-center gap-1 text-decoration-none" href="#">VESTIGE HEART TO HEART</a></li>
+                    <li><a class="collapseItem d-flex align-items-center gap-1 text-decoration-none" href="#">EMPLOYEE BENEFITS PREPOSITION</a></li>
+                    <li><a class="collapseItem d-flex align-items-center gap-1 text-decoration-none" href="#">CURRENT OPENINGS</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+  </div>
+</div>

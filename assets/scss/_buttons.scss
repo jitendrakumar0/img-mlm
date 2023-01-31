@@ -1,7 +1,13 @@
 
 .btnStyle1 {
-    height: 44px;
+    height: 40px;
     align-items: center;
     display: flex;
     font-size: 12px;
+}
+@media (max-width: 991px){
+    .btnStyle1 {
+        height: 34px;
+        padding: 0 24px !important;
+    }
 }

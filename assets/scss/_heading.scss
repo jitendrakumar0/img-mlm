@@ -45,13 +45,102 @@
         font-size: 18px;
         color: $dark;
     }
+    & .miniHeading {
+        font-size: 200px;
+        font-weight: bold;
+        opacity: 0.05;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 0;
+        line-height: 210px;
+    }
 }
-.miniHeading {
-    font-size: 200px;
-    font-weight: bold;
-    color: rgba(255,105,95,0.05);
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: -1;
+
+
+// Small devices (landscape phones, 576px and up)
+@mixin headings-mixin-min-sm() {
+}
+
+// Medium devices (tablets, 768px and up)
+@mixin headings-mixin-min-md() {
+}
+
+// Large devices (desktops, 992px and up)
+@mixin headings-mixin-min-lg() {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@mixin headings-mixin-min-xl() {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@mixin headings-mixin-min-xxl() {
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@mixin headings-mixin-max-xs() {
+    .WelcomeHeading {
+        font-size: 14px;
+    }
+    .mainHeading {
+        font-size: 18px;
+    }
+    .heading {
+        & .title {  
+            font-size: 24px;
+            &:before {
+            }
+            &:after {
+            }
+        }
+        & .subHeading {
+            font-size: 14px;
+        }
+        & .miniHeading {
+            font-size: 80px;
+            line-height: 90px;
+        }
+    }
+}
+
+// Small devices (landscape phones, less than 768px)
+@mixin headings-mixin-max-sm() {
+    .mainHeading {
+        font-size: 28px;
+    }
+}
+
+// Medium devices (tablets, less than 992px)
+@mixin headings-mixin-max-md() {
+    .mainHeading {
+        font-size: 32px;
+    }
+    .heading {
+        & .title {  
+            font-size: 32px;
+            &:before {
+                width: 32px;
+            }
+            
+            &:after {
+                width: 32px;
+            }
+        }
+        & .subHeading {
+            font-size: 16px;
+        }
+        & .miniHeading {
+            font-size: 120px;
+            line-height: 130px;
+        }
+    }
+}
+
+// Large devices (desktops, less than 1200px)
+@mixin headings-mixin-max-lg() {
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@mixin headings-mixin-max-xl() {
 }

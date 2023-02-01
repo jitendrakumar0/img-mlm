@@ -9,51 +9,33 @@
             }
         }
         & .footer-item{
-            & h4 {
+            & .linksTitle {
                 font-size: 18px;
                 font-weight: 700;
                 color: $gray-900;
                 margin-bottom: 30px;
             }
-            & p {
-                font-size: 15px;
-                color: $gray-500;
-                margin-top: -5px;
-            }
-            & ul {
+            & .links {
                 & li {
-                    & a {
+                    & .footerLink {
                         font-size: 14px;
                         color: $gray-500;
                         transition: all .3s;
-                        &:hover {
+                        &:before {
+                            content: '';
+                            width: 0;
+                            height: 2px;
+                            background-color: $theme1;
+                            display: block;
+                            transition: ease-in-out .3s;
+                        }
+                        &:hover, &.active, &:active {
                             color: $theme1;
+                            &:before {
+                                width: 15px;
+                            }
                         }
                     }
-                }
-            }
-            & form {
-                background-color: $theme2;
-                height: 46px;
-                border-radius: 23px;
-                position: relative;
-                margin-top: 15px;
-                & input {
-                    line-height: 46px;
-                    background-color: transparent;
-                    border: none;
-                    font-size: 14px;
-                    padding: 0px 20px;
-                    outline: none;
-                }
-                & button {
-                    position: absolute;
-                    right: 20px;
-                    top: 10px;
-                    color: $white;
-                    background-color: transparent;
-                    border: none;
-                    outline: none;
                 }
             }
         }
@@ -64,7 +46,7 @@
                     margin-bottom: 30px;
                 }
             }
-            & a {
+            & .link {
                 color: $gray-500;
                 font-weight: 300;
             }

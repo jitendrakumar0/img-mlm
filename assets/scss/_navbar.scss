@@ -1,6 +1,6 @@
 .navbar {
-    min-height: 80px;
     height: 80px;
+    transition: ease-in-out .3s;
     & .navbar-brand {
         width: 130px;
         & img {
@@ -83,6 +83,9 @@
             }
         }
     }
+    &.nav-active {
+        height: 60px;
+    }
 }
 
 .offcanvas {
@@ -163,4 +166,150 @@
             }
         }
     }
+}
+
+
+// Small devices (landscape phones, 576px and up)
+@mixin navbar-mixin-min-sm() {
+}
+
+// Medium devices (tablets, 768px and up)
+@mixin navbar-mixin-min-md() {
+}
+
+// Large devices (desktops, 992px and up)
+@mixin navbar-mixin-min-lg() {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@mixin navbar-mixin-min-xl() {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@mixin navbar-mixin-min-xxl() {
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@mixin navbar-mixin-max-xs() {
+}
+
+// Small devices (landscape phones, less than 768px)
+@mixin navbar-mixin-max-sm() {
+    .navbar {
+        height: 60px;
+        transition: ease-in-out .3s;
+        & .navbar-brand {
+            width: 100px;
+            & img {
+    
+            }
+        }
+        & .navbar-toggler {
+            & .navbar-toggler-icon {
+    
+            }
+        }
+        & .navbar-collapse {
+            & .navbar-nav {
+                & .nav-item {
+                    & .nav-link {
+                        &:after {
+                        }
+                        &.active, &:hover {
+                            &:after {
+                            }
+                        }
+                    }
+                    &.dropdown{
+                        & .nav-link {
+                            &:before {
+                            }
+                        }
+                        & .dropdown-menu {
+                            & .dropdown-item{
+                                &:hover, &:active {
+                                }
+                                &:active {
+                                }
+                            }
+                        }
+                        &.brands {
+                            & .dropdown-menu {
+                                & .dropdown-item {
+                                    & img {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.nav-active {
+            height: 60px;
+        }
+    }
+}
+
+// Medium devices (tablets, less than 992px)
+@mixin navbar-mixin-max-md() {
+    .navbar {
+        height: 60px;
+        & .navbar-brand {
+            & img {
+    
+            }
+        }
+        & .navbar-toggler {
+            & .navbar-toggler-icon {
+    
+            }
+        }
+        & .navbar-collapse {
+            & .navbar-nav {
+                & .nav-item {
+                    & .nav-link {
+                        &:after {
+                        }
+                        &.active, &:hover {
+                            &:after {
+                            }
+                        }
+                    }
+                    &.dropdown{
+                        & .nav-link {
+                            &:before {
+                            }
+                        }
+                        & .dropdown-menu {
+                            & .dropdown-item{
+                                &:hover, &:active {
+                                }
+                                &:active {
+                                }
+                            }
+                        }
+                        &.brands {
+                            & .dropdown-menu {
+                                & .dropdown-item {
+                                    & img {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.nav-active {
+        }
+    }
+}
+
+// Large devices (desktops, less than 1200px)
+@mixin navbar-mixin-max-lg() {
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@mixin navbar-mixin-max-xl() {
 }

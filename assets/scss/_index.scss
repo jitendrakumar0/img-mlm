@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+//? ###################################### Home Page Start ######################################
 [page-name=homePage] {
     &.homePage {
         // Hero Section Start
@@ -43,7 +44,7 @@
                             line-height: 46px;
                             border-radius: 50%;
                             background: $theme1;
-                            color: #fff;
+                            color: $white;
                             font-size: 20px;
                         }
                     }
@@ -60,7 +61,7 @@
                         font-size: 20px;
                         font-weight: 500;
                         margin-left: 10px;
-                        color: #2a2a2a;
+                        color: $dark;
                         width: 15px;
                         display: inline-block;
                         text-align: center;
@@ -116,13 +117,17 @@
             & .mainEventSlider {
                 & .owl-stage-outer{
                     padding: 0;
+                    // overflow: unset;
                 }
                 & .owl-dots {
-                    display: inline;
+                    position: absolute;
+                    left: 0;
+                    bottom: -40px;
+                    display: flex;
+                    gap: 8px;
                     & .owl-dot{
                         width: 12px;
                         height: 12px;
-                        margin-right: 8px;
                         border-radius: 50px;
                         background-color: $gray-100;
                         border:2px solid $theme1;
@@ -136,17 +141,22 @@
                 & .owl-nav{
                     position: absolute;
                     right: 0;
-                    bottom: -20px;
-                    padding: 0;
+                    bottom: -50px;
                     display: flex;
                     gap: 8px;
+                    z-index: 1;
                     justify-content: end;
                     & .owl-prev, & .owl-next {
                         width: 32px;
                         height: 32px;
                         background: lighten($theme1, 10);
                         border-radius: 50px;
+                        padding: 9px !important;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                         transition: ease-in-out .3s;
+                        
                         &.disabled {
                             background-color: lighten($theme1, 20);
                             &:hover {
@@ -212,15 +222,16 @@
 
         // Our Brands Section Start
         & .ourBrands {
-            padding-bottom: 80px;
+            padding: 40px 0 80px;
             background: url(../img/bgImg/brands.png);
             background-repeat: no-repeat;
             background-position: left bottom;
-            background-size: contain;
+            background-size: 20%;
             & .bransOuter{
                 & .brands {
                     width: 100%;
                     height: 140px;
+                    padding: 50px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -232,6 +243,7 @@
                         transition: ease-in-out .3s;
                         position: relative;
                         z-index: 1;
+                        width: 100%;
                     }
                     &::after{
                         content: '';
@@ -345,13 +357,19 @@
                 &.trandingVideo{
                     height: 480px;
                     & a {
-                        
+                        & img {
+                            object-fit: cover;
+                        }
                     }
                 }
                 
                 &.otherVideos {
                     height: 144px;
                     & a {
+                        & img {
+                            object-fit: cover;
+                            object-position: top center;
+                        }
                     }
                     & .videoDecription{
                         width: fit-content;
@@ -386,21 +404,18 @@
                     position: relative;
                     z-index: 2;
                 }
-                
-                & .info {
-                    & .infoOuter {
-                        cursor: pointer;
-                        & .infoIcon {
-                            width: 44px;
-                            height: 44px;
-                            padding: 14px;
-                        }
-                        & a {
-                            font-size: 14px;
-                            transition: ease-in-out .2s;
-                            &:hover {
-                                color: $theme1 !important;
-                            }
+                & .infoOuter {
+                    cursor: pointer;
+                    & .infoIcon {
+                        width: 44px;
+                        height: 44px;
+                        padding: 14px;
+                    }
+                    & a {
+                        font-size: 14px;
+                        transition: ease-in-out .2s;
+                        &:hover {
+                            color: $theme1 !important;
                         }
                     }
                 }
@@ -436,39 +451,6 @@
                     }
                     & textarea{
                         max-height: 80px;
-                    }
-                    & .tomSelect {
-                        & .ts-control{
-                            border: none;
-                            // border-bottom: 2px solid $gray-200;
-                            padding: 0;
-                            border-radius: 0;
-                            & input {
-                                &::placeholder {
-                                    font-size: 14px;
-                                    color: $gray-500;
-                                    font-weight: 300;
-                                }
-                            }
-                        }
-                        & .ts-dropdown {
-                            border: none;
-                            box-shadow: 0 0px 6px rgb(0 0 0 / 20%);
-                            &.single {
-
-                            }
-                            & .ts-dropdown-content {
-                                & .option {
-                                    &.active {
-
-                                    }
-                                    &.selected {
-                                        background-color: $theme2;
-                                        color: $white;
-                                    }
-                                }
-                            }
-                        }
                     }
                     & .invalid-feedback{
                         font-size: 12px;
@@ -597,51 +579,65 @@
     
             // Event Section Start
             & .mainEvents {
-                padding-bottom: 80px;
                 & .mainEventSlider {
                     & .owl-stage-outer{
-                        padding: 0;
+                        & .owl-stage{
+                            & .owl-item {
+                                &.active {
+                                    & .eventOuter {
+                                        & .eventImg {
+                                            & img {
+                                            }
+                                        }
+                                        & .eventDecription {
+                                            & .eventTitle {
+                                            }
+                                            & .eventDec {
+                                            }
+                                        
+                                        }
+                                        &:hover {
+                                            & .eventImg {
+                                                & img {
+                                                }
+                                            }
+                                            & .eventDecription {
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .owl-dots {
+                        bottom: -30px;
+                        & .owl-dot{
+                            &.active {
+                            }
+                        }
                     }
     
                 }
                 & .eventOuter {
-                    height: 500px;
+                    height: 280px;
                     & .eventImg {
                         & img {
-                            object-fit: cover;
-                            filter: grayscale(1);
-                            transition: ease-in-out .3s;
                         }
                     }
                     & .eventDecription {
-                        width: 65%;
-                        height: fit-content;
-                        border-radius: 32px 0;
-                        bottom: -240px;
-                        right: -240px;
-                        transition: ease-in-out .4s;
+                        width: 70%;
                         & .eventTitle {
-                            font-size: 16px;
-                            font-weight: bold;
                         }
                         & .eventDec {
-                            font-size: 12px;
-                            display: -webkit-box;
-                            -webkit-box-orient: vertical;
-                            -webkit-line-clamp: 3;
-                            overflow: hidden;
                         }
                     
                     }
                     &:hover {
                         & .eventImg {
                             & img {
-                                filter: none;
                             }
                         }
                         & .eventDecription {
-                            right: 20px;
-                            bottom: 20px;
                         }
                     }
                 }
@@ -650,47 +646,20 @@
     
             // Our Brands Section Start
             & .ourBrands {
-                padding-bottom: 80px;
-                background: url(../img/bgImg/brands.png);
-                background-repeat: no-repeat;
+                background-size: 40%;
                 background-position: left bottom;
-                background-size: contain;
                 & .bransOuter{
                     & .brands {
-                        width: 100%;
-                        height: 140px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        border-radius: 10px;
-                        border: 1px solid $gray-200;
-                        transition: ease-in-out .3s;
+                        height: 100px;
+                        padding: 30px;
                         & img {
-                            filter: grayscale(100%);
-                            transition: ease-in-out .3s;
-                            position: relative;
-                            z-index: 1;
                         }
                         &::after{
-                            content: '';
-                            display: block;
-                            width: 0;
-                            height: 100%;
-                            backdrop-filter: blur(8px);
-                            position: absolute;
-                            z-index: 0;
-                            transition: ease-in-out .3s;
-                            left: 0;
                         }
                         &:hover {
-                            border-color: $theme1;
-                            // backdrop-filter: blur(8px);
                             &:after {
-                                width: 100%;
                             }
                             & img {
-                                filter: none;
-                                transform: scale(1.05);
                             }
                         }
                     }
@@ -700,108 +669,49 @@
     
             // Our Videos Section Start
             & .ourVideo {
-                padding-bottom: 80px;
-                background: url(../img/bgImg/videosRight.png);
-                background-repeat: no-repeat;
-                background-position: right bottom;
-                background-size: auto;
                 & .videos {
                     & .playBtn{
-                        width: 50px;
-                        height: 50px;
-                        transition: ease-in-out .3s;
                         & img {
-                            position: relative;
-                            z-index: 1;
                         }
                         &:before {
-                            content: "";
-                            position: absolute;
-                            z-index: 0;
-                            left: 50%;
-                            top: 50%;
-                            transform: translateX(-50%) translateY(-50%);
-                            display: block;
-                            width: 50px;
-                            height: 50px;
-                            background: $theme2;
-                            border-radius: 50%;
-                            animation: pulse-border 1500ms ease-out infinite;
-                            z-index: 0;
-                            transition: ease-in-out .3s;
                         }
                         &:after {
-                            content: "";
-                            position: absolute;
-                            z-index: 1;
-                            left: 50%;
-                            top: 50%;
-                            transform: translateX(-50%) translateY(-50%);
-                            display: block;
-                            width: 50px;
-                            height: 50px;
-                            background: $theme2;
-                            border-radius: 50%;
-                            transition: all 200ms;
-                            z-index: 0;
-                            transition: ease-in-out .3s;
                         }
-                        
-                        @keyframes pulse-border {
-                            0% {
-                              transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
-                              opacity: 1;
-                            }
-                            100% {
-                              transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
-                              opacity: 0;
-                            }
-                          }
                     }
                     &:hover {
                         & .playBtn {
                             &:after, &:before {
-                                background-color: $theme1;
                             }
                         }
                     }
                     & .videoDecription{
-                        width: 260px;
-                        height: fit-content;
-                        border-radius: 32px 0;
-                        transition: ease-in-out .3s;
-                        top: -200px;
-                        left: -200px;
+                        width: 140px;
                         & .videoTitle {
-                            font-size: 20px;
-                            font-weight: bold;
+                            font-size: 12px;
                         }
                         & .subTitle{
-                            font-size: 14px;
+                            font-size: 8px;
                         }
                     }
                     &.trandingVideo{
-                        height: 480px;
+                        height: 160px;
                         & a {
                             
                         }
                     }
                     
                     &.otherVideos {
-                        height: 144px;
+                        height: 110px;
                         & a {
                         }
                         & .videoDecription{
-                            width: fit-content;
                             & .videoTitle {
-                                font-size: 16px;
+                                font-size: 12px;
                             }
                         }
                     }
                     &:hover {
                         & .videoDecription {
-                            top: 0;
-                            left: 0;
                         }
                     }
                 }
@@ -812,86 +722,35 @@
     
             // Get in Touch Section Start
             & .getInTouch {
-                padding: 80px 0;
-                background-color: lighten($theme2, 50);
-                z-index: 2;
-                position: relative;  
                 & .section-heading{
                     & .subHeading {
-                        font-size: 30px;
-                        text-transform: capitalize;
-                        font-weight: 700;
-                        position: relative;
-                        z-index: 2;
                     }
-                    
-                    & .info {
-                        & .infoOuter {
-                            cursor: pointer;
-                            & .infoIcon {
-                                width: 44px;
-                                height: 44px;
-                                padding: 14px;
-                            }
-                            & a {
-                                font-size: 14px;
-                                transition: ease-in-out .2s;
-                                &:hover {
-                                    color: $theme1 !important;
-                                }
+                    & .infoOuter {
+                        & .infoIcon {
+                            width: 30px;
+                            height: 30px;
+                            padding: 8px;
+                        }
+                        & a {
+                            &:hover {
                             }
                         }
                     }
                 }
                 & .form {
-                    // margin-left: -100px;
-                    position: relative;
-                    z-index: 2;
-                    background-image: url(../images/contact-form-bg.png);
-                    background-repeat: no-repeat;
-                    background-position: center center;
-                    background-size: cover;
-                    box-shadow: 0px 0px 15px rgba($dark, 10%);
-                    padding: 60px 60px;
-                    border-radius: 20px;
                     & .input-group {
                         & .form-control, & .form-select {
-                            width: 100%;
-                            min-height: 32px;
-                            border-radius: 0px;
-                            background-color: transparent;
-                            border: none;
-                            border-bottom: 2px solid $gray-200;
-                            outline: none;
-                            font-size: 14px;
-                            font-weight: 300;
-                            color: $gray-900;
-                            padding: 0px 0px;
-                            &::placeholder {
-                                font-size: 14px;
-                                color: $gray-500;
-                            }
                         }
                         & textarea{
-                            max-height: 80px;
                         }
                         & .tomSelect {
                             & .ts-control{
-                                border: none;
-                                // border-bottom: 2px solid $gray-200;
-                                padding: 0;
-                                border-radius: 0;
                                 & input {
                                     &::placeholder {
-                                        font-size: 14px;
-                                        color: $gray-500;
-                                        font-weight: 300;
                                     }
                                 }
                             }
                             & .ts-dropdown {
-                                border: none;
-                                box-shadow: 0 0px 6px rgb(0 0 0 / 20%);
                                 &.single {
     
                                 }
@@ -901,28 +760,22 @@
     
                                         }
                                         &.selected {
-                                            background-color: $theme2;
-                                            color: $white;
                                         }
                                     }
                                 }
                             }
                         }
                         & .invalid-feedback{
-                            font-size: 12px;
                         }
                     }
                     &.was-validated {
                         & .input-group {
                             & .form-control, & .form-select, & .tomSelect {
-                                background-image: none !important;
                                 &:invalid {
-                                    border-color: $danger;
                                 }
                             }
                             & .tomSelect {
                                 &.invalid {
-                                    border-color: $danger;
                                 }
                                 & .ts-control{
                                     & input {
@@ -935,12 +788,7 @@
                     }
                 }
                 & .contact-left-dec {
-                    position: absolute;
-                    z-index: -1;
-                    width: 174px;
-                    height: 319px;
-                    left: 0;
-                    top: 200px;
+                    display: none;
                 }
             }
             // Get in Touch Section End
@@ -1012,51 +860,33 @@
     
             // Event Section Start
             & .mainEvents {
-                padding-bottom: 80px;
+                padding-bottom: 50px;
                 & .mainEventSlider {
                     & .owl-stage-outer{
-                        padding: 0;
+                    }
+                    & .owl-nav{
+                        display: none;
                     }
     
                 }
                 & .eventOuter {
-                    height: 500px;
                     & .eventImg {
                         & img {
-                            object-fit: cover;
-                            filter: grayscale(1);
-                            transition: ease-in-out .3s;
                         }
                     }
                     & .eventDecription {
-                        width: 65%;
-                        height: fit-content;
-                        border-radius: 32px 0;
-                        bottom: -240px;
-                        right: -240px;
-                        transition: ease-in-out .4s;
                         & .eventTitle {
-                            font-size: 16px;
-                            font-weight: bold;
                         }
                         & .eventDec {
-                            font-size: 12px;
-                            display: -webkit-box;
-                            -webkit-box-orient: vertical;
-                            -webkit-line-clamp: 3;
-                            overflow: hidden;
                         }
                     
                     }
                     &:hover {
                         & .eventImg {
                             & img {
-                                filter: none;
                             }
                         }
                         & .eventDecription {
-                            right: 20px;
-                            bottom: 20px;
                         }
                     }
                 }
@@ -1065,47 +895,20 @@
     
             // Our Brands Section Start
             & .ourBrands {
-                padding-bottom: 80px;
-                background: url(../img/bgImg/brands.png);
-                background-repeat: no-repeat;
-                background-position: left bottom;
-                background-size: contain;
+                padding: 25px 0 50px;
+                background-size: 40%;
                 & .bransOuter{
                     & .brands {
-                        width: 100%;
-                        height: 140px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        border-radius: 10px;
-                        border: 1px solid $gray-200;
-                        transition: ease-in-out .3s;
+                        height: 120px;
+                        padding: 40px;
                         & img {
-                            filter: grayscale(100%);
-                            transition: ease-in-out .3s;
-                            position: relative;
-                            z-index: 1;
                         }
                         &::after{
-                            content: '';
-                            display: block;
-                            width: 0;
-                            height: 100%;
-                            backdrop-filter: blur(8px);
-                            position: absolute;
-                            z-index: 0;
-                            transition: ease-in-out .3s;
-                            left: 0;
                         }
                         &:hover {
-                            border-color: $theme1;
-                            // backdrop-filter: blur(8px);
                             &:after {
-                                width: 100%;
                             }
                             & img {
-                                filter: none;
-                                transform: scale(1.05);
                             }
                         }
                     }
@@ -1114,109 +917,53 @@
             // Our Brands Section End
     
             // Our Videos Section Start
-            & .ourVideo {
-                padding-bottom: 80px;
-                background: url(../img/bgImg/videosRight.png);
-                background-repeat: no-repeat;
-                background-position: right bottom;
-                background-size: auto;
+            & .ourVideo { 
+                padding-bottom: 50px;
+                background-size: 30%;
                 & .videos {
                     & .playBtn{
-                        width: 50px;
-                        height: 50px;
-                        transition: ease-in-out .3s;
+                        width: 30px;
+                        height: 30px;
+                        padding: 7px;
                         & img {
-                            position: relative;
-                            z-index: 1;
+                            width: 100%;
                         }
-                        &:before {
-                            content: "";
-                            position: absolute;
-                            z-index: 0;
-                            left: 50%;
-                            top: 50%;
-                            transform: translateX(-50%) translateY(-50%);
-                            display: block;
-                            width: 50px;
-                            height: 50px;
-                            background: $theme2;
-                            border-radius: 50%;
-                            animation: pulse-border 1500ms ease-out infinite;
-                            z-index: 0;
-                            transition: ease-in-out .3s;
+                        &:before, &:after {
+                            width: 30px;
+                            height: 30px;
                         }
                         &:after {
-                            content: "";
-                            position: absolute;
-                            z-index: 1;
-                            left: 50%;
-                            top: 50%;
-                            transform: translateX(-50%) translateY(-50%);
-                            display: block;
-                            width: 50px;
-                            height: 50px;
-                            background: $theme2;
-                            border-radius: 50%;
-                            transition: all 200ms;
-                            z-index: 0;
-                            transition: ease-in-out .3s;
                         }
-                        
-                        @keyframes pulse-border {
-                            0% {
-                              transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
-                              opacity: 1;
-                            }
-                            100% {
-                              transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
-                              opacity: 0;
-                            }
-                          }
                     }
                     &:hover {
                         & .playBtn {
                             &:after, &:before {
-                                background-color: $theme1;
                             }
                         }
                     }
                     & .videoDecription{
-                        width: 260px;
-                        height: fit-content;
-                        border-radius: 32px 0;
-                        transition: ease-in-out .3s;
-                        top: -200px;
-                        left: -200px;
                         & .videoTitle {
-                            font-size: 20px;
-                            font-weight: bold;
                         }
                         & .subTitle{
-                            font-size: 14px;
                         }
                     }
                     &.trandingVideo{
-                        height: 480px;
+                        height: 240px;
                         & a {
                             
                         }
                     }
                     
                     &.otherVideos {
-                        height: 144px;
                         & a {
                         }
                         & .videoDecription{
-                            width: fit-content;
                             & .videoTitle {
-                                font-size: 16px;
                             }
                         }
                     }
                     &:hover {
                         & .videoDecription {
-                            top: 0;
-                            left: 0;
                         }
                     }
                 }
@@ -1227,86 +974,38 @@
     
             // Get in Touch Section Start
             & .getInTouch {
-                padding: 80px 0;
-                background-color: lighten($theme2, 50);
-                z-index: 2;
-                position: relative;  
+                padding: 50px 0; 
                 & .section-heading{
                     & .subHeading {
-                        font-size: 30px;
-                        text-transform: capitalize;
-                        font-weight: 700;
-                        position: relative;
-                        z-index: 2;
+                        font-size: 18px;
                     }
-                    
-                    & .info {
-                        & .infoOuter {
-                            cursor: pointer;
-                            & .infoIcon {
-                                width: 44px;
-                                height: 44px;
-                                padding: 14px;
-                            }
-                            & a {
-                                font-size: 14px;
-                                transition: ease-in-out .2s;
-                                &:hover {
-                                    color: $theme1 !important;
-                                }
+                    & .infoOuter {
+                        & .infoIcon {
+                            padding: 10px;
+                        }
+                        & a {
+                            &:hover {
                             }
                         }
                     }
                 }
                 & .form {
-                    // margin-left: -100px;
-                    position: relative;
-                    z-index: 2;
-                    background-image: url(../images/contact-form-bg.png);
-                    background-repeat: no-repeat;
-                    background-position: center center;
-                    background-size: cover;
-                    box-shadow: 0px 0px 15px rgba($dark, 10%);
                     padding: 60px 60px;
-                    border-radius: 20px;
                     & .input-group {
                         & .form-control, & .form-select {
-                            width: 100%;
-                            min-height: 32px;
-                            border-radius: 0px;
-                            background-color: transparent;
-                            border: none;
-                            border-bottom: 2px solid $gray-200;
-                            outline: none;
-                            font-size: 14px;
-                            font-weight: 300;
-                            color: $gray-900;
-                            padding: 0px 0px;
                             &::placeholder {
-                                font-size: 14px;
-                                color: $gray-500;
                             }
                         }
                         & textarea{
-                            max-height: 80px;
                         }
                         & .tomSelect {
                             & .ts-control{
-                                border: none;
-                                // border-bottom: 2px solid $gray-200;
-                                padding: 0;
-                                border-radius: 0;
                                 & input {
                                     &::placeholder {
-                                        font-size: 14px;
-                                        color: $gray-500;
-                                        font-weight: 300;
                                     }
                                 }
                             }
                             & .ts-dropdown {
-                                border: none;
-                                box-shadow: 0 0px 6px rgb(0 0 0 / 20%);
                                 &.single {
     
                                 }
@@ -1316,28 +1015,22 @@
     
                                         }
                                         &.selected {
-                                            background-color: $theme2;
-                                            color: $white;
                                         }
                                     }
                                 }
                             }
                         }
                         & .invalid-feedback{
-                            font-size: 12px;
                         }
                     }
                     &.was-validated {
                         & .input-group {
                             & .form-control, & .form-select, & .tomSelect {
-                                background-image: none !important;
                                 &:invalid {
-                                    border-color: $danger;
                                 }
                             }
                             & .tomSelect {
                                 &.invalid {
-                                    border-color: $danger;
                                 }
                                 & .ts-control{
                                     & input {
@@ -1350,12 +1043,6 @@
                     }
                 }
                 & .contact-left-dec {
-                    position: absolute;
-                    z-index: -1;
-                    width: 174px;
-                    height: 319px;
-                    left: 0;
-                    top: 200px;
                 }
             }
             // Get in Touch Section End
@@ -1432,51 +1119,63 @@
     
             // Event Section Start
             & .mainEvents {
-                padding-bottom: 80px;
+                padding-bottom: 60px;
                 & .mainEventSlider {
                     & .owl-stage-outer{
-                        padding: 0;
+                        & .owl-stage{
+                            & .owl-item {
+                                &.active {
+                                    & .eventOuter {
+                                        & .eventImg {
+                                            & img {
+                                                filter: none;
+                                            }
+                                        }
+                                        & .eventDecription {
+                                            bottom: 20px;
+                                            right: 20px;
+                                            & .eventTitle {
+                                            }
+                                            & .eventDec {
+                                            }
+                                        
+                                        }
+                                        &:hover {
+                                            & .eventImg {
+                                                & img {
+                                                }
+                                            }
+                                            & .eventDecription {
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
     
                 }
                 & .eventOuter {
-                    height: 500px;
+                    height: 400px;
                     & .eventImg {
                         & img {
-                            object-fit: cover;
-                            filter: grayscale(1);
-                            transition: ease-in-out .3s;
                         }
                     }
                     & .eventDecription {
-                        width: 65%;
-                        height: fit-content;
-                        border-radius: 32px 0;
-                        bottom: -240px;
-                        right: -240px;
-                        transition: ease-in-out .4s;
+                        transition: ease-in-out .3s;
                         & .eventTitle {
-                            font-size: 16px;
-                            font-weight: bold;
+                            font-size: 14px;
                         }
                         & .eventDec {
-                            font-size: 12px;
-                            display: -webkit-box;
-                            -webkit-box-orient: vertical;
-                            -webkit-line-clamp: 3;
-                            overflow: hidden;
                         }
                     
                     }
                     &:hover {
                         & .eventImg {
                             & img {
-                                filter: none;
                             }
                         }
                         & .eventDecription {
-                            right: 20px;
-                            bottom: 20px;
                         }
                     }
                 }
@@ -1485,47 +1184,21 @@
     
             // Our Brands Section Start
             & .ourBrands {
-                padding-bottom: 80px;
-                background: url(../img/bgImg/brands.png);
-                background-repeat: no-repeat;
-                background-position: left bottom;
-                background-size: contain;
+                padding: 30px 0 60px;
+                background-position: left top;
+                background-size: 30%;
                 & .bransOuter{
                     & .brands {
-                        width: 100%;
-                        height: 140px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        border-radius: 10px;
-                        border: 1px solid $gray-200;
-                        transition: ease-in-out .3s;
+                        height: 100px;
+                        padding: 30px;
                         & img {
-                            filter: grayscale(100%);
-                            transition: ease-in-out .3s;
-                            position: relative;
-                            z-index: 1;
                         }
                         &::after{
-                            content: '';
-                            display: block;
-                            width: 0;
-                            height: 100%;
-                            backdrop-filter: blur(8px);
-                            position: absolute;
-                            z-index: 0;
-                            transition: ease-in-out .3s;
-                            left: 0;
                         }
                         &:hover {
-                            border-color: $theme1;
-                            // backdrop-filter: blur(8px);
                             &:after {
-                                width: 100%;
                             }
                             & img {
-                                filter: none;
-                                transform: scale(1.05);
                             }
                         }
                     }
@@ -1535,99 +1208,51 @@
     
             // Our Videos Section Start
             & .ourVideo {
-                padding-bottom: 80px;
-                background: url(../img/bgImg/videosRight.png);
-                background-repeat: no-repeat;
-                background-position: right bottom;
-                background-size: auto;
+                padding-bottom: 60px;
+                background-size: 20%;
                 & .videos {
                     & .playBtn{
-                        width: 50px;
-                        height: 50px;
-                        transition: ease-in-out .3s;
+                        width: 40px;
+                        height: 40px;
                         & img {
-                            position: relative;
-                            z-index: 1;
                         }
-                        &:before {
-                            content: "";
-                            position: absolute;
-                            z-index: 0;
-                            left: 50%;
-                            top: 50%;
-                            transform: translateX(-50%) translateY(-50%);
-                            display: block;
-                            width: 50px;
-                            height: 50px;
-                            background: $theme2;
-                            border-radius: 50%;
-                            animation: pulse-border 1500ms ease-out infinite;
-                            z-index: 0;
-                            transition: ease-in-out .3s;
+                        &:before, &:after {
+                            width: 40px;
+                            height: 40px;
                         }
                         &:after {
-                            content: "";
-                            position: absolute;
-                            z-index: 1;
-                            left: 50%;
-                            top: 50%;
-                            transform: translateX(-50%) translateY(-50%);
-                            display: block;
-                            width: 50px;
-                            height: 50px;
-                            background: $theme2;
-                            border-radius: 50%;
-                            transition: all 200ms;
-                            z-index: 0;
-                            transition: ease-in-out .3s;
                         }
-                        
-                        @keyframes pulse-border {
-                            0% {
-                              transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
-                              opacity: 1;
-                            }
-                            100% {
-                              transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
-                              opacity: 0;
-                            }
-                          }
                     }
                     &:hover {
                         & .playBtn {
                             &:after, &:before {
-                                background-color: $theme1;
                             }
                         }
                     }
                     & .videoDecription{
-                        width: 260px;
-                        height: fit-content;
-                        border-radius: 32px 0;
-                        transition: ease-in-out .3s;
-                        top: -200px;
-                        left: -200px;
+                        width: 200px;
+                        border-radius: 16px 0;
+                        top: 0;
+                        left: 0;
                         & .videoTitle {
-                            font-size: 20px;
-                            font-weight: bold;
+                            font-size: 16px;
+                            font-weight: 600;
                         }
                         & .subTitle{
-                            font-size: 14px;
+                            font-size: 12px;
                         }
                     }
                     &.trandingVideo{
-                        height: 480px;
+                        height: 312px;
                         & a {
                             
                         }
                     }
                     
                     &.otherVideos {
-                        height: 144px;
                         & a {
                         }
                         & .videoDecription{
-                            width: fit-content;
                             & .videoTitle {
                                 font-size: 16px;
                             }
@@ -1635,8 +1260,6 @@
                     }
                     &:hover {
                         & .videoDecription {
-                            top: 0;
-                            left: 0;
                         }
                     }
                 }
@@ -1647,86 +1270,44 @@
     
             // Get in Touch Section Start
             & .getInTouch {
-                padding: 80px 0;
-                background-color: lighten($theme2, 50);
-                z-index: 2;
-                position: relative;  
+                padding: 60px 0; 
                 & .section-heading{
                     & .subHeading {
-                        font-size: 30px;
-                        text-transform: capitalize;
-                        font-weight: 700;
-                        position: relative;
-                        z-index: 2;
+                        font-size: 24px;
                     }
-                    
-                    & .info {
-                        & .infoOuter {
-                            cursor: pointer;
-                            & .infoIcon {
-                                width: 44px;
-                                height: 44px;
-                                padding: 14px;
-                            }
-                            & a {
-                                font-size: 14px;
-                                transition: ease-in-out .2s;
-                                &:hover {
-                                    color: $theme1 !important;
-                                }
+                    & .infoOuter {
+                        & .infoIcon {
+                            width: 36px;
+                            height: 36px;
+                            padding: 8px;
+                        }
+                        & a {
+                            font-size: 12px;
+                            &:hover {
                             }
                         }
                     }
                 }
                 & .form {
-                    // margin-left: -100px;
-                    position: relative;
-                    z-index: 2;
-                    background-image: url(../images/contact-form-bg.png);
-                    background-repeat: no-repeat;
-                    background-position: center center;
-                    background-size: cover;
-                    box-shadow: 0px 0px 15px rgba($dark, 10%);
-                    padding: 60px 60px;
-                    border-radius: 20px;
+                    padding: 50px 20px;
                     & .input-group {
                         & .form-control, & .form-select {
-                            width: 100%;
-                            min-height: 32px;
-                            border-radius: 0px;
-                            background-color: transparent;
-                            border: none;
-                            border-bottom: 2px solid $gray-200;
-                            outline: none;
-                            font-size: 14px;
-                            font-weight: 300;
-                            color: $gray-900;
-                            padding: 0px 0px;
+                            font-size: 12px;
                             &::placeholder {
-                                font-size: 14px;
-                                color: $gray-500;
+                                font-size: 12px;
                             }
                         }
                         & textarea{
-                            max-height: 80px;
                         }
                         & .tomSelect {
                             & .ts-control{
-                                border: none;
-                                // border-bottom: 2px solid $gray-200;
-                                padding: 0;
-                                border-radius: 0;
                                 & input {
                                     &::placeholder {
-                                        font-size: 14px;
-                                        color: $gray-500;
-                                        font-weight: 300;
+                                        font-size: 12px;
                                     }
                                 }
                             }
                             & .ts-dropdown {
-                                border: none;
-                                box-shadow: 0 0px 6px rgb(0 0 0 / 20%);
                                 &.single {
     
                                 }
@@ -1736,28 +1317,22 @@
     
                                         }
                                         &.selected {
-                                            background-color: $theme2;
-                                            color: $white;
                                         }
                                     }
                                 }
                             }
                         }
                         & .invalid-feedback{
-                            font-size: 12px;
                         }
                     }
                     &.was-validated {
                         & .input-group {
                             & .form-control, & .form-select, & .tomSelect {
-                                background-image: none !important;
                                 &:invalid {
-                                    border-color: $danger;
                                 }
                             }
                             & .tomSelect {
                                 &.invalid {
-                                    border-color: $danger;
                                 }
                                 & .ts-control{
                                     & input {
@@ -1770,12 +1345,6 @@
                     }
                 }
                 & .contact-left-dec {
-                    position: absolute;
-                    z-index: -1;
-                    width: 174px;
-                    height: 319px;
-                    left: 0;
-                    top: 200px;
                 }
             }
             // Get in Touch Section End
@@ -1785,6 +1354,258 @@
 
 // Large devices (desktops, less than 1200px)
 @mixin homePage-mixin-max-lg() {
+    [page-name=homePage] {
+        &.homePage {
+            // Hero Section Start
+            & .main-banner {
+                & .mainCarousel {
+                    &:after {
+                    }
+                }
+                .item {
+                    &.header-text {
+                    & .decription {
+                    }
+                    & .down-buttons{
+                        & .call-button {
+                            & a {
+                            }
+                            & .callIcon {
+                            }
+                        }
+                    }
+                    }
+                }
+                & .owl-dots {
+                    & .owl-dot{
+                        &:before {
+                        }
+                        &.active:before {
+                        }
+                    }
+                }
+            }
+            // Hero Section End
+
+            // About us Section Start
+            & .aboutUs{
+                & .aboutDec{
+                }
+                & .missionVision{
+                    & .outer{
+                        & .title {
+                        }
+                        & .decription {
+                        }
+                    }
+                }
+                & .aboutImg{
+                    & img {
+                    }
+                }
+            }
+            // About us Section End
+    
+            // Event Section Start
+            & .mainEvents {
+                & .mainEventSlider {
+                    & .owl-stage-outer{
+                        & .owl-stage{
+                            & .owl-item {
+                                &.active {
+                                    & .eventOuter {
+                                        & .eventImg {
+                                            & img {
+                                            }
+                                        }
+                                        & .eventDecription {
+                                            & .eventTitle {
+                                            }
+                                            & .eventDec {
+                                            }
+                                        
+                                        }
+                                        &:hover {
+                                            & .eventImg {
+                                                & img {
+                                                }
+                                            }
+                                            & .eventDecription {
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+    
+                }
+                & .eventOuter {
+                    & .eventImg {
+                        & img {
+                        }
+                    }
+                    & .eventDecription {
+                        & .eventTitle {
+                        }
+                        & .eventDec {
+                        }
+                    
+                    }
+                    &:hover {
+                        & .eventImg {
+                            & img {
+                            }
+                        }
+                        & .eventDecription {
+                        }
+                    }
+                }
+            }
+            // Event Section End
+    
+            // Our Brands Section Start
+            & .ourBrands {
+                & .bransOuter{
+                    & .brands {
+                        & img {
+                        }
+                        &::after{
+                        }
+                        &:hover {
+                            &:after {
+                            }
+                            & img {
+                            }
+                        }
+                    }
+                }
+            }
+            // Our Brands Section End
+    
+            // Our Videos Section Start
+            & .ourVideo {
+                & .videos {
+                    & .playBtn{
+                        & img {
+                        }
+                        &:before, &:after {
+                        }
+                        &:after {
+                        }
+                    }
+                    &:hover {
+                        & .playBtn {
+                            &:after, &:before {
+                            }
+                        }
+                    }
+                    & .videoDecription{
+                        & .videoTitle {
+                        }
+                        & .subTitle{
+                        }
+                    }
+                    &.trandingVideo{
+                        & a {
+                            
+                        }
+                    }
+                    
+                    &.otherVideos {
+                        & a {
+                        }
+                        & .videoDecription{
+                            & .videoTitle {
+                            }
+                        }
+                    }
+                    &:hover {
+                        & .videoDecription {
+                        }
+                    }
+                }
+                
+                
+            }
+            // Our Videos Section End
+    
+            // Get in Touch Section Start
+            & .getInTouch {
+                & .section-heading{
+                    & .subHeading {
+                    }
+                    & .infoOuter {
+                        cursor: pointer;
+                        & .infoIcon {
+                        }
+                        & a {
+                            &:hover {
+                            }
+                        }
+                    }
+                }
+                & .form {
+                    & .input-group {
+                        & .form-control, & .form-select {
+                            &::placeholder {
+                            }
+                        }
+                        & textarea{
+                            max-height: 80px;
+                        }
+                        & .tomSelect {
+                            & .ts-control{
+                                border: none;
+                                padding: 0;
+                                border-radius: 0;
+                                & input {
+                                    &::placeholder {
+                                    }
+                                }
+                            }
+                            & .ts-dropdown {
+                                &.single {
+                                }
+                                & .ts-dropdown-content {
+                                    & .option {
+                                        &.active {
+                                        }
+                                        &.selected {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        & .invalid-feedback{
+                        }
+                    }
+                    &.was-validated {
+                        & .input-group {
+                            & .form-control, & .form-select, & .tomSelect {
+                                &:invalid {
+                                }
+                            }
+                            & .tomSelect {
+                                &.invalid {
+                                }
+                                & .ts-control{
+                                    & input {
+                                        &::placeholder {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                & .contact-left-dec {
+                    top: 270px;
+                }
+            }
+            // Get in Touch Section End
+        }
+    }
 }
 
 // X-Large devices (large desktops, less than 1400px)
@@ -1829,6 +1650,657 @@
                 }
             }
             // Hero Section End
+
+            // Event Section Start
+            & .mainEvents {
+                & .mainEventSlider {
+                    & .owl-stage-outer{
+                        & .owl-stage{
+                            & .owl-item {
+                                &.active {
+                                    & .eventOuter {
+                                        & .eventImg {
+                                            & img {
+                                            }
+                                        }
+                                        & .eventDecription {
+                                            & .eventTitle {
+                                            }
+                                            & .eventDec {
+                                            }
+                                        
+                                        }
+                                        &:hover {
+                                            & .eventImg {
+                                                & img {
+                                                }
+                                            }
+                                            & .eventDecription {
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+    
+                }
+                & .eventOuter {
+                    & .eventImg {
+                        & img {
+                        }
+                    }
+                    & .eventDecription {
+                        padding: 16px !important;
+                        & .eventTitle {
+                            font-size: 12px !important;
+                        }
+                        & .eventDec {
+                            font-size: 10px;
+                            -webkit-line-clamp: 2;
+                        }
+                    
+                    }
+                    &:hover {
+                        & .eventImg {
+                            & img {
+                            }
+                        }
+                        & .eventDecription {
+                        }
+                    }
+                }
+            }
+            // Event Section End
+
+            // Our Brands Section Start
+            & .ourBrands {
+                background-size: 60% !important;
+                background-position: left center !important;
+                & .bransOuter{
+                    & .brands {
+                        height: 70px !important;
+                        padding: 20px !important;
+                        & img {
+                        }
+                        &::after{
+                        }
+                        &:hover {
+                            &:after {
+                            }
+                            & img {
+                            }
+                        }
+                    }
+                }
+            }
+            // Our Brands Section End
+
+            // Our Videos Section Start
+            & .ourVideo {
+                & .videos {
+                    & .playBtn{
+                        & img {
+                        }
+                        &:before {
+                        }
+                        &:after {
+                        }
+                    }
+                    &:hover {
+                        & .playBtn {
+                            &:after, &:before {
+                            }
+                        }
+                    }
+                    & .videoDecription{
+                        width: 140px;
+                        & .videoTitle {
+                        }
+                        & .subTitle{
+                        }
+                    }
+                    &.trandingVideo{
+                        height: 160px;
+                        & a {
+                            
+                        }
+                    }
+                    
+                    &.otherVideos {
+                        height: 100px;
+                        & a {
+                        }
+                        & .videoDecription{
+                            & .videoTitle {
+                            }
+                        }
+                    }
+                    &:hover {
+                        & .videoDecription {
+                        }
+                    }
+                }
+                
+                
+            }
+            // Our Videos Section End
+
+            // Get in Touch Section Start
+            & .getInTouch {
+                & .section-heading{
+                    & .subHeading {
+                    }
+                    & .infoOuter {
+                        & .infoIcon {
+                        }
+                        & a {
+                            &:hover {
+                            }
+                        }
+                    }
+                }
+                & .form {
+                    padding: 30px 30px !important;
+                    & .input-group {
+                        & .form-control, & .form-select {
+                        }
+                        & textarea{
+                        }
+                        & .tomSelect {
+                            & .ts-control{
+                                & input {
+                                    &::placeholder {
+                                    }
+                                }
+                            }
+                            & .ts-dropdown {
+                                &.single {
+    
+                                }
+                                & .ts-dropdown-content {
+                                    & .option {
+                                        &.active {
+    
+                                        }
+                                        &.selected {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        & .invalid-feedback{
+                        }
+                    }
+                    &.was-validated {
+                        & .input-group {
+                            & .form-control, & .form-select, & .tomSelect {
+                                &:invalid {
+                                }
+                            }
+                            & .tomSelect {
+                                &.invalid {
+                                }
+                                & .ts-control{
+                                    & input {
+                                        &::placeholder {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                & .contact-left-dec {
+                }
+            }
+            // Get in Touch Section End
         }
     }
 }
+
+//! ###################################### Home Page End ######################################
+
+
+.tomSelect {
+    & .ts-control{
+        border: none;
+        // border-bottom: 2px solid $gray-200;
+        padding: 0;
+        border-radius: 0;
+        & input {
+            &::placeholder {
+                font-size: 14px;
+                color: $gray-500;
+                font-weight: 300;
+            }
+        }
+    }
+    & .ts-dropdown {
+        border: none;
+        box-shadow: 0 0px 6px rgba($dark, 20%);
+        &.single {
+
+        }
+        & .ts-dropdown-content {
+            & .option {
+                font-size: 12px;
+                &.active {
+
+                }
+                &.selected {
+                    background-color: $theme2;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+.nav {
+    &.nav-tabs {
+        border-bottom: 3px solid  $gray-300;
+        & .nav-link {
+            color: $gray-500;
+            border-bottom: 3px solid $gray-300  !important;
+            outline: none;
+            border-radius: 0;
+            font-size: 14px;
+            transition: ease-in-out .3s;
+            margin-bottom: -3px;
+            &.active {
+                border-color: $theme1 !important;
+                color: $theme1 !important;
+                backdrop-filter: blur(8px);
+            }
+        }
+    }
+}
+.tab-content {
+    & .tab-pane {
+        &.show {
+        }
+        &.active {
+        }
+    }
+}
+
+
+
+
+//? ###################################### Company Page Start ######################################
+[page-name=companyPage] {
+    &.companyPage {
+        & .innerPageBanner{
+            margin-top: 80px;
+            background-image: linear-gradient(90deg, rgba($black, 0.5) 30%, rgba($black, 0.3) 100%), url(../img/bgImg/company-banner.jpg);
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        & .mainSection {
+            padding: 60px 0;
+
+            & .tab-content {
+                & .tab-pane {
+                    &.show {
+                    }
+                    &.active {
+                    }
+                    & .tabHeading {
+                        font-size: 18px;
+                        font-weight: 600;
+                    }
+                    & .decription {
+                        font-size: 14px;
+                    }
+                    & .missionVision{
+                        & .outer{
+                            & .title {
+                                font-weight: 700;
+                                & .decription {
+                                    font-size: 14px;
+                                    font-weight: normal;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            & .about {
+            }
+            & .management{
+                & .teamMember{
+                    & .outer{
+                        cursor: pointer;
+                        border-bottom: 5px solid transparent;
+                        transition: ease-in-out .3s;
+                        background-image: url(../img/bgImg/cardBg.jpg);
+                        background-position: right -10px;
+                        background-size: 20%;
+                        background-repeat: no-repeat;
+                        & .imgOuter {
+                            width: 60px;
+                            height: 60px;
+                            border: 4px solid transparent;
+                            background: linear-gradient(to left, rgba($theme2, 0.2), rgba($theme1, 0.2));
+                            & img {
+                                object-fit: cover;
+                            }
+                        }
+                        & .memberName{
+                            font-size: 16px;
+                            font-weight: 600;
+                        }
+                        & .memberPost {
+                            font-size: 12px;
+                        }
+                        & .memberDetail {
+                            & .decription{
+                                font-weight: 300;
+                                font-size: 13px;
+                            }
+                        }
+                        &:hover {
+                            border-color: $theme2;
+                            & .imgOuter {
+                                & img {
+                                }
+                            }
+                            & .memberDetail {
+
+                                & .decription{
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            & .opportunities {
+                & .planHeading {
+                    background-image: url(../img/bgImg/mainbg.jpg);
+                    background-size: cover;
+                    width: 100%;
+                    padding: 50px 0;
+                }
+            }
+        }
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@mixin companyPage-mixin-min-sm() {
+}
+
+// Medium devices (tablets, 768px and up)
+@mixin companyPage-mixin-min-md() {
+}
+
+// Large devices (desktops, 992px and up)
+@mixin companyPage-mixin-min-lg() {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@mixin companyPage-mixin-min-xl() {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@mixin companyPage-mixin-min-xxl() {
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@mixin companyPage-mixin-max-xs() {
+}
+
+// Small devices (landscape phones, less than 768px)
+@mixin companyPage-mixin-max-sm() {
+    [page-name=companyPage] {
+        &.companyPage {
+            & .innerPageBanner{
+                margin-top: 60px;
+                height: 100px;
+            }
+            & .mainSection {
+                & .nav {
+                    &.nav-tabs {
+                        overflow: auto hidden;
+                        flex-wrap: nowrap;
+                        border: none;
+                        &::-webkit-scrollbar {
+                            display: none;
+                        }
+                        & .nav-link {
+                            white-space: nowrap;
+                            width: auto;
+                            font-size: 12px;
+                            padding: 6px 18px !important;
+                            margin-bottom: 0 !important;
+                            &.active {
+                            }
+                        }
+                    }
+                }
+                & .tab-content {
+                    & .tab-pane {
+                        &.show {
+                        }
+                        &.active {
+                        }
+                        & .tabHeading {
+                            font-size: 14px;
+                        }
+                        & .decription {
+                            font-size: 12px;
+                        }
+                        & .missionVision{
+                            & .outer{
+                                & .title {
+                                    font-size: 14px;
+                                    & .decription {
+                                        font-size: 12px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                & .about {
+                }
+                & .management{
+                    & .teamMember{
+                        & .outer{
+                            background-size: 15%;
+                            & .imgOuter {
+                                & img {
+                                }
+                            }
+                            & .memberName{
+                            }
+                            & .memberPost {
+                            }
+                            & .memberDetail {
+                                & .decription{
+                                }
+                            }
+                            &:hover {
+                                & .imgOuter {
+                                    & img {
+                                    }
+                                }
+                                & .memberDetail {
+    
+                                    & .decription{
+    
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Medium devices (tablets, less than 992px)
+@mixin companyPage-mixin-max-md() {
+    [page-name=companyPage] {
+        &.companyPage {
+            & .innerPageBanner{
+            }
+            & .mainSection {
+                padding: 50px 0;
+                & .nav {
+                    &.nav-tabs {
+                        & .nav-link {
+                            width: 25%;
+                            &.active {
+                            }
+                        }
+                    }
+                }
+                & .tab-content {
+                    & .tab-pane {
+                        &.show {
+                        }
+                        &.active {
+                        }
+                        & .tabHeading {
+                        }
+                        & .decription {
+                        }
+                        & .missionVision{
+                            & .outer{
+                                & .title {
+                                    & .decription {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                & .about {
+                }
+                & .management{
+                    & .teamMember{
+                        & .outer{
+                            & .imgOuter {
+                                & img {
+                                }
+                            }
+                            & .memberName{
+                            }
+                            & .memberPost {
+                            }
+                            & .memberDetail {
+                                & .decription{
+                                }
+                            }
+                            &:hover {
+                                & .imgOuter {
+                                    & img {
+                                    }
+                                }
+                                & .memberDetail {
+    
+                                    & .decription{
+    
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Large devices (desktops, less than 1200px)
+@mixin companyPage-mixin-max-lg() {
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@mixin companyPage-mixin-max-xl() {
+}
+@media (max-width: 360px) {
+    [page-name=companyPage] {
+        &.companyPage {
+            & .innerPageBanner{
+            }
+            & .mainSection {
+                & .nav {
+                    &.nav-tabs {
+                        &::-webkit-scrollbar {
+                        }
+                        & .nav-link {
+                            &.active {
+                            }
+                        }
+                    }
+                }
+                & .tab-content {
+                    & .tab-pane {
+                        &.show {
+                        }
+                        &.active {
+                        }
+                        & .tabHeading {
+                        }
+                        & .decription {
+                        }
+                        & .missionVision{
+                            & .outer{
+                                & .title {
+                                    & .decription {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                & .about {
+                }
+                & .management{
+                    & .teamMember{
+                        & .outer{
+                            & .imgOuter {
+                                width: 50px;
+                                height: 50px;
+                                & img {
+                                }
+                            }
+                            & .memberName{
+                                font-size: 14px;
+                            }
+                            & .memberPost {
+                                font-size: 10px;
+                            }
+                            & .memberDetail {
+                                & .decription{
+                                    font-size: 11px;
+                                }
+                            }
+                            &:hover {
+                                & .imgOuter {
+                                    & img {
+                                    }
+                                }
+                                & .memberDetail {
+    
+                                    & .decription{
+    
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//! ###################################### Company Page End ######################################

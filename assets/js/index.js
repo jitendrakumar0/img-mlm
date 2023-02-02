@@ -24,7 +24,7 @@ $(window).scroll(function () {
         loop: true,
         dots:true,
         autoplay:true,
-        autoplayTimeout:5000,
+        autoplayTimeout:3000,
         autoplayHoverPause:false,
         responsive: {
         0: {
@@ -43,20 +43,26 @@ $(window).scroll(function () {
 var owl = $('.mainEventSlider');
 owl.owlCarousel({
     margin: 20,
-    loop: false,
+    loop: true,
     dots:true,
     nav:true,
     autoplay:true,
-    autoplayTimeout:5000,
+    autoplayTimeout:3000,
     autoplayHoverPause:false,
+    navText: ["<img class='w-100' src='assets/img/icons/leftArrow.svg'>","<img class='w-100' src='assets/img/icons/rightArrow.svg''>"],
     responsive: {
     0: {
-        items: 3
+        items: 1,
+        nav:false,
+        stagePadding: 30,
+        margin: 15,
     },
-    600: {
-        items: 3
+    576: {
+        items: 1,
+        nav:false,
+        stagePadding: 100,
     },
-    1000: {
+    992: {
         items: 3
     }
     }

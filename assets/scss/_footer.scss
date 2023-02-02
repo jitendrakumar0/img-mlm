@@ -1,90 +1,95 @@
 [page-name=footer] {
     &.footer {
-        .footer-dec {
+        & .footer-dec {
             width: 100%;
             margin-bottom: -50px;
+            position: absolute;
+            top: -70px;
+            z-index: 2;
             & img {
                 width: 100%;
                 overflow: hidden;
             }
         }
-        & .footer-item{
-            & .linksTitle {
-                font-size: 18px;
-                font-weight: 700;
-                color: $gray-900;
-                margin-bottom: 30px;
-            }
-            & .links {
-                & li {
-                    & .footerLink {
-                        font-size: 14px;
-                        color: $gray-500;
-                        transition: all .3s;
-                        &:before {
-                            content: '';
-                            width: 0;
-                            height: 2px;
-                            background-color: $theme1;
-                            display: block;
-                            transition: ease-in-out .3s;
-                        }
-                        &:hover, &.active, &:active {
-                            color: $theme1;
+        & .footerLinksOuter {
+            padding: 80px 12px;
+            & .footer-item{
+                & .linksTitle {
+                    font-size: 18px;
+                    font-weight: 700;
+                    color: $gray-900;
+                    margin-bottom: 30px;
+                }
+                & .links {
+                    & li {
+                        & .footerLink {
+                            font-size: 14px;
+                            color: $gray-500;
+                            transition: all .3s;
                             &:before {
-                                width: 15px;
+                                content: '';
+                                width: 0;
+                                height: 2px;
+                                background-color: $theme1;
+                                display: block;
+                                transition: ease-in-out .3s;
+                            }
+                            &:hover, &.active, &:active {
+                                color: $theme1;
+                                &:before {
+                                    width: 15px;
+                                }
                             }
                         }
                     }
                 }
             }
-        }
-        & .about {
-            & .logo {
-                & a {
-                    width: 120px;
-                    margin-bottom: 30px;
-                }
-            }
-            & .link {
-                color: $gray-500;
-                font-weight: 300;
-            }
-            & ul {
-                margin-top: 20px;
-                & li {
-                    margin: 0;
+            & .about {
+                & .logo {
                     & a {
-                        width: 32px;
-                        height: 32px;
-                        background-color: $theme2;
-                        color: $white !important;
-                        border-radius: 50%;
-                        text-align: center;
-                        display: flex;
-                        justify-content: center;
-                        line-height: 32px;
-                        font-size: 15px;
-                        &:hover {
-                            background-color: $theme1;
+                        width: 120px;
+                        margin-bottom: 30px;
+                    }
+                }
+                & .link {
+                    color: $gray-500;
+                    font-weight: 300;
+                }
+                & ul {
+                    margin-top: 20px;
+                    & li {
+                        margin: 0;
+                        & a {
+                            width: 32px;
+                            height: 32px;
+                            background-color: $theme2;
+                            color: $white !important;
+                            border-radius: 50%;
+                            text-align: center;
+                            display: flex;
+                            justify-content: center;
+                            line-height: 32px;
+                            font-size: 15px;
+                            &:hover {
+                                background-color: $theme1;
+                            }
                         }
                     }
                 }
             }
+            & .services {
+            }
         }
-        & .services {
-        }
-    }
-    & .copyright {
-        & p {
-            text-align: center;
-            border-top: 1px solid $gray-300;
-            color: $gray-500;
-            margin-top: 50px;
-            padding: 20px 0px;
-            font-weight: 300;
-            & a {
-                color: $theme1;
+        & .copyright {
+            & p {
+                text-align: center;
+                border-top: 1px solid $gray-300;
+                color: $gray-500;
+                padding: 20px 0px;
+                font-weight: 300;
+                & a {
+                    color: $theme1;
+                }
             }
         }
     }
@@ -114,53 +119,57 @@
 @mixin footer-mixin-max-xs() {
     [page-name=footer] {
         &.footer {
-            .footer-dec {
+            & .footer-dec {
+                display: none;
                 & img {
                 }
             }
-            & .footer-item{
-                & h4 {
-                    font-size: 14px;
-                }
-                & p {
-                }
-                & ul {
-                    & li {
-                        & a {
-                            &:hover {
+            & .footerLinksOuter {
+                padding-top: 0;
+                & .footer-item{
+                    & .linksTitle {
+                        font-size: 14px;
+                    }
+                    & p {
+                    }
+                    & ul {
+                        & li {
+                            & a {
+                                &:hover {
+                                }
                             }
                         }
                     }
-                }
-                & form {
-                    & input {
+                    & form {
+                        & input {
+                        }
+                        & button {
+                        }
                     }
-                    & button {
-                    }
                 }
-            }
-            & .about {
-                & .logo {
+                & .about {
+                    & .logo {
+                        & a {
+                        }
+                    }
                     & a {
                     }
-                }
-                & a {
-                }
-                & ul {
-                    & li {
-                        & a {
-                            &:hover {
+                    & ul {
+                        & li {
+                            & a {
+                                &:hover {
+                                }
                             }
                         }
                     }
                 }
+                & .services {
+                }
             }
-            & .services {
-            }
-        }
-        & .copyright {
-            & p {
-                & a {
+            & .copyright {
+                & p {
+                    & a {
+                    }
                 }
             }
         }
@@ -169,62 +178,125 @@
 
 // Small devices (landscape phones, less than 768px)
 @mixin footer-mixin-max-sm() {
+    [page-name=footer] {
+        &.footer {
+            & .footer-dec {
+                & img {
+                }
+            }
+            & .footerLinksOuter {
+                padding: 50px 12px;
+                & .footer-item{
+                    & .linksTitle {
+                        font-size: 16px;
+                    }
+                    & p {
+                    }
+                    & .links  {
+                        & li {
+                            & .footerLink {
+                                font-size: 12px;
+                                &:hover {
+                                }
+                            }
+                        }
+                    }
+                    & form {
+                        & input {
+                        }
+                        & button {
+                        }
+                    }
+                }
+                & .about {
+                    & .logo {
+                        & a {
+                        }
+                    }
+                    & a {
+                    }
+                    & ul {
+                        & li {
+                            & a {
+                                &:hover {
+                                }
+                            }
+                        }
+                    }
+                }
+                & .services {
+                }
+            }
+            & .copyright {
+                & p {
+                    & a {
+                    }
+                }
+            }
+        }
+    }
 }
 
 // Medium devices (tablets, less than 992px)
 @mixin footer-mixin-max-md() {
     [page-name=footer] {
         &.footer {
-            .footer-dec {
+            & .footer-dec {
+                top: -50px;
+                height: 120px;
                 & img {
+                    height: 100%;
                 }
             }
-            & .footer-item{
-                & h4 {
-                    margin-bottom: 12px;
-                    font-size: 16px;
-                }
-                & p {
-                }
-                & ul {
-                    & li {
-                        & a {
-                            font-size: 12px;
-                            &:hover {
+            & .footerLinksOuter {
+                padding: 60px 12px;
+                & .footer-item{
+                    & .linksTitle {
+                        margin-bottom: 12px;
+                        font-size: 16px;
+                    }
+                    & p {
+                    }
+                    & ul {
+                        & li {
+                            & a {
+                                font-size: 12px;
+                                &:hover {
+                                }
                             }
                         }
                     }
-                }
-                & form {
-                    & input {
+                    & form {
+                        & input {
+                        }
+                        & button {
+                        }
                     }
-                    & button {
-                    }
                 }
-            }
-            & .about {
-                & .logo {
+                & .about {
+                    & .logo {
+                        & a {
+                        }
+                    }
                     & a {
                     }
-                }
-                & a {
-                }
-                & ul {
-                    & li {
-                        & a {
-                            &:hover {
+                    & ul {
+                        & li {
+                            & a {
+                                &:hover {
+                                }
                             }
                         }
                     }
                 }
+                & .services {
+                }
             }
-            & .services {
-            }
-        }
-        & .copyright {
-            & p {
-                font-size: 14px;
-                & a {
+            & .copyright {
+                & p {
+                    font-size: 14px;
+                    & a {
+                    }
                 }
             }
         }

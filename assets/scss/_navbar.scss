@@ -61,18 +61,38 @@
                             font-size: 13px;
                             padding: 6px 16px;
                             outline: none;
+                            display: flex;
+                            align-items: center;
+                            gap: 6px;
+                            &:before {
+                                content: '';
+                                display: block;
+                                width: 0;
+                                height: 2px;
+                                background: $theme1;
+                                transition: ease-in-out .3s;
+                            }
                             &:hover, &:active {
                                 color: $theme1;
+                                &:before {
+                                    width: 10px;
+                                }
                             }
                             &:active {
                                 background: $theme1;
                                 color: #fff;
+                                &:before {
+                                    width: 10px;
+                                }
                             }
                         }
                     }
                     &.brands {
                         & .dropdown-menu {
                             & .dropdown-item {
+                                &::before {
+                                    content: none;
+                                }
                                 & img {
                                     width: 100px;
                                 }

@@ -7,6 +7,7 @@
   @include footer-mixin-min-sm();
   @include homePage-mixin-min-sm();
   @include headings-mixin-min-sm();
+  @include companyPage-mixin-min-sm();
 }
 
 // Medium devices (tablets, 768px and up)
@@ -15,6 +16,7 @@
   @include footer-mixin-min-md();
   @include homePage-mixin-min-md();
   @include headings-mixin-min-md();
+  @include companyPage-mixin-min-md();
 }
 
 // Large devices (desktops, 992px and up)
@@ -23,6 +25,7 @@
   @include footer-mixin-min-lg();
   @include homePage-mixin-min-lg();
   @include headings-mixin-min-lg();
+  @include companyPage-mixin-min-lg();
 }
 
 // X-Large devices (large desktops, 1200px and up)
@@ -31,6 +34,7 @@
   @include footer-mixin-min-xl();
   @include homePage-mixin-min-xl();
   @include headings-mixin-min-xl();
+  @include companyPage-mixin-min-xl();
 }
 
 // XX-Large devices (larger desktops, 1400px and up)
@@ -39,6 +43,7 @@
   @include footer-mixin-min-xxl();
   @include homePage-mixin-min-xxl();
   @include headings-mixin-min-xxl();
+  @include companyPage-mixin-min-xxl();
 }
 
 // X-Large devices (large desktops, less than 1400px)
@@ -47,6 +52,7 @@
   @include footer-mixin-max-xl();
   @include homePage-mixin-max-xl();
   @include headings-mixin-max-xl();
+  @include companyPage-mixin-max-xl();
 }
 
 // Large devices (desktops, less than 1200px)
@@ -55,6 +61,7 @@
   @include footer-mixin-max-lg();
   @include homePage-mixin-max-lg();
   @include headings-mixin-max-lg();
+  @include companyPage-mixin-max-lg();
 }
 
 // Medium devices (tablets, less than 992px)
@@ -63,6 +70,7 @@
   @include footer-mixin-max-md();
   @include homePage-mixin-max-md();
   @include headings-mixin-max-md();
+  @include companyPage-mixin-max-md();
 }
 
 // Small devices (landscape phones, less than 768px)
@@ -71,6 +79,7 @@
   @include footer-mixin-max-sm();
   @include homePage-mixin-max-sm();
   @include headings-mixin-max-sm();
+  @include companyPage-mixin-max-sm();
 }
 
 // X-Small devices (portrait phones, less than 576px)
@@ -79,6 +88,7 @@
   @include footer-mixin-max-xs();
   @include homePage-mixin-max-xs();
   @include headings-mixin-max-xs();
+  @include companyPage-mixin-max-xs();
 }
 
 // XX-Large devices (larger desktops)

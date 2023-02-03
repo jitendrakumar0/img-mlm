@@ -1,6 +1,7 @@
 .navbar {
     height: 80px;
     transition: ease-in-out .3s;
+    z-index: 999;
     & .navbar-brand {
         width: 130px;
         & img {
@@ -23,7 +24,6 @@
                     position: relative;
                     letter-spacing: 1px;
                     transition: ease-in-out .3s;
-                    padding-right: 16px;
 
                     &:after {
                         content: '';
@@ -44,6 +44,7 @@
                 }
                 &.dropdown{
                     & .nav-link {
+                        padding-right: 16px;
                         &:before {
                             display: block;
                             content: "";

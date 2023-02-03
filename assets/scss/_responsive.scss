@@ -8,6 +8,8 @@
   @include homePage-mixin-min-sm();
   @include headings-mixin-min-sm();
   @include companyPage-mixin-min-sm();
+  @include galleryPage-mixin-min-sm();
+  @include newsPage-mixin-min-sm();
 }
 
 // Medium devices (tablets, 768px and up)
@@ -17,6 +19,8 @@
   @include homePage-mixin-min-md();
   @include headings-mixin-min-md();
   @include companyPage-mixin-min-md();
+  @include galleryPage-mixin-min-md();
+  @include newsPage-mixin-min-md();
 }
 
 // Large devices (desktops, 992px and up)
@@ -26,6 +30,8 @@
   @include homePage-mixin-min-lg();
   @include headings-mixin-min-lg();
   @include companyPage-mixin-min-lg();
+  @include galleryPage-mixin-min-lg();
+  @include newsPage-mixin-min-lg();
 }
 
 // X-Large devices (large desktops, 1200px and up)
@@ -35,6 +41,8 @@
   @include homePage-mixin-min-xl();
   @include headings-mixin-min-xl();
   @include companyPage-mixin-min-xl();
+  @include galleryPage-mixin-min-xl();
+  @include newsPage-mixin-min-xl();
 }
 
 // XX-Large devices (larger desktops, 1400px and up)
@@ -44,6 +52,8 @@
   @include homePage-mixin-min-xxl();
   @include headings-mixin-min-xxl();
   @include companyPage-mixin-min-xxl();
+  @include galleryPage-mixin-min-xxl();
+  @include newsPage-mixin-min-xxl();
 }
 
 // X-Large devices (large desktops, less than 1400px)
@@ -53,6 +63,8 @@
   @include homePage-mixin-max-xl();
   @include headings-mixin-max-xl();
   @include companyPage-mixin-max-xl();
+  @include galleryPage-mixin-max-xl();
+  @include newsPage-mixin-max-xl();
 }
 
 // Large devices (desktops, less than 1200px)
@@ -62,6 +74,8 @@
   @include homePage-mixin-max-lg();
   @include headings-mixin-max-lg();
   @include companyPage-mixin-max-lg();
+  @include galleryPage-mixin-max-lg();
+  @include newsPage-mixin-max-lg();
 }
 
 // Medium devices (tablets, less than 992px)
@@ -71,6 +85,8 @@
   @include homePage-mixin-max-md();
   @include headings-mixin-max-md();
   @include companyPage-mixin-max-md();
+  @include galleryPage-mixin-max-md();
+  @include newsPage-mixin-max-md();
 }
 
 // Small devices (landscape phones, less than 768px)
@@ -80,6 +96,8 @@
   @include homePage-mixin-max-sm();
   @include headings-mixin-max-sm();
   @include companyPage-mixin-max-sm();
+  @include galleryPage-mixin-max-sm();
+  @include newsPage-mixin-max-sm();
 }
 
 // X-Small devices (portrait phones, less than 576px)
@@ -89,6 +107,8 @@
   @include homePage-mixin-max-xs();
   @include headings-mixin-max-xs();
   @include companyPage-mixin-max-xs();
+  @include galleryPage-mixin-max-xs();
+  @include newsPage-mixin-max-xs();
 }
 
 // XX-Large devices (larger desktops)

@@ -69,8 +69,9 @@
     <!-- Custom Css -->
     <link rel="stylesheet" href="assets/css/style.min.css">
 </head>
-<body>
+<body class="overflowhidden">
     <div class="cantainer-fluid vh-100">
+      <!-- <div class="myPreloader"></div> -->
         <!-- Header Start -->
         <div id="myHeader"></div>
         <!-- Header End -->
@@ -81,52 +82,62 @@
                   <div class="row">
                     <div class="col-lg-12">
                       <div class="row">
-                        <div class="col-lg-5 align-self-center order-2 order-lg-1 mainCarousel">
+                        <div class="col-lg-7 align-self-center order-2 order-lg-1 mainCarousel">
                           <div class="owl-carousel heorSection">
                             <div class="item header-text">
-                              <div class="h6 WelcomeHeading text-theme1 text-uppercase">Welcome to Demo. Digital</div>
-                              <div class="h2 text-black mainHeading">Build <span class="text-theme2">your business</span> the best in <span class="text-theme1">MLM</span>?</div>
-                              <div class="decription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ab nostrum non consectetur neque molestias porro atque magni? Doloribus, autem.</div>
+                              <div class="h6 WelcomeHeading text-white text-uppercase">Welcome to Demo. Digital</div>
+                              <div class="h2 text-white mainHeading">Build your business the best in <span class="text-theme1">MLM</span>?</div>
+                              <div class="decription text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ab nostrum non consectetur neque molestias porro atque magni? Doloribus, autem.</div>
                               <div class="down-buttons d-inline-flex gap-sm-4 gap-3">
                                 <div class="main-blue-button-hover">
-                                  <a href="#getintouch" class="btn btn-theme2 btnStyle1 rounded-pill px-4 text-white">Message Us Now</a>
+                                  <a href="#getintouch" class="btn btn-theme2 btnStyle1 rounded-pill px-4 text-white">
+                                      <span class="spinner-border spinner-border-sm afterText d-none me-2" role="status" aria-hidden="true"></span>
+                                      <span class="visually-showw afterText d-none ps-1">Please Wait...</span>
+                                      <span class="d-inline-flex me-2 icon beforeText"><img class="w-100" src="assets/img/icons/messageWhite.svg" alt=""></span>
+                                      <span class="beforeText">Message Us Now</span>
+                                  </a>
                                 </div>
                                 <div class="call-button">
-                                  <a href="#" class="d-flex align-items-center gap-2 text-decoration-none"><div class="callIcon"><img src="assets/img/icons/callWhiteFill.svg" alt=""></div>9876542310</a>
+                                  <a href="tel:9876542310" class="d-flex align-items-center gap-2 text-decoration-none text-white"><div class="callIcon"><img src="assets/img/icons/callWhiteFill.svg" alt=""></div>9876542310</a>
                                 </div>
                               </div>
                             </div>
                             <div class="item header-text">
-                              <div class="h6 WelcomeHeading text-theme1 text-uppercase">Muti Level Marketing</div>
-                              <div class="h2 text-black mainHeading">Get the <span class="text-theme2">best ideas</span> for <span class="text-theme1">your website</span></div>
-                              <div class="decription">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia commodi distinctio mollitia quas blanditiis alias fugit eligendi in?</div>
+                              <div class="h6 WelcomeHeading text-white text-uppercase">Muti Level Marketing</div>
+                              <div class="h2 text-white mainHeading">Get the best ideas for <span class="text-theme1">your website</span></div>
+                              <div class="decription text-white">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia commodi distinctio mollitia quas blanditiis alias fugit eligendi in?</div>
                               <div class="down-buttons d-inline-flex gap-sm-4 gap-3">
                                 <div class="main-blue-button-hover">
-                                  <a href="#services" class="btn btn-theme2 btnStyle1 rounded-pill px-4 text-white">Our Services</a>
+                                  <a href="#services" class="btn btn-theme2 btnStyle1 rounded-pill px-4 text-white">
+                                    <span class="spinner-border spinner-border-sm afterText d-none me-2" role="status" aria-hidden="true"></span>
+                                    <span class="visually-showw afterText d-none ps-1">Please Wait...</span>
+                                    <span class="d-inline-flex me-2 icon beforeText"><img class="w-100" src="assets/img/icons/preWhite.svg" alt=""></span>
+                                    <span class="beforeText">Our Brands</span>
+                                  </a>
                                 </div>
                                 <div class="call-button">
-                                  <a href="#" class="d-flex align-items-center gap-2 text-decoration-none"><div class="callIcon"><img src="assets/img/icons/callWhiteFill.svg" alt=""></div>9876542310</a>
+                                  <a href="tel:9876542310" class="d-flex align-items-center gap-2 text-decoration-none text-white"><div class="callIcon"><img src="assets/img/icons/callWhiteFill.svg" alt=""></div>9876542310</a>
                                 </div>
                               </div>
                             </div>
                             <div class="item header-text">
-                              <div class="h6 WelcomeHeading text-theme1 text-uppercase">Video Tutorials</div>
-                              <div class="h2 text-black mainHeading">Watch <span class="text-theme2">our videos</span> for your <span class="text-theme1">Business</span></div>
-                              <div class="decription">Please <a rel="nofollow" class="text-decoration-none" href="#" target="_blank">support us</a> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, alias. Thank you.</div>
+                              <div class="h6 WelcomeHeading text-white text-uppercase">Video Tutorials</div>
+                              <div class="h2 text-white mainHeading">Watch our videos for your <span class="text-theme1">Business</span></div>
+                              <div class="decription text-white">Please <a rel="nofollow" class="text-decoration-none text-theme2" href="#" target="_blank">support us</a> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, alias. Thank you.</div>
                               <div class="down-buttons d-inline-flex gap-sm-4 gap-3">
                                 <div class="main-blue-button-hover">
-                                  <a href="#ourVideos" class="btn btn-theme2 btnStyle1 rounded-pill px-4 text-white">Watch Videos</a>
+                                  <a href="#ourVideos" class="btn btn-theme2 btnStyle1 rounded-pill px-4 text-white">
+                                    <span class="spinner-border spinner-border-sm afterText d-none me-2" role="status" aria-hidden="true"></span>
+                                    <span class="visually-showw afterText d-none ps-1">Please Wait...</span>
+                                    <span class="d-inline-flex me-2 icon beforeText"><img class="w-100" src="assets/img/icons/playWhite.svg" alt=""></span>
+                                    <span class="beforeText">Watch Videos</span>
+                                  </a>
                                 </div>
                                 <div class="call-button">
-                                  <a href="#" class="d-flex align-items-center gap-2 text-decoration-none"><div class="callIcon"><img src="assets/img/icons/callWhiteFill.svg" alt=""></div>9876542310</a>
+                                  <a href="tel:9876542310" class="d-flex align-items-center gap-2 text-decoration-none text-white"><div class="callIcon"><img src="assets/img/icons/callWhiteFill.svg" alt=""></div>9876542310</a>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                        </div>
-                        <div class="col-lg-7 order-1 order-lg-2 d-none d-md-block">
-                          <div class="mainBgImg">
-                            <img src="assets/images/banner-right-image.png" alt="">
                           </div>
                         </div>
                       </div>
@@ -151,8 +162,8 @@
                   <div class="col-12">
                     <div class="row align-items-center gap-2 gap-lg-0">
                       <div class="col-lg-6">
-                        <div class="aboutImg w-lg-100 w-75 mx-auto">
-                          <img class="w-100" src="assets/img/bgImg/about.png" alt="">
+                        <div class="aboutImg w-lg-100 w-75 mx-auto bg-light overflow-hidden">
+                          <img class="w-100" src="assets/img/bgImg/aboutUs.jpg" alt="">
                         </div>
                       </div>
                       <div class="col-lg-6">
@@ -429,8 +440,8 @@
                                   <img class="w-100" src="assets/img/icons/callWhiteFill.svg" alt="">
                                 </span>
                                 <span>
-                                  <a class="text-decoration-none text-dark d-block" href="#">+91 9876542310</a>
-                                  <a class="text-decoration-none text-dark d-block" href="#">+91 9876542310</a>
+                                  <a class="text-decoration-none text-dark d-block" href="tel:+91 9876542310">+91 9876542310</a>
+                                  <a class="text-decoration-none text-dark d-block" href="tel:+91 9876542310">+91 9876542310</a>
                                 </span>
                               </div>
                               <div class="col-sm-6 infoOuter align-items-center d-flex gap-3">
@@ -438,8 +449,8 @@
                                   <img class="w-100" src="assets/img/icons/whiteMail.svg" alt="">
                                 </span>
                                 <span>
-                                  <a class="text-decoration-none text-dark d-block" href="#">info@demo.digital.com</a>
-                                  <a class="text-decoration-none text-dark d-block" href="#">mail@demo.digital.com</a>
+                                  <a class="text-decoration-none text-dark d-block" href="mailTo:info@demo.digital.com">info@demo.digital.com</a>
+                                  <a class="text-decoration-none text-dark d-block" href="mailTo:mail@demo.digital.com">mail@demo.digital.com</a>
                                 </span>
                               </div>
                             </div>

@@ -5,11 +5,17 @@
     display: flex;
     font-size: 12px;
     width: fit-content;
-    &.loginBtn{
-        & .icon {
-            width: 18px;
-            height: 18px;
+    &:disabled, &.disabled {
+        & .afterText {
+            display: block !important;
         }
+        & .beforeText {
+            display: none !important;
+        }
+    }
+    & .icon {
+        width: 15px;
+        height: 15px;
     }
 }
 @media (max-width: 991px){

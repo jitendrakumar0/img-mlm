@@ -58,6 +58,7 @@
                         }
                     }
                     & .dropdown-menu {
+                        min-width: 15rem;
                         & .dropdown-item{
                             font-size: 13px;
                             padding: 6px 16px;

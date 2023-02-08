@@ -2,21 +2,15 @@
 // Header & Footer include js
 $(function(){
     $("#myHeader").load("layout/header.html"); 
-    $("#myFooter").load("layout/footer.html"); 
-    $(".myPreloader").load("layout/preloader.html"); 
-  });
+    $("#myFooter").load("layout/footer.html");
+    $(".emptState").load("layout/empty-state.html"); 
+});
 
-//   var preloaderMain = document.querySelector(".myPreloader");
-//     window.addEventListener('load', function(){
-//         setTimeout(()=>{
-//             preloaderMain.classList.add("d-none");
-//             document.body.style = "overflow: hidden auto !important;"
-//           }, 1000);
-//     })
-
-// setTimeout(()=>{
-//     document.querySelector(".myPreloader").style = 'visibility: hidden; transition: ease-in-out .3s;'
-//   }, 1000);
+var prelodar = document.querySelector(".preLoader");
+    window.addEventListener('load', function(){
+    prelodar.classList.remove('active');
+    document.body.style.overflow = 'hidden auto';
+});
 
 // header sticky   
 $(window).scroll(function () {
@@ -31,26 +25,26 @@ $(window).scroll(function () {
 //? ###################################### Home Page JS ######################################
 if ($("[page-name=homePage]").length) {
     // Home page hero slider
-      var owl = $('.heorSection');
-        owl.owlCarousel({
-            margin: 10,
-            loop: true,
-            dots:true,
-            autoplay:true,
-            autoplayTimeout:3000,
-            autoplayHoverPause:false,
-            responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 1
-            },
-            1000: {
-                items: 1
-            }
-            }
-        })
+    var owl = $('.heorSection');
+    owl.owlCarousel({
+        margin: 10,
+        loop: true,
+        dots:true,
+        autoplay:true,
+        autoplayTimeout:3000,
+        autoplayHoverPause:false,
+        responsive: {
+        0: {
+            items: 1
+        },
+        600: {
+            items: 1
+        },
+        1000: {
+            items: 1
+        }
+        }
+    })
     
     // Main Event slider
     var owl = $('.mainEventSlider');
@@ -360,3 +354,35 @@ if ($("[page-name=newsPage]").length) {
     
 }
 //! ###################################### News Page JS ######################################
+
+
+//? ###################################### Schedule Page JS ######################################
+if ($("[page-name=schedulePage]").length) {
+
+    
+    $(document).ready(function() {
+        $('.customDatatable').DataTable({
+            responsive:true,
+            "language": {
+                "paginate": {
+                    "previous": "<img class='w-100' src='assets/img/icons/arrowLeft.svg' alt=''>",
+                    "next": "<img class='w-100' src='assets/img/icons/arrowRight.svg' alt=''>"
+                }
+            }
+        });
+    } );
+    let newVar = document.querySelectorAll('.nav-link');
+    for(i=0; i<newVar.length; i++){
+        newVar[i].addEventListener('click', ()=>{
+            
+        });
+    };
+    
+
+    //   top select 
+    new TomSelect(".tomSelect", {
+        allowEmptyOption: false,
+        create: false
+    }); 
+}
+//! ###################################### Schedule Page JS ######################################

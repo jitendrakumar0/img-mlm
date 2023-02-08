@@ -14,13 +14,27 @@
         }
     }
     & .icon {
-        width: 15px;
-        height: 15px;
+        width: 16px;
+        height: 16px;
     }
 }
 @media (max-width: 991px){
     .btnStyle1 {
         height: 34px;
-        padding: 0 24px !important;
     }
 }
+@media (max-width: 575px){
+    .btnStyle1 {
+        &.exportBtn {
+            &:disabled, &.disabled {
+                & .afterTextOnly {
+                    display: none !important;
+                }
+                & .beforeText {
+                    display: none !important;
+                }
+            }
+        }
+    }
+}
+

@@ -15,12 +15,33 @@ var prelodar = document.querySelector(".preLoader");
 // header sticky   
 $(window).scroll(function () {
     var scroll = $(window).scrollTop();
-    if (scroll <= 80) {
+    if (scroll <= 1) {
         $("nav.navbar").removeClass("nav-active");
     } else {
         $("nav.navbar").addClass("nav-active");
     }
 });
+
+// form validation
+(() => {
+    'use strict'
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        event.preventDefault()
+        if (!form.checkValidity()) {
+            event.stopPropagation()
+        }else{
+        }
+  
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
 
 //? ###################################### Home Page JS ######################################
 if ($("[page-name=homePage]").length) {
@@ -118,29 +139,10 @@ if ($("[page-name=homePage]").length) {
         selector: '.glightbox4'
     });
     
-    // form validation
-    (() => {
-        'use strict'
-      
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        const forms = document.querySelectorAll('.needs-validation')
-      
-        // Loop over them and prevent submission
-        Array.from(forms).forEach(form => {
-          form.addEventListener('submit', event => {
-            if (!form.checkValidity()) {
-              event.preventDefault()
-              event.stopPropagation()
-            }
-      
-            form.classList.add('was-validated')
-          }, false)
-        })
-      })()
     
     
     //   top select 
-    new TomSelect(".tomSelect", {
+    new TomSelect("#chooesQuery", {
         allowEmptyOption: false,
         create: false
     });
@@ -359,10 +361,10 @@ if ($("[page-name=newsPage]").length) {
 //? ###################################### Schedule Page JS ######################################
 if ($("[page-name=schedulePage]").length) {
 
-    
     $(document).ready(function() {
         $('.customDatatable').DataTable({
             responsive:true,
+            destroy: true,
             "language": {
                 "paginate": {
                     "previous": "<img class='w-100' src='assets/img/icons/arrowLeft.svg' alt=''>",
@@ -370,19 +372,43 @@ if ($("[page-name=schedulePage]").length) {
                 }
             }
         });
-    } );
-    let newVar = document.querySelectorAll('.nav-link');
-    for(i=0; i<newVar.length; i++){
-        newVar[i].addEventListener('click', ()=>{
-            
-        });
-    };
+        $('.nav-link').click(function () {
+            $('.customDatatable').DataTable({
+                destroy: true,
+                "language": {
+                    "paginate": {
+                        "previous": "<img class='w-100' src='assets/img/icons/arrowLeft.svg' alt=''>",
+                        "next": "<img class='w-100' src='assets/img/icons/arrowRight.svg' alt=''>"
+                    }
+                }
+            }).reload;
+          });
+    });
+
     
 
     //   top select 
-    new TomSelect(".tomSelect", {
+    new TomSelect("#monthSelect", {
         allowEmptyOption: false,
         create: false
     }); 
 }
 //! ###################################### Schedule Page JS ######################################
+
+//? ###################################### Branches Page JS ######################################
+if ($("[page-name=branchesPage]").length) {
+    //   top select 
+    new TomSelect("#countarySelect", {
+        allowEmptyOption: false,
+        create: false
+    }); 
+    new TomSelect("#stateSelect", {
+        allowEmptyOption: false,
+        create: false
+    });
+    new TomSelect("#zipCode", {
+        allowEmptyOption: false,
+        create: false
+    }); 
+}
+//! ###################################### Branches Page JS ######################################

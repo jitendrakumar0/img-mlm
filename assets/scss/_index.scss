@@ -256,6 +256,55 @@ font-size: 12px;
     }
 }
 
+.form {
+    & .input-group {
+        & .form-control, & .form-select {
+            width: 100%;
+            min-height: 36px;
+            border-radius: 0px;
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid $gray-200;
+            outline: none;
+            font-size: 14px;
+            font-weight: 300;
+            color: $gray-900;
+            padding: 0px 0px;
+            &::placeholder {
+                font-size: 14px;
+                color: $gray-500;
+            }
+        }
+        & textarea{
+            max-height: 80px;
+        }
+        & .invalid-feedback{
+            font-size: 12px;
+        }
+    }
+    &.was-validated {
+        & .input-group {
+            & .form-control, & .form-select, & .tomSelect {
+                background-image: none !important;
+                &:invalid {
+                    border-color: $danger;
+                }
+            }
+            & .tomSelect {
+                &.invalid {
+                    border-color: $danger;
+                }
+                & .ts-control{
+                    & input {
+                        &::placeholder {
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 
 // Small devices (landscape phones, 576px and up)
@@ -920,40 +969,22 @@ font-size: 12px;
                 border-radius: 20px;
                 & .input-group {
                     & .form-control, & .form-select {
-                        width: 100%;
-                        min-height: 32px;
-                        border-radius: 0px;
-                        background-color: transparent;
-                        border: none;
-                        border-bottom: 2px solid $gray-200;
-                        outline: none;
-                        font-size: 14px;
-                        font-weight: 300;
-                        color: $gray-900;
-                        padding: 0px 0px;
                         &::placeholder {
-                            font-size: 14px;
-                            color: $gray-500;
                         }
                     }
                     & textarea{
-                        max-height: 80px;
                     }
                     & .invalid-feedback{
-                        font-size: 12px;
                     }
                 }
                 &.was-validated {
                     & .input-group {
                         & .form-control, & .form-select, & .tomSelect {
-                            background-image: none !important;
                             &:invalid {
-                                border-color: $danger;
                             }
                         }
                         & .tomSelect {
                             &.invalid {
-                                border-color: $danger;
                             }
                             & .ts-control{
                                 & input {
@@ -4713,3 +4744,162 @@ font-size: 12px;
 }
 
 //! ###################################### Schedule Page End ######################################
+
+
+//? ###################################### Branches Page Start ######################################
+[page-name=branchesPage] {
+    &.branchesPage {
+        & .tomSelect {
+            // border-bottom: 2px solid $gray-200 !important;
+            & .ts-control{
+                & input {
+                    &[type=select-one]{
+                    }
+                    &::placeholder {
+                    }
+                }
+            }
+            & .ts-dropdown {
+                border: none;
+                box-shadow: 0 0px 6px rgba($dark, 20%);
+                &.single {
+        
+                }
+                & .ts-dropdown-content {
+                    & .option {
+                        font-size: 12px;
+                        &.active {
+        
+                        }
+                        &.selected {
+                            background-color: $theme2;
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+        & .MainSection {
+            padding: 50px 0;
+            background-color: lighten($theme2, 50);
+        }
+        & .searchResult{
+            padding: 50px 0;
+            & .nav {
+                &.nav-tabs {
+                    top: 60px;
+                    & .nav-link {
+                        &.active {
+                        }
+                    }
+                }
+            }
+            & .branchOuter {
+                & .outer{
+                    cursor: pointer;
+                    border-bottom: 5px solid transparent;
+                    transition: ease-in-out .3s;
+                    background-image: url(../img/bgImg/branchCardImg1.png);
+                    background-position: 150% 260%;
+                    background-size: 60%;
+                    background-repeat: no-repeat;
+                    & .imgOuter {
+                        width: 60px;
+                        height: 60px;
+                        border: 4px solid transparent;
+                        background: linear-gradient(to left, rgba($theme2, 0.2), rgba($theme1, 0.2));
+                        & img {
+                            object-fit: cover;
+                        }
+                    }
+                    & .memberName{
+                        font-size: 14px;
+                    }
+                    & .memberPost {
+                        font-size: 12px;
+                    }
+                    & .memberDetail {
+                        & .title{
+                            font-size: 12px;
+                            color: $gray-400;
+                            & .link {
+                                &:hover {
+                                    color: $theme2 !important;
+                                }
+                            }
+                        }
+                    }
+                    &:hover {
+                        box-shadow: 0 0.5rem 1rem rgba($dark, 0.15) !important  ;
+                        border-color: $theme2;
+                        & .imgOuter {
+                            & img {
+                            }
+                        }
+                        & .memberDetail {
+
+                            & .decription{
+
+                            }
+                        }
+                    }
+                }
+                & .cardOuter{
+                    height: 200px;
+                    & .logoOuter{
+                        background-image:  linear-gradient(90deg, rgba($black, 0.5) 100%, rgba($black, 0.3) 100%), url(../img/bgImg/branchCardImg1.png);
+                        background-repeat: no-repeat;
+                        & .logoImg {
+                            width: 120px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@mixin branchesPage-mixin-min-sm() {
+}
+
+// Medium devices (tablets, 768px and up)
+@mixin branchesPage-mixin-min-md() {
+}
+
+// Large devices (desktops, 992px and up)
+@mixin branchesPage-mixin-min-lg() {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@mixin branchesPage-mixin-min-xl() {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@mixin branchesPage-mixin-min-xxl() {
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@mixin branchesPage-mixin-max-xs() {
+}
+
+// Small devices (landscape phones, less than 768px)
+@mixin branchesPage-mixin-max-sm() {
+}
+
+// Medium devices (tablets, less than 992px)
+@mixin branchesPage-mixin-max-md() {
+}
+
+// Large devices (desktops, less than 1200px)
+@mixin branchesPage-mixin-max-lg() {
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@mixin branchesPage-mixin-max-xl() {
+}
+
+@media (max-width: 360px) {
+}
+
+//! ###################################### Branches Page End ######################################

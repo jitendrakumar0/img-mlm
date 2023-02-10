@@ -18,6 +18,28 @@
         height: 16px;
     }
 }
+.backToTopbtn {
+    width: 36px;
+    height: 36px;
+    z-index: 999;
+    position: fixed;
+    top: -50px;
+    right: 25px;
+    padding: 10px !important;
+    opacity: 0;
+    transition: ease-in-out .5s;
+    &.active {
+        top: 90%;
+        opacity: 1;
+    }
+    &:hover {
+        
+    }
+    & img {
+        transform: rotate(-90deg);
+        filter: invert(1);
+    }
+}
 @media (max-width: 991px){
     .btnStyle1 {
         height: 34px;

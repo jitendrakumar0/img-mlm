@@ -22,6 +22,16 @@ $(window).scroll(function () {
     }
 });
 
+// show back to top button   
+$(window).scroll(function () {
+    var pagescroll = $(window).scrollTop();
+    if (pagescroll <= 50) {
+        $(".backToTopbtn").removeClass("active");
+    } else {
+        $(".backToTopbtn").addClass("active");
+    }
+});
+
 // form validation
 (() => {
     'use strict'
@@ -410,5 +420,109 @@ if ($("[page-name=branchesPage]").length) {
         allowEmptyOption: false,
         create: false
     }); 
+    new TomSelect("#districtSelect", {
+        allowEmptyOption: false,
+        create: false
+    }); 
 }
 //! ###################################### Branches Page JS ######################################
+
+//? ###################################### Download Page JS ######################################
+if ($("[page-name=downloadPage]").length) {
+
+    $(document).ready(function() {
+        $('.customDatatable').DataTable({
+            responsive:false,
+            scrollX: true,
+            destroy: true,
+            "language": {
+                "paginate": {
+                    "previous": "<img class='w-100' src='assets/img/icons/arrowLeft.svg' alt=''>",
+                    "next": "<img class='w-100' src='assets/img/icons/arrowRight.svg' alt=''>"
+                }
+            }
+        });
+    });
+}
+//! ###################################### Download Page JS ######################################
+
+
+//? ###################################### Career Page JS ######################################
+if ($("[page-name=careerPage]").length) {
+    var owl = $('.workCulture');
+    owl.owlCarousel({
+        margin: 10,
+        loop: true,
+        dots:true,
+        nav:true,
+        navText: ["<img class='' src='assets/img/icons/leftArrow.svg'>","<img class='' src='assets/img/icons/rightArrow.svg''>"],
+        autoplay:true,
+        autoplayTimeout:3000,
+        autoplayHoverPause:false,
+        responsive: {
+        0: {
+            items: 1,
+            stagePadding: 30,
+            nav: false,
+        },
+        576: {
+            items: 1,
+            stagePadding: 80,
+            nav: false,
+        },
+        768: {
+            items: 1,
+            stagePadding: 80,
+            dots: false
+        },
+        1000: {
+            items: 3,
+            dots:false
+        }
+        }
+    })
+
+    // GLightbox js 
+    var lightbox = GLightbox();
+    lightbox.on('open', (target) => {
+        console.log('lightbox opened');
+    });
+    var lightboxDescription = GLightbox({
+        selector: '.glightbox2'
+    });
+    var lightboxVideo = GLightbox({
+        selector: '.glightbox3'
+    });
+    lightboxVideo.on('slide_changed', ({ prev, current }) => {
+        console.log('Prev slide', prev);
+        console.log('Current slide', current);
+    
+        const { slideIndex, slideNode, slideConfig, player } = current;
+    
+        if (player) {
+            if (!player.ready) {
+                // If player is not ready
+                player.on('ready', (event) => {
+                    // Do something when video is ready
+                });
+            }
+    
+            player.on('play', (event) => {
+                console.log('Started play');
+            });
+    
+            player.on('volumechange', (event) => {
+                console.log('Volume change');
+            });
+    
+            player.on('ended', (event) => {
+                console.log('Video ended');
+            });
+        }
+    });
+    
+    var lightboxInlineIframe = GLightbox({
+        selector: '.glightbox4'
+    });
+}
+//! ###################################### Career Page JS ######################################

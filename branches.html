@@ -96,9 +96,9 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <form action="" class="form needs-validation position-relative z-1" novalidate>
+                                    <form action="" class="form needs-validation position-relative z-3" novalidate>
                                         <div class="row g-4">
-                                          <div class="col-lg-4">
+                                          <div class="col-sm-6 col-lg">
                                             <div class="input-group has-validation">
                                               <select class="form-select tomSelect bg-white ps-2 rounded-0 border0 shadow-none align-items-center d-flex" id="countarySelect" required>
                                                 <option selected disabled value="">Select Country...</option>
@@ -111,7 +111,7 @@
                                               </div>
                                             </div>
                                           </div>
-                                          <div class="col-lg-4">
+                                          <div class="col-sm-6 col-lg">
                                             <div class="input-group has-validation">
                                               <select class="form-select tomSelect bg-white ps-2 rounded-0 border0 shadow-none align-items-center d-flex" id="stateSelect" required>
                                                 <option selected disabled value="">Select State...</option>
@@ -125,7 +125,21 @@
                                               </div>
                                             </div>
                                           </div>
-                                          <div class="col-lg-4">
+                                          <div class="col-sm-6 col-lg">
+                                            <div class="input-group has-validation">
+                                              <select class="form-select tomSelect bg-white ps-2 rounded-0 border0 shadow-none align-items-center d-flex" id="districtSelect" required>
+                                                <option selected disabled value="">Select District...</option>
+                                                <option>Jaipur</option>
+                                                <option>Nagor</option>
+                                                <option>Alwar</option>
+                                                <option>Ajmer</option>
+                                              </select>
+                                              <div class="invalid-feedback text-danger">
+                                                Please Select Your District.
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="col-sm-6 col-lg">
                                             <div class="input-group has-validation">
                                               <select class="form-select tomSelect bg-white ps-2 rounded-0 border0 shadow-none align-items-center d-flex" id="zipCode" required>
                                                 <option selected disabled value="">Select Pincode...</option>
@@ -138,8 +152,8 @@
                                               </div>
                                             </div>
                                           </div>
-                                          <div class="col-12 mt-4">
-                                            <button type="button" class="btn btn-theme2 btnStyle1 rounded-pill px-4 text-white ms-auto">
+                                          <div class="col-lg-auto mt-4">
+                                            <button type="submit" class="btn btn-theme2 btnStyle1 rounded-pill px-4 text-white ms-auto">
                                                 <span class="spinner-border spinner-border-sm afterText d-none me-2" role="status" aria-hidden="true"></span>
                                                 <span class="visually-showw afterText d-none ps-1">Please Wait...</span>
                                                 <span class="d-inline-flex me-2 icon beforeText"><img class="w-100" src="assets/img/icons/searchWhite.svg" alt=""></span>
@@ -167,80 +181,37 @@
                                     </div>
                                     <div class="tab-content mt-4" id="nav-tabContent">
                                         <div class="tab-pane fade position-relative show active" id="branchDetails" role="tabpanel" aria-labelledby="branchDetails-tab" tabindex="0">
-                                            <div class="row branchOuter mx-0">
-                                                <div class="col-md-6 col-xxl-4 cardOuter rounded-4 px-0 overflow-hidden">
-                                                    <div class="row mx-0 h-100 align-items-center">
-                                                        <div class="col-5 px-0 h-100">
-                                                            <div class="logoOuter w-100 h-100 align-items-center d-flex justify-content-center">
-                                                                <div class="logoImg mx-auto">
-                                                                    <img class="w-100" src="assets/img/logo/logo-white.png" alt="">
+                                            <div class="row branchOuter g-4">
+                                                <div class="col-6 col-lg-4 col-xl-3 singleCard">
+                                                    <div class="cardOuter rounded-4 overflow-hidden shadow">
+                                                        <div class="row mx-0 h-100">
+                                                            <div class="col-12 px-0">
+                                                                <div class="logoOuter w-100 align-items-center d-flex justify-content-center">
+                                                                    <div class="logoImg mx-auto">
+                                                                        <img class="w-100" src="assets/img/logo/logo-white.png" alt="">
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="col"></div>
-                                                    </div>
-                                                    <!-- <div class="outer p-4 h-100 rounded-4 shadow-sm overflow-hidden position-relative">
-                                                        <div class="row gap-3">
-                                                            <div class="col-12 row mx-0 align-items-center">
-                                                                <div class="col-auto p-0 imgOuter overflow-hidden rounded-4">
-                                                                    <img class="w-100 h-100" src="assets/img/bgImg/profile-avater.jpg" alt="">
-                                                                </div>
-                                                                <div class="col">
-                                                                    <div class="memberName text-theme2">Vaishali Nagar, Jaipur</div>
-                                                                    <div class="memberPost text-dark">Jaipur</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <div class="memberDetail d-flex flex-column gap-2">
-                                                                    <div class="row title mx-0">
-                                                                        <div class="col-4 px-0">Manager</div>
+                                                            <div class="col px-0 h-100">
+                                                                <div class="memberDetail d-flex flex-column gap-3 p-3 h-100">
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/profileBlue.svg" alt=""></div></div>
                                                                         <div class="col px-0 text-dark">John Doe</div>
                                                                     </div>
-                                                                    <div class="row title mx-0">
-                                                                        <div class="col-4 px-0">Address</div>
-                                                                        <div class="col px-0 text-dark"><a href="#" class="link text-decoration-none text-dark">Ram Nagar, Vaishali Nagar, Jaipur, 000000</a></div>
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/branchIcon.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">New Branch, Vaishali Nagar</div>
                                                                     </div>
-                                                                    <div class="row title mx-0">
-                                                                        <div class="col-4 px-0">Number</div>
+                                                                    <div class="row title mx-0 gap-2">
+                                                                        <div class="col-auto px-0"><div class="icon"><img class="w-100" src="assets/img/icons/locationBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark"><a href="javascript:;" class="link text-decoration-none text-dark">Ram Nagar, Vaishali Nagar, Jaipur, 000000</a></div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/callBlueIcon.svg" alt=""></div></div>
                                                                         <div class="col px-0 text-dark"><a href="tel: 01425-123455" class="link text-decoration-none text-dark">01425-123455</a></div>
                                                                     </div>
-                                                                    <div class="row title mx-0">
-                                                                        <div class="col-4 px-0">Timing</div>
-                                                                        <div class="col px-0 text-dark">09:15AM - 07:00PM</div>
-                                                                    </div>  
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div> -->
-                                                </div>
-                                                <!-- <div class="col-md-4">
-                                                    <div class="outer p-4 h-100 rounded-4 shadow-sm overflow-hidden position-relative">
-                                                        <div class="row gap-3">
-                                                            <div class="col-12 row mx-0 align-items-center">
-                                                                <div class="col-auto p-0 imgOuter overflow-hidden rounded-4">
-                                                                    <img class="w-100 h-100" src="assets/img/bgImg/profile-avater.jpg" alt="">
-                                                                </div>
-                                                                <div class="col">
-                                                                    <div class="memberName text-theme2">Vaishali Nagar, Jaipur</div>
-                                                                    <div class="memberPost text-dark">Jaipur</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <div class="memberDetail d-flex flex-column gap-2">
-                                                                    <div class="row title mx-0">
-                                                                        <div class="col-4 px-0">Manager</div>
-                                                                        <div class="col px-0 text-dark">John Doe</div>
-                                                                    </div>
-                                                                    <div class="row title mx-0">
-                                                                        <div class="col-4 px-0">Address</div>
-                                                                        <div class="col px-0 text-dark"><a href="#" class="link text-decoration-none text-dark">Ram Nagar, Vaishali Nagar, Jaipur, 000000</a></div>
-                                                                    </div>
-                                                                    <div class="row title mx-0">
-                                                                        <div class="col-4 px-0">Number</div>
-                                                                        <div class="col px-0 text-dark"><a href="tel: 01425-123455" class="link text-decoration-none text-dark">01425-123455</a></div>
-                                                                    </div>
-                                                                    <div class="row title mx-0">
-                                                                        <div class="col-4 px-0">Timing</div>
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/timingBlue.svg" alt=""></div></div>
                                                                         <div class="col px-0 text-dark">09:15AM - 07:00PM</div>
                                                                     </div>  
                                                                 </div>
@@ -248,77 +219,478 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
-                                                    <div class="outer p-4 h-100 rounded-4 shadow-sm overflow-hidden position-relative">
-                                                        <div class="row gap-3">
-                                                            <div class="col-12 row mx-0 align-items-center">
-                                                                <div class="col-auto p-0 imgOuter overflow-hidden rounded-4">
-                                                                    <img class="w-100 h-100" src="assets/img/bgImg/profile-avater.jpg" alt="">
-                                                                </div>
-                                                                <div class="col">
-                                                                    <div class="memberName text-theme2">Vaishali Nagar, Jaipur</div>
-                                                                    <div class="memberPost text-dark">Jaipur</div>
+                                                <div class="col-6 col-lg-4 col-xl-3 singleCard">
+                                                    <div class="cardOuter rounded-4 overflow-hidden shadow">
+                                                        <div class="row mx-0 h-100">
+                                                            <div class="col-12 px-0">
+                                                                <div class="logoOuter w-100 align-items-center d-flex justify-content-center">
+                                                                    <div class="logoImg mx-auto">
+                                                                        <img class="w-100" src="assets/img/logo/logo-white.png" alt="">
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-12">
-                                                                <div class="memberDetail d-flex flex-column gap-2">
-                                                                    <div class="row title mx-0">
-                                                                        <div class="col-4 px-0">Manager</div>
+                                                            <div class="col px-0 h-100">
+                                                                <div class="memberDetail d-flex flex-column gap-3 p-3 h-100">
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/profileBlue.svg" alt=""></div></div>
                                                                         <div class="col px-0 text-dark">John Doe</div>
                                                                     </div>
-                                                                    <div class="row title mx-0">
-                                                                        <div class="col-4 px-0">Address</div>
-                                                                        <div class="col px-0 text-dark"><a href="#" class="link text-decoration-none text-dark">Ram Nagar, Vaishali Nagar, Jaipur, 000000</a></div>
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/branchIcon.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">New Branch, Vaishali Nagar</div>
                                                                     </div>
-                                                                    <div class="row title mx-0">
-                                                                        <div class="col-4 px-0">Number</div>
+                                                                    <div class="row title mx-0 gap-2">
+                                                                        <div class="col-auto px-0"><div class="icon"><img class="w-100" src="assets/img/icons/locationBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark"><a href="javascript:;" class="link text-decoration-none text-dark">Ram Nagar, Vaishali Nagar, Jaipur, 000000</a></div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/callBlueIcon.svg" alt=""></div></div>
                                                                         <div class="col px-0 text-dark"><a href="tel: 01425-123455" class="link text-decoration-none text-dark">01425-123455</a></div>
                                                                     </div>
-                                                                    <div class="row title mx-0">
-                                                                        <div class="col-4 px-0">Timing</div>
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/timingBlue.svg" alt=""></div></div>
                                                                         <div class="col px-0 text-dark">09:15AM - 07:00PM</div>
                                                                     </div>  
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div> -->
+                                                </div>
+                                                <div class="col-6 col-lg-4 col-xl-3 singleCard">
+                                                    <div class="cardOuter rounded-4 overflow-hidden shadow">
+                                                        <div class="row mx-0 h-100">
+                                                            <div class="col-12 px-0">
+                                                                <div class="logoOuter w-100 align-items-center d-flex justify-content-center">
+                                                                    <div class="logoImg mx-auto">
+                                                                        <img class="w-100" src="assets/img/logo/logo-white.png" alt="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col px-0 h-100">
+                                                                <div class="memberDetail d-flex flex-column gap-3 p-3 h-100">
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/profileBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">John Doe</div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/branchIcon.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">New Branch, Vaishali Nagar</div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2">
+                                                                        <div class="col-auto px-0"><div class="icon"><img class="w-100" src="assets/img/icons/locationBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark"><a href="javascript:;" class="link text-decoration-none text-dark">Ram Nagar, Vaishali Nagar, Jaipur, 000000</a></div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/callBlueIcon.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark"><a href="tel: 01425-123455" class="link text-decoration-none text-dark">01425-123455</a></div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/timingBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">09:15AM - 07:00PM</div>
+                                                                    </div>  
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 col-lg-4 col-xl-3 singleCard">
+                                                    <div class="cardOuter rounded-4 overflow-hidden shadow">
+                                                        <div class="row mx-0 h-100">
+                                                            <div class="col-12 px-0">
+                                                                <div class="logoOuter w-100 align-items-center d-flex justify-content-center">
+                                                                    <div class="logoImg mx-auto">
+                                                                        <img class="w-100" src="assets/img/logo/logo-white.png" alt="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col px-0 h-100">
+                                                                <div class="memberDetail d-flex flex-column gap-3 p-3 h-100">
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/profileBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">John Doe</div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/branchIcon.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">New Branch, Vaishali Nagar</div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2">
+                                                                        <div class="col-auto px-0"><div class="icon"><img class="w-100" src="assets/img/icons/locationBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark"><a href="javascript:;" class="link text-decoration-none text-dark">Ram Nagar, Vaishali Nagar, Jaipur, 000000</a></div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/callBlueIcon.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark"><a href="tel: 01425-123455" class="link text-decoration-none text-dark">01425-123455</a></div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/timingBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">09:15AM - 07:00PM</div>
+                                                                    </div>  
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="tab-pane fade position-relative" id="DLCP" role="tabpanel" aria-labelledby="DLCP-tab" tabindex="0">
-                                            <div class="row branchOuter">
-                                                <div class="col-md-4">
-                                                    <!-- <div class="outer p-4 h-100 rounded-4 shadow-sm overflow-hidden position-relative">
-                                                        <div class="row gap-3">
-                                                            <div class="col-12 row mx-0 align-items-center">
-                                                                <div class="col-auto p-0 imgOuter overflow-hidden rounded-4">
-                                                                    <img class="w-100 h-100" src="assets/img/bgImg/profile-avater.jpg" alt="">
-                                                                </div>
-                                                                <div class="col">
-                                                                    <div class="memberName text-theme2">Vaishali Nagar, Jaipur</div>
-                                                                    <div class="memberPost text-dark">Jaipur</div>
+                                            <div class="row branchOuter g-4">
+                                                <div class="col-6 col-lg-4 col-xl-3 singleCard">
+                                                    <div class="cardOuter rounded-4 overflow-hidden shadow">
+                                                        <div class="row mx-0 h-100">
+                                                            <div class="col-12 px-0">
+                                                                <div class="logoOuter w-100 align-items-center d-flex justify-content-center">
+                                                                    <div class="logoImg mx-auto">
+                                                                        <img class="w-100" src="assets/img/logo/logo-white.png" alt="">
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-12">
-                                                                <div class="memberDetail d-flex flex-column gap-2">
-                                                                    <div class="row title mx-0">
-                                                                        <div class="col-4 px-0">Manager</div>
+                                                            <div class="col px-0 h-100">
+                                                                <div class="memberDetail d-flex flex-column gap-3 p-3 h-100">
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/profileBlue.svg" alt=""></div></div>
                                                                         <div class="col px-0 text-dark">John Doe</div>
                                                                     </div>
-                                                                    <div class="row title mx-0">
-                                                                        <div class="col-4 px-0">Address</div>
-                                                                        <div class="col px-0 text-dark"><a href="#" class="link text-decoration-none text-dark">Ram Nagar, Vaishali Nagar, Jaipur, 000000</a></div>
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/branchIcon.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">New Branch, Vaishali Nagar</div>
                                                                     </div>
+                                                                    <div class="row title mx-0 gap-2">
+                                                                        <div class="col-auto px-0"><div class="icon"><img class="w-100" src="assets/img/icons/locationBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark"><a href="javascript:;" class="link text-decoration-none text-dark">Ram Nagar, Vaishali Nagar, Jaipur, 000000</a></div>
+                                                                    </div>  
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div> -->
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 col-lg-4 col-xl-3 singleCard">
+                                                    <div class="cardOuter rounded-4 overflow-hidden shadow">
+                                                        <div class="row mx-0 h-100">
+                                                            <div class="col-12 px-0">
+                                                                <div class="logoOuter w-100 align-items-center d-flex justify-content-center">
+                                                                    <div class="logoImg mx-auto">
+                                                                        <img class="w-100" src="assets/img/logo/logo-white.png" alt="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col px-0 h-100">
+                                                                <div class="memberDetail d-flex flex-column gap-3 p-3 h-100">
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/profileBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">John Doe</div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/branchIcon.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">New Branch, Vaishali Nagar</div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2">
+                                                                        <div class="col-auto px-0"><div class="icon"><img class="w-100" src="assets/img/icons/locationBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark"><a href="javascript:;" class="link text-decoration-none text-dark">Ram Nagar, Vaishali Nagar, Jaipur, 000000</a></div>
+                                                                    </div>  
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 col-lg-4 col-xl-3 singleCard">
+                                                    <div class="cardOuter rounded-4 overflow-hidden shadow">
+                                                        <div class="row mx-0 h-100">
+                                                            <div class="col-12 px-0">
+                                                                <div class="logoOuter w-100 align-items-center d-flex justify-content-center">
+                                                                    <div class="logoImg mx-auto">
+                                                                        <img class="w-100" src="assets/img/logo/logo-white.png" alt="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col px-0 h-100">
+                                                                <div class="memberDetail d-flex flex-column gap-3 p-3 h-100">
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/profileBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">John Doe</div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/branchIcon.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">New Branch, Vaishali Nagar</div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2">
+                                                                        <div class="col-auto px-0"><div class="icon"><img class="w-100" src="assets/img/icons/locationBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark"><a href="javascript:;" class="link text-decoration-none text-dark">Ram Nagar, Vaishali Nagar, Jaipur, 000000</a></div>
+                                                                    </div>  
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 col-lg-4 col-xl-3 singleCard">
+                                                    <div class="cardOuter rounded-4 overflow-hidden shadow">
+                                                        <div class="row mx-0 h-100">
+                                                            <div class="col-12 px-0">
+                                                                <div class="logoOuter w-100 align-items-center d-flex justify-content-center">
+                                                                    <div class="logoImg mx-auto">
+                                                                        <img class="w-100" src="assets/img/logo/logo-white.png" alt="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col px-0 h-100">
+                                                                <div class="memberDetail d-flex flex-column gap-3 p-3 h-100">
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/profileBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">John Doe</div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/branchIcon.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">New Branch, Vaishali Nagar</div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2">
+                                                                        <div class="col-auto px-0"><div class="icon"><img class="w-100" src="assets/img/icons/locationBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark"><a href="javascript:;" class="link text-decoration-none text-dark">Ram Nagar, Vaishali Nagar, Jaipur, 000000</a></div>
+                                                                    </div>  
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade position-relative" id="miniDLCP" role="tabpanel" aria-labelledby="miniDLCP-tab" tabindex="0">3
+                                        <div class="tab-pane fade position-relative" id="miniDLCP" role="tabpanel" aria-labelledby="miniDLCP-tab" tabindex="0">
+                                            <div class="row branchOuter g-4">
+                                                <div class="col-6 col-lg-4 col-xl-3 singleCard">
+                                                    <div class="cardOuter rounded-4 overflow-hidden shadow">
+                                                        <div class="row mx-0 h-100">
+                                                            <div class="col-12 px-0">
+                                                                <div class="logoOuter w-100 align-items-center d-flex justify-content-center">
+                                                                    <div class="logoImg mx-auto">
+                                                                        <img class="w-100" src="assets/img/logo/logo-white.png" alt="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col px-0 h-100">
+                                                                <div class="memberDetail d-flex flex-column gap-3 p-3 h-100">
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/profileBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">John Doe</div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/branchIcon.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">New Branch, Vaishali Nagar</div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2">
+                                                                        <div class="col-auto px-0"><div class="icon"><img class="w-100" src="assets/img/icons/locationBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark"><a href="javascript:;" class="link text-decoration-none text-dark">Ram Nagar, Vaishali Nagar, Jaipur, 000000</a></div>
+                                                                    </div>  
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 col-lg-4 col-xl-3 singleCard">
+                                                    <div class="cardOuter rounded-4 overflow-hidden shadow">
+                                                        <div class="row mx-0 h-100">
+                                                            <div class="col-12 px-0">
+                                                                <div class="logoOuter w-100 align-items-center d-flex justify-content-center">
+                                                                    <div class="logoImg mx-auto">
+                                                                        <img class="w-100" src="assets/img/logo/logo-white.png" alt="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col px-0 h-100">
+                                                                <div class="memberDetail d-flex flex-column gap-3 p-3 h-100">
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/profileBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">John Doe</div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/branchIcon.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">New Branch, Vaishali Nagar</div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2">
+                                                                        <div class="col-auto px-0"><div class="icon"><img class="w-100" src="assets/img/icons/locationBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark"><a href="javascript:;" class="link text-decoration-none text-dark">Ram Nagar, Vaishali Nagar, Jaipur, 000000</a></div>
+                                                                    </div>  
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 col-lg-4 col-xl-3 singleCard">
+                                                    <div class="cardOuter rounded-4 overflow-hidden shadow">
+                                                        <div class="row mx-0 h-100">
+                                                            <div class="col-12 px-0">
+                                                                <div class="logoOuter w-100 align-items-center d-flex justify-content-center">
+                                                                    <div class="logoImg mx-auto">
+                                                                        <img class="w-100" src="assets/img/logo/logo-white.png" alt="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col px-0 h-100">
+                                                                <div class="memberDetail d-flex flex-column gap-3 p-3 h-100">
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/profileBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">John Doe</div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/branchIcon.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">New Branch, Vaishali Nagar</div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2">
+                                                                        <div class="col-auto px-0"><div class="icon"><img class="w-100" src="assets/img/icons/locationBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark"><a href="javascript:;" class="link text-decoration-none text-dark">Ram Nagar, Vaishali Nagar, Jaipur, 000000</a></div>
+                                                                    </div>  
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 col-lg-4 col-xl-3 singleCard">
+                                                    <div class="cardOuter rounded-4 overflow-hidden shadow">
+                                                        <div class="row mx-0 h-100">
+                                                            <div class="col-12 px-0">
+                                                                <div class="logoOuter w-100 align-items-center d-flex justify-content-center">
+                                                                    <div class="logoImg mx-auto">
+                                                                        <img class="w-100" src="assets/img/logo/logo-white.png" alt="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col px-0 h-100">
+                                                                <div class="memberDetail d-flex flex-column gap-3 p-3 h-100">
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/profileBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">John Doe</div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/branchIcon.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">New Branch, Vaishali Nagar</div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2">
+                                                                        <div class="col-auto px-0"><div class="icon"><img class="w-100" src="assets/img/icons/locationBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark"><a href="javascript:;" class="link text-decoration-none text-dark">Ram Nagar, Vaishali Nagar, Jaipur, 000000</a></div>
+                                                                    </div>  
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="tab-pane fade position-relative" id="DCC" role="tabpanel" aria-labelledby="DCC-tab" tabindex="0">4
+                                        <div class="tab-pane fade position-relative" id="DCC" role="tabpanel" aria-labelledby="DCC-tab" tabindex="0">
+                                            <div class="row branchOuter g-4">
+                                                <div class="col-6 col-lg-4 col-xl-3 singleCard">
+                                                    <div class="cardOuter rounded-4 overflow-hidden shadow">
+                                                        <div class="row mx-0 h-100">
+                                                            <div class="col-12 px-0">
+                                                                <div class="logoOuter w-100 align-items-center d-flex justify-content-center">
+                                                                    <div class="logoImg mx-auto">
+                                                                        <img class="w-100" src="assets/img/logo/logo-white.png" alt="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col px-0 h-100">
+                                                                <div class="memberDetail d-flex flex-column gap-3 p-3 h-100">
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/profileBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">John Doe</div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/branchIcon.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">New Branch, Vaishali Nagar</div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2">
+                                                                        <div class="col-auto px-0"><div class="icon"><img class="w-100" src="assets/img/icons/locationBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark"><a href="javascript:;" class="link text-decoration-none text-dark">Ram Nagar, Vaishali Nagar, Jaipur, 000000</a></div>
+                                                                    </div>  
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 col-lg-4 col-xl-3 singleCard">
+                                                    <div class="cardOuter rounded-4 overflow-hidden shadow">
+                                                        <div class="row mx-0 h-100">
+                                                            <div class="col-12 px-0">
+                                                                <div class="logoOuter w-100 align-items-center d-flex justify-content-center">
+                                                                    <div class="logoImg mx-auto">
+                                                                        <img class="w-100" src="assets/img/logo/logo-white.png" alt="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col px-0 h-100">
+                                                                <div class="memberDetail d-flex flex-column gap-3 p-3 h-100">
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/profileBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">John Doe</div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/branchIcon.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">New Branch, Vaishali Nagar</div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2">
+                                                                        <div class="col-auto px-0"><div class="icon"><img class="w-100" src="assets/img/icons/locationBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark"><a href="javascript:;" class="link text-decoration-none text-dark">Ram Nagar, Vaishali Nagar, Jaipur, 000000</a></div>
+                                                                    </div>  
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 col-lg-4 col-xl-3 singleCard">
+                                                    <div class="cardOuter rounded-4 overflow-hidden shadow">
+                                                        <div class="row mx-0 h-100">
+                                                            <div class="col-12 px-0">
+                                                                <div class="logoOuter w-100 align-items-center d-flex justify-content-center">
+                                                                    <div class="logoImg mx-auto">
+                                                                        <img class="w-100" src="assets/img/logo/logo-white.png" alt="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col px-0 h-100">
+                                                                <div class="memberDetail d-flex flex-column gap-3 p-3 h-100">
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/profileBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">John Doe</div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/branchIcon.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">New Branch, Vaishali Nagar</div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2">
+                                                                        <div class="col-auto px-0"><div class="icon"><img class="w-100" src="assets/img/icons/locationBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark"><a href="javascript:;" class="link text-decoration-none text-dark">Ram Nagar, Vaishali Nagar, Jaipur, 000000</a></div>
+                                                                    </div>  
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 col-lg-4 col-xl-3 singleCard">
+                                                    <div class="cardOuter rounded-4 overflow-hidden shadow">
+                                                        <div class="row mx-0 h-100">
+                                                            <div class="col-12 px-0">
+                                                                <div class="logoOuter w-100 align-items-center d-flex justify-content-center">
+                                                                    <div class="logoImg mx-auto">
+                                                                        <img class="w-100" src="assets/img/logo/logo-white.png" alt="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col px-0 h-100">
+                                                                <div class="memberDetail d-flex flex-column gap-3 p-3 h-100">
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/profileBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">John Doe</div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2 align-items-center">
+                                                                        <div class="col-auto px-0"><div class="icon align-items-center d-flex justify-content-center"><img class="w-100" src="assets/img/icons/branchIcon.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark">New Branch, Vaishali Nagar</div>
+                                                                    </div>
+                                                                    <div class="row title mx-0 gap-2">
+                                                                        <div class="col-auto px-0"><div class="icon"><img class="w-100" src="assets/img/icons/locationBlue.svg" alt=""></div></div>
+                                                                        <div class="col px-0 text-dark"><a href="javascript:;" class="link text-decoration-none text-dark">Ram Nagar, Vaishali Nagar, Jaipur, 000000</a></div>
+                                                                    </div>  
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

@@ -299,10 +299,16 @@ font-size: 12px;
                 &:invalid {
                     border-color: $danger;
                 }
+                &:valid {
+                    border-color: $gray-200;
+                }
             }
             & .tomSelect {
                 &.invalid {
                     border-color: $danger;
+                }
+                &:valid {
+                    border-color: $gray-200;
                 }
                 & .ts-control{
                     & input {
@@ -534,6 +540,84 @@ font-size: 12px;
 //! ###################################### Globally Scss ######################################
 
 
+//? ###################################### Gallery Page Start ######################################
+[page-name=loginPage] {
+    &.loginPage {
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+        &:before, &:after {
+            content: '';
+            display: block;
+            width: 520px;
+            height: 500px;
+            position: absolute;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        &:before {
+            background-image: url(../img/bgImg/loginTopRight.svg);
+            background-position: top left;
+            top: 0;
+            right: 0;
+        }
+        &:after {
+            width: 465px;
+            height: 399px;
+            background-image: url(../img/bgImg/loginLeftBottom.svg);
+            background-position: top left;
+            bottom: 0;
+            left: 0;
+        }
+
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@mixin loginPage-mixin-min-sm() {
+}
+
+// Medium devices (tablets, 768px and up)
+@mixin loginPage-mixin-min-md() {
+}
+
+// Large devices (desktops, 992px and up)
+@mixin loginPage-mixin-min-lg() {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@mixin loginPage-mixin-min-xl() {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@mixin loginPage-mixin-min-xxl() {
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@mixin loginPage-mixin-max-xs() {
+}
+
+// Small devices (landscape phones, less than 768px)
+@mixin loginPage-mixin-max-sm() {
+}
+
+// Medium devices (tablets, less than 992px)
+@mixin loginPage-mixin-max-md() {
+}
+
+// Large devices (desktops, less than 1200px)
+@mixin loginPage-mixin-max-lg() {
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@mixin loginPage-mixin-max-xl() {
+}
+@media (max-width: 360px) {
+}
+
+//! ###################################### Gallery Page End ######################################
+
+
 //? ###################################### Home Page Start ######################################
 [page-name=homePage] {
     &.homePage {
@@ -638,6 +722,7 @@ font-size: 12px;
                 }
             }
             & .aboutImg{
+                width: 70%;
                 height: 350px;
                 border-radius: 49% 51% 47% 53%/61% 58% 42% 39%;
                 animation-name: flo;
@@ -1088,21 +1173,27 @@ font-size: 12px;
             // About us Section Start
             & .aboutUs{
                 & .aboutDec{
-                    font-size: 12px;
-                    line-height: 24px;
+                    font-size: 10px;
+                    line-height: 20px;
                 }
                 & .missionVision{
                     & .outer{
                         & .title {
-                            font-size: 14px;
+                            font-size: 12px;
                         }
                         & .decription {
-                            font-size: 12px;
+                            font-size: 10px;
                         }
                     }
                 }
                 & .aboutImg{
+                    width: 70%;
                     & img {
+                    }
+                    @keyframes flo{
+                        50%{
+                            transform: translateY(-20px);
+                        }
                     }
                 }
             }
@@ -1391,6 +1482,7 @@ font-size: 12px;
                     }
                 }
                 & .aboutImg{
+                    width: 75%;
                     & img {
                     }
                 }
@@ -1646,6 +1738,7 @@ font-size: 12px;
                     }
                 }
                 & .aboutImg{
+                    width: 50%;
                     & img {
                         @keyframes flo{
                             50%{
@@ -1940,6 +2033,7 @@ font-size: 12px;
                     }
                 }
                 & .aboutImg{
+                    height: 300px;
                     & img {
                     }
                 }
@@ -2151,6 +2245,261 @@ font-size: 12px;
 // X-Large devices (large desktops, less than 1400px)
 @mixin homePage-mixin-max-xl() {
 }
+
+@media (max-width: 480px) {
+    [page-name=homePage] {
+        &.homePage {
+            // Hero Section Start
+            & .main-banner {
+                & .mainCarousel {
+                    &:after {
+                    }
+                }
+                .item {
+                    &.header-text {
+                    & .decription {
+                    }
+                    & .down-buttons{
+                        & .call-button {
+                            & a {
+                                
+                            }
+                            & .callIcon {
+                            }
+                        }
+                    }
+                    }
+                }
+                & .owl-dots {
+                    & .owl-dot{
+                        &:before {
+                        }
+                        &.active:before {
+                        }
+                    }
+                }
+            }
+            // Hero Section End
+
+            // About us Section Start
+            & .aboutUs{
+                & .aboutDec{
+                }
+                & .missionVision{
+                    & .outer{
+                        & .title {
+                        }
+                        & .decription {
+                        }
+                    }
+                }
+                & .aboutImg{
+                    width: 85% !important;
+                    & img {
+                    }
+                }
+            }
+            // About us Section End
+
+            // Event Section Start
+            & .mainEvents {
+                & .mainEventSlider {
+                    & .owl-stage-outer{
+                        & .owl-stage{
+                            & .owl-item {
+                                &.active {
+                                    & .eventOuter {
+                                        & .eventImg {
+                                            & img {
+                                            }
+                                        }
+                                        & .eventDecription {
+                                            & .eventTitle {
+                                            }
+                                            & .eventDec {
+                                            }
+                                        
+                                        }
+                                        &:hover {
+                                            & .eventImg {
+                                                & img {
+                                                }
+                                            }
+                                            & .eventDecription {
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+    
+                }
+                & .eventOuter {
+                    & .eventImg {
+                        & img {
+                        }
+                    }
+                    & .eventDecription {
+                        padding: 16px !important;
+                        & .eventTitle {
+                            font-size: 12px !important;
+                        }
+                        & .eventDec {
+                            font-size: 10px;
+                            -webkit-line-clamp: 2;
+                        }
+                    
+                    }
+                    &:hover {
+                        & .eventImg {
+                            & img {
+                            }
+                        }
+                        & .eventDecription {
+                        }
+                    }
+                }
+            }
+            // Event Section End
+
+            // Our Brands Section Start
+            & .ourBrands {
+                & .bransOuter{
+                    & .brands {
+                        & img {
+                        }
+                        &::after{
+                        }
+                        &:hover {
+                            &:after {
+                            }
+                            & img {
+                            }
+                        }
+                    }
+                }
+            }
+            // Our Brands Section End
+
+            // Our Videos Section Start
+            & .ourVideo {
+                & .videos {
+                    & .playBtn{
+                        & img {
+                        }
+                        &:before {
+                        }
+                        &:after {
+                        }
+                    }
+                    &:hover {
+                        & .playBtn {
+                            &:after, &:before {
+                            }
+                        }
+                    }
+                    & .videoDecription{
+                        & .videoTitle {
+                        }
+                        & .subTitle{
+                        }
+                    }
+                    &.trandingVideo{
+                        & a {
+                            
+                        }
+                    }
+                    
+                    &.otherVideos {
+                        & a {
+                        }
+                        & .videoDecription{
+                            & .videoTitle {
+                            }
+                        }
+                    }
+                    &:hover {
+                        & .videoDecription {
+                        }
+                    }
+                }
+                
+                
+            }
+            // Our Videos Section End
+
+            // Get in Touch Section Start
+            & .getInTouch {
+                & .section-heading{
+                    & .subHeading {
+                    }
+                    & .infoOuter {
+                        & .infoIcon {
+                        }
+                        & a {
+                            &:hover {
+                            }
+                        }
+                    }
+                }
+                & .form {
+                    & .input-group {
+                        & .form-control, & .form-select {
+                        }
+                        & textarea{
+                        }
+                        & .tomSelect {
+                            & .ts-control{
+                                & input {
+                                    &::placeholder {
+                                    }
+                                }
+                            }
+                            & .ts-dropdown {
+                                &.single {
+    
+                                }
+                                & .ts-dropdown-content {
+                                    & .option {
+                                        &.active {
+    
+                                        }
+                                        &.selected {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        & .invalid-feedback{
+                        }
+                    }
+                    &.was-validated {
+                        & .input-group {
+                            & .form-control, & .form-select, & .tomSelect {
+                                &:invalid {
+                                }
+                            }
+                            & .tomSelect {
+                                &.invalid {
+                                }
+                                & .ts-control{
+                                    & input {
+                                        &::placeholder {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                & .contact-left-dec {
+                }
+            }
+            // Get in Touch Section End
+        }
+    }
+}
 @media (max-width: 360px) {
     [page-name=homePage] {
         &.homePage {
@@ -2192,6 +2541,27 @@ font-size: 12px;
                 }
             }
             // Hero Section End
+
+            // About us Section Start
+            & .aboutUs{
+                & .aboutDec{
+                }
+                & .missionVision{
+                    & .outer{
+                        & .title {
+                        }
+                        & .decription {
+                        }
+                    }
+                }
+                & .aboutImg{
+                    width: 100% !important;
+                    height: 250px !important;
+                    & img {
+                    }
+                }
+            }
+            // About us Section End
 
             // Event Section Start
             & .mainEvents {
@@ -5354,6 +5724,12 @@ font-size: 12px;
                             }
                           }
                     }
+                    & .imgView {
+                        inset: 0;
+                        width: 0;
+                        height: 0;
+                        transition: ease-in-out .3s;
+                    }
                     &:hover {
                         &:before {
                             width: 100%;
@@ -5365,6 +5741,11 @@ font-size: 12px;
                                 animation: pulse-border 1500ms ease-out infinite;
                             }
                         }
+                        
+                    & .imgView {
+                        width: 24px;
+                        height: 24px;
+                    }
                     }
                 }
                 & .owl-carousel{
@@ -5505,6 +5886,7 @@ font-size: 12px;
                     }
                     & .tabOuter {
                         & .dec {
+                            font-size: 10px;
                         }
                     }
                     & .videoOuter {
@@ -5806,3 +6188,602 @@ font-size: 12px;
 }
 
 //! ###################################### Career Page End ######################################
+
+//? ###################################### Contact Us Page Start ######################################
+[page-name=contactUsPage] {
+    &.contactUsPage {
+        & .mainSection {
+            padding: 60px 0;
+            & .contactUsOuter {
+                & .card {
+                    cursor: pointer;
+                    & .cardIcon {
+                        width: 50px;
+                        height: 50px;
+                        margin-top: -73px;
+                        & img {
+                            z-index: 1;
+                        }
+                        &:after {
+                            content: '';
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            background-color: $theme1;
+                            transition: ease-in-out .5s;
+                            opacity: 0;
+                            border-radius: 50px;
+                        }
+                    }
+                    & .tollfree{
+                        font-size: 14px;
+                        transition: ease-in-out .3s;
+                        & .title{
+                            opacity: .3;
+                        }
+                        & a {
+                            &:hover {
+                                color: $theme1 !important;
+                            }
+                        }
+                    }
+                    &:hover {
+                        & .cardIcon {
+                            &:after {
+                                opacity: 1;
+                                transform: rotateY(180deg);
+                            }
+                        }
+                    }
+                }
+            }
+            & .getInTouch {
+                padding: 48px 0;
+                background-color: lighten($theme2, 50);
+                z-index: 2;
+                position: relative;  
+                & .section-heading{
+                    & .subHeading {
+                        font-size: 30px;
+                        text-transform: capitalize;
+                        font-weight: 700;
+                        position: relative;
+                        z-index: 2;
+                    }
+                    & .infoOuter {
+                        cursor: pointer;
+                        & .infoIcon {
+                            width: 44px;
+                            height: 44px;
+                            padding: 14px;
+                        }
+                        & a {
+                            font-size: 14px;
+                            transition: ease-in-out .2s;
+                            &:hover {
+                                color: $theme1 !important;
+                            }
+                        }
+                    }
+                    & .map {
+                        border-radius: 20px;
+                    }
+                }
+                & .form {
+                    position: relative;
+                    z-index: 2;
+                    background-image: url(../images/contact-form-bg.png);
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: cover;
+                    box-shadow: 0px 0px 15px rgba($dark, 10%);
+                    padding: 50px 50px;
+                    border-radius: 20px;
+                    & .input-group {
+                        & .form-control, & .form-select {
+                            &::placeholder {
+                            }
+                        }
+                        & textarea{
+                        }
+                        & .invalid-feedback{
+                        }
+                    }
+                    &.was-validated {
+                        & .input-group {
+                            & .form-control, & .form-select, & .tomSelect {
+                                &:invalid {
+                                }
+                            }
+                            & .tomSelect {
+                                &.invalid {
+                                }
+                                & .ts-control{
+                                    & input {
+                                        &::placeholder {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                & .contact-left-dec {
+                    position: absolute;
+                    z-index: -1;
+                    width: 174px;
+                    height: 319px;
+                    left: 0;
+                    top: 200px;
+                }
+            }
+            & .customerCare {
+                width: 100%;
+                background-image: linear-gradient(90deg, rgba($black, 0.5) 100%, rgba($black, 0.5) 100%), url(../img/bgImg/customerSupport.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: top center;
+                background-attachment: fixed;
+                padding: 100px 0;
+                & .outer {
+                    height: 120px;
+                    backdrop-filter: blur(10px);
+                    cursor: pointer;
+                        & .title {
+                            font-size: 14px;
+                        }
+                    & .number {
+                        font-size: 24px;
+                        font-weight: 600;
+                        transition: ease-in-out .3s;
+                    }
+                    &:hover {
+                        & .number {
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@mixin contactUsPage-mixin-min-sm() {
+}
+
+// Medium devices (tablets, 768px and up)
+@mixin contactUsPage-mixin-min-md() {
+    [page-name=contactUsPage] {
+        &.contactUsPage {
+            & .mainSection {
+            }
+        }
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@mixin contactUsPage-mixin-min-lg() {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@mixin contactUsPage-mixin-min-xl() {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@mixin contactUsPage-mixin-min-xxl() {
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@mixin contactUsPage-mixin-max-xs() {
+    [page-name=contactUsPage] {
+        &.contactUsPage {
+            & .mainSection {
+                & .contactUsOuter {
+                    & .card {
+                        cursor: pointer;
+                        & .cardIcon {
+                            width: 40px;
+                            height: 40px;
+                            margin-top: -44px;
+                            padding: 12px;
+                            & img {
+                            }
+                            &:after {
+                            }
+                        }
+                        & .tollfree{
+                            font-size: 10px;
+                            & .title{
+                            }
+                            &:hover {
+                                & a {
+                                }
+                            }
+                        }
+                        &:hover {
+                            & .cardIcon {
+                                &:after {
+                                }
+                            }
+                        }
+                    }
+                }
+                & .getInTouch {
+                    & .section-heading{
+                    }
+                    & .form {
+                        & .input-group {
+                            & .form-control, & .form-select {
+                            }
+                            & textarea{
+                            }
+                            & .tomSelect {
+                                & .ts-control{
+                                    & input {
+                                        &::placeholder {
+                                        }
+                                    }
+                                }
+                                & .ts-dropdown {
+                                    &.single {
+        
+                                    }
+                                    & .ts-dropdown-content {
+                                        & .option {
+                                            &.active {
+        
+                                            }
+                                            &.selected {
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            & .invalid-feedback{
+                            }
+                        }
+                        &.was-validated {
+                            & .input-group {
+                                & .form-control, & .form-select, & .tomSelect {
+                                    &:invalid {
+                                    }
+                                }
+                                & .tomSelect {
+                                    &.invalid {
+                                    }
+                                    & .ts-control{
+                                        & input {
+                                            &::placeholder {
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .contact-left-dec {
+                        display: none;
+                    }
+                }
+                & .customerCare {
+                    padding: 60px 0;
+                    & .outer {
+                        height: 80px;
+                            & .title {
+                                font-size: 10px;
+                            }
+                        & .number {
+                            font-size: 14px;
+                        }
+                        &:hover {
+                            & .number {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Small devices (landscape phones, less than 768px)
+@mixin contactUsPage-mixin-max-sm() {
+    [page-name=contactUsPage] {
+        &.contactUsPage {
+            & .mainSection {
+                & .contactUsOuter {
+                    & .card {
+                        & .cardIcon {
+                            & img {
+                            }
+                            &:after {
+                            }
+                        }
+                        & .tollfree{
+                            & .title{
+                            }
+                            &:hover {
+                                & a {
+                                }
+                            }
+                        }
+                        &:hover {
+                            & .cardIcon {
+                                &:after {
+                                }
+                            }
+                        }
+                    }
+                }
+                & .getInTouch {
+                    & .section-heading{
+                        & .map {
+                            height: 300px !important;
+                        }
+                    }
+                    & .form {
+                        padding: 60px 60px;
+                    }
+                }
+                & .customerCare {
+                    & .outer {
+                        height: 100px;
+                        cursor: pointer;
+                            & .title {
+                                font-size: 12px;
+                            }
+                        & .number {
+                            font-size: 16px;
+                        }
+                        &:hover {
+                            & .number {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Medium devices (tablets, less than 992px)
+@mixin contactUsPage-mixin-max-md() {
+    [page-name=contactUsPage] {
+        &.contactUsPage {
+            & .mainSection {
+                padding: 30px 0;
+                & .contactUsOuter {
+                    & .card {
+                        & .cardIcon {
+                            & img {
+                            }
+                            &:after {
+                            }
+                        }
+                        & .tollfree{
+                            & .title{
+                            }
+                            &:hover {
+                                & a {
+                                }
+                            }
+                        }
+                        &:hover {
+                            & .cardIcon {
+                                &:after {
+                                }
+                            }
+                        }
+                    }
+                }
+                & .getInTouch {
+                    & .section-heading{
+                    }
+                    & .form {
+                        padding: 50px 20px;
+                        & .input-group {
+                            & .form-control, & .form-select {
+                                font-size: 12px;
+                                &::placeholder {
+                                    font-size: 12px;
+                                }
+                            }
+                            & textarea{
+                            }
+                            & .tomSelect {
+                                & .ts-control{
+                                    & input {
+                                        &::placeholder {
+                                            font-size: 12px;
+                                        }
+                                    }
+                                }
+                                & .ts-dropdown {
+                                    &.single {
+        
+                                    }
+                                    & .ts-dropdown-content {
+                                        & .option {
+                                            &.active {
+        
+                                            }
+                                            &.selected {
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            & .invalid-feedback{
+                            }
+                        }
+                        &.was-validated {
+                            & .input-group {
+                                & .form-control, & .form-select, & .tomSelect {
+                                    &:invalid {
+                                    }
+                                }
+                                & .tomSelect {
+                                    &.invalid {
+                                    }
+                                    & .ts-control{
+                                        & input {
+                                            &::placeholder {
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .contact-left-dec {
+                    }
+                }
+                & .customerCare {
+                    & .outer {
+                        height: 80px;
+                        cursor: pointer;
+                            & .title {
+                                font-size: 12px;
+                            }
+                        & .number {
+                            font-size: 16px;
+                        }
+                        &:hover {
+                            & .number {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+// Large devices (desktops, less than 1200px)
+@mixin contactUsPage-mixin-max-lg() {
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@mixin contactUsPage-mixin-max-xl() {
+}
+@media (max-width: 360px) {
+    [page-name=contactUsPage] {
+        &.contactUsPage {
+            & .mainSection {
+                & .contactUsOuter {
+                    & .card {
+                        cursor: pointer;
+                        & .cardIcon {
+                            width: 40px;
+                            height: 40px;
+                            margin-top: -44px;
+                            padding: 12px;
+                            & img {
+                            }
+                            &:after {
+                            }
+                        }
+                        & .tollfree{
+                            font-size: 10px;
+                            & .title{
+                            }
+                            &:hover {
+                                & a {
+                                }
+                            }
+                        }
+                        &:hover {
+                            & .cardIcon {
+                                &:after {
+                                }
+                            }
+                        }
+                    }
+                }
+                & .getInTouch {
+                    & .section-heading{
+                        & .subHeading {
+                        }
+                        & .infoOuter {
+                            & .infoIcon {
+                            }
+                            & a {
+                                &:hover {
+                                }
+                            }
+                        }
+                    }
+                    & .form {
+                        padding: 30px 30px !important;
+                        & .input-group {
+                            & .form-control, & .form-select {
+                            }
+                            & textarea{
+                            }
+                            & .tomSelect {
+                                & .ts-control{
+                                    & input {
+                                        &::placeholder {
+                                        }
+                                    }
+                                }
+                                & .ts-dropdown {
+                                    &.single {
+        
+                                    }
+                                    & .ts-dropdown-content {
+                                        & .option {
+                                            &.active {
+        
+                                            }
+                                            &.selected {
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            & .invalid-feedback{
+                            }
+                        }
+                        &.was-validated {
+                            & .input-group {
+                                & .form-control, & .form-select, & .tomSelect {
+                                    &:invalid {
+                                    }
+                                }
+                                & .tomSelect {
+                                    &.invalid {
+                                    }
+                                    & .ts-control{
+                                        & input {
+                                            &::placeholder {
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .contact-left-dec {
+                    }
+                }
+                & .customerCare {
+                    & .outer {
+                            & .title {
+                            }
+                        & .number {
+                        }
+                        &:hover {
+                            & .number {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//! ###################################### Contact Us Page End ######################################

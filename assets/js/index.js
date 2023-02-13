@@ -456,9 +456,9 @@ if ($("[page-name=careerPage]").length) {
         dots:true,
         nav:true,
         navText: ["<img class='' src='assets/img/icons/leftArrow.svg'>","<img class='' src='assets/img/icons/rightArrow.svg''>"],
-        autoplay:true,
-        autoplayTimeout:3000,
-        autoplayHoverPause:false,
+        // autoplay:true,
+        // autoplayTimeout:3000,
+        // autoplayHoverPause:false,
         responsive: {
         0: {
             items: 1,
@@ -526,3 +526,17 @@ if ($("[page-name=careerPage]").length) {
     });
 }
 //! ###################################### Career Page JS ######################################
+
+
+//? ###################################### Contact Us Page JS ######################################
+if ($("[page-name=contactUsPage]").length) {
+
+    //   top select 
+    
+    new TomSelect("#chooesQuery2", {
+        allowEmptyOption: false,
+        create: false
+    }); 
+
+}
+//! ###################################### Contact Us Page JS ######################################

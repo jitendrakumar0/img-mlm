@@ -42,7 +42,7 @@
         left: 0;
         right: 0;
         top: 0;
-        z-index: 0;
+        z-index: -1;
         line-height: 190px;
     }
 }
@@ -97,14 +97,15 @@
     }
     .heading {
         & .title {  
-            font-size: 24px;
-            &:before {
+            font-size: 18px;
+            &:before, &:after {
+                width: 24px;
             }
             &:after {
             }
         }
         & .subHeading {
-            font-size: 14px;
+            font-size: 10px;
         }
         & .miniHeading {
             font-size: 60px;
@@ -113,15 +114,27 @@
     }
     .innerPageBanner{
     }
+    .tabHeading {
+        & .title {
+            font-size: 12px !important;
+        }
+        & .dec {
+            font-size: 10px;
+            & span {
+                font-size: 12px !important;
+            }
+        }
+    }
 }
 
 // Small devices (landscape phones, less than 768px)
 @mixin headings-mixin-max-sm() {
     .mainHeading {
-        font-size: 28px;
+        font-size: 24px;
     }
     .heading {
         & .title {
+            font-size: 24px;
             &:before {
             }
             
@@ -131,8 +144,6 @@
         & .subHeading {
         }
         & .miniHeading {
-            font-size: 80px;
-            line-height: 110px;
         }
     }
     .innerPageBanner{
@@ -146,42 +157,47 @@
 // Medium devices (tablets, less than 992px)
 @mixin headings-mixin-max-md() {
     .mainHeading {
-        font-size: 32px;
+        font-size: 28px;
     }
     .heading {
         & .title {  
-            font-size: 32px;
+            font-size: 28px;
             &:before {
-                width: 32px;
+                width: 28px;
             }
             
             &:after {
-                width: 32px;
+                width: 28px;
             }
         }
         & .subHeading {
         }
         & .miniHeading {
-            font-size: 120px;
-            line-height: 130px;
+            font-size: 90px;
+            line-height: 100px;
         }
     }
 }
 
 // Large devices (desktops, less than 1200px)
 @mixin headings-mixin-max-lg() {
+    .mainHeading {
+        font-size: 32px;
+    }
     .heading {
         & .title {
+            font-size: 32px;
             &:before {
             }
             &:after {
             }
         }
         & .subHeading {
+            font-size: 14px;
         }
         & .miniHeading {
-            font-size: 140px;
-            line-height: 150px;
+            font-size: 120px;
+            line-height: 130px;
         }
     }
 }
@@ -202,7 +218,6 @@
             }
         }
         & .subHeading {
-            font-size: 12px !important;
         }
         & .miniHeading {
             display: none;

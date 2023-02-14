@@ -26,9 +26,9 @@ $(window).scroll(function () {
 $(window).scroll(function () {
     var pagescroll = $(window).scrollTop();
     if (pagescroll <= 50) {
-        $(".backToTopbtn").removeClass("active");
+        $(".backToTopbtn").removeClass("clickToTop");
     } else {
-        $(".backToTopbtn").addClass("active");
+        $(".backToTopbtn").addClass("clickToTop");
     }
 });
 
@@ -52,6 +52,120 @@ $(window).scroll(function () {
       }, false)
     })
   })()
+
+
+  
+    // otp input tab change
+    let digitValidate = function(ele){
+    console.log(ele.value);
+    ele.value = ele.value.replace(/[^0-9]/g,'');
+    }
+    let tabChange = function(val){
+        let ele = document.querySelectorAll('.otp');
+            if(ele[val-1].value != ''){
+            ele[val].focus()
+            }else if(ele[val-1].value == ''){
+            ele[val-2].focus()
+        }   
+    }
+
+//? ###################################### login Page JS ######################################
+if ($("[page-name=loginPage]").length) {
+    const passBtn = document.querySelectorAll('.passBtn');
+    passBtn.forEach(passBtns =>{
+        passBtns.addEventListener('click', (e)=>{
+            let newVar = e.currentTarget;
+            let inputType = newVar.previousElementSibling;
+            inputType.getAttribute('type') === 'password' ? inputType.setAttribute('type', 'text') : inputType.setAttribute('type', 'password');
+            let changeImg = newVar.firstElementChild;
+            if (changeImg.src.match("eyeIconHide")) {
+                changeImg.src = "assets/img/icons/eyeIconShow.svg";
+            } else {
+                changeImg.src = "assets/img/icons/eyeIconHide.svg";
+            }
+        });
+    });
+    
+
+
+    // show forgot pass page 
+    let sectionOuter = document.querySelector('.loginOuter');
+    let forgotTxt = document.querySelector('#forgotTxt');
+    let cancelBtn = document.querySelector('.cancelBtn');
+    let otpSend = document.querySelector('.otpSend');
+    let otpSubmit = document.querySelector('.otpSubmit');
+    let passwordSubmit = document.querySelector('.passwordSubmit');
+    forgotTxt.addEventListener('click', (e)=>{
+        sectionOuter.classList.replace('login', 'forgotPass');
+    });
+    cancelBtn.addEventListener('click', ()=>{
+        sectionOuter.classList.replace('forgotPass', 'login');
+    });
+    otpSend.addEventListener('click', ()=>{
+        (() => {
+            'use strict'
+            
+            const forms = document.querySelectorAll('.needs-validation')
+          
+            Array.from(forms).forEach(form => {
+              form.addEventListener('submit', event => {
+                event.preventDefault()
+                if (!form.checkValidity()) {
+                    event.stopPropagation()
+                }else{
+                    sectionOuter.classList.replace('forgotPass', 'enterOtp');
+                }
+          
+                form.classList.add('was-validated')
+              }, false)
+            })
+          })()
+    });
+    otpSubmit.addEventListener('click', ()=>{
+        (() => {
+            'use strict'
+            const forms = document.querySelectorAll('.needs-validation')
+            Array.from(forms).forEach(form => {
+              form.addEventListener('submit', event => {
+                event.preventDefault()
+                if (!form.checkValidity()) {
+                    event.stopPropagation()
+                }else{
+                    sectionOuter.classList.replace('enterOtp', 'createPass');
+                }
+          
+                form.classList.add('was-validated')
+              }, false)
+            })
+          })()
+    })
+    passwordSubmit.addEventListener('click', ()=>{
+        (() => {
+            'use strict'
+            const forms = document.querySelectorAll('.needs-validation')
+            Array.from(forms).forEach(form => {
+              form.addEventListener('submit', event => {
+                event.preventDefault()
+                if (!form.checkValidity()) {
+                    event.stopPropagation()
+                }else{
+                    swal("Successfully", "your new password is created.", "success");
+                    sectionOuter.classList.replace('createPass', 'login');
+                    var newBtn = document.querySelector('.swal-button');
+                    newBtn.setAttribute('class', 'btn btn-theme2 btnStyle1 rounded-pill px-4 text-white')
+                }
+          
+                form.classList.add('was-validated')
+              }, false)
+            })
+          })()
+    })
+
+}
+//! ###################################### login Page JS ######################################
+
+
+   
 
 //? ###################################### Home Page JS ######################################
 if ($("[page-name=homePage]").length) {

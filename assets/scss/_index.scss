@@ -288,8 +288,16 @@ font-size: 12px;
         & textarea{
             max-height: 80px;
         }
-        & .invalid-feedback{
+        & .invalid-feedback, & .invalid {
             font-size: 10px;
+        }
+        & .passBtn{
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+            top: 9px;
+            right: 10px;
+
         }
     }
     &.was-validated {
@@ -314,6 +322,40 @@ font-size: 12px;
                     & input {
                         &::placeholder {
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.swal-overlay{
+    &.swal-overlay--show-modal {
+
+    }
+    & .swal-modal{
+        & .swal-icon {
+            &.swal-icon--success {
+                & .swal-icon--success__line {
+                    &.swal-icon--success__line--long {
+                    }
+                    &.swal-icon--success__line--tip {
+                    }
+                }
+                & .swal-icon--success__ring {
+                }
+                & .swal-icon--success__hide-corners {
+                }
+            }
+        }
+        & .swal-title {
+        }
+        & .swal-text {
+        }
+        & .swal-footer {
+            & .swal-button-container {
+                & .swal-button {
+                    &.swal-button--confirm {
                     }
                 }
             }
@@ -543,9 +585,7 @@ font-size: 12px;
 //? ###################################### Gallery Page Start ######################################
 [page-name=loginPage] {
     &.loginPage {
-        height: 100vh;
-        width: 100vw;
-        position: relative;
+        min-height: 500px;
         &:before, &:after {
             content: '';
             display: block;
@@ -554,6 +594,7 @@ font-size: 12px;
             position: absolute;
             background-size: cover;
             background-repeat: no-repeat;
+            z-index: 0;
         }
         &:before {
             background-image: url(../img/bgImg/loginTopRight.svg);
@@ -568,6 +609,98 @@ font-size: 12px;
             background-position: top left;
             bottom: 0;
             left: 0;
+        }
+
+        & .loginOuter {
+            &.login {
+                & .loginPart {
+                    display: flex !important;
+                }
+            }
+            &.forgotPass {
+                & .forgotPassPart {
+                    display: flex !important;
+                    & .rightPart {
+                        & .imgOuter {
+                            &:before{
+                            }
+                            & img {
+                                object-position: top center;
+                            }
+                        }
+                    }
+                }
+            }
+            &.enterOtp {
+                & .otpPart {
+                    display: flex !important;
+                    & .rightPart {
+                        & .imgOuter {
+                            &:before{
+                            }
+                            & img {
+                                object-position: center;
+                            }
+                        }
+                    }
+                }
+            }
+            &.createPass {
+                & .createPasswordPart {
+                    display: flex !important;
+                }
+            }
+            & .card {
+                & form {
+                    &.form {
+                        & .forgotTxt, & .miniTxt {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+            & .rightPart {
+                & .imgOuter {
+                    height: 400px;
+                    &:before{
+                        content: '';
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        inset: 0;
+                        margin: auto;
+                        background-color: rgba($dark, .6);
+                    }
+                    & img {
+                        object-fit: cover;
+                        object-position: left;
+                    }
+                }
+            }
+            & .otpPart{
+                & .card {
+                    & form {
+                        &.form {
+                            & .input-group {
+                                & .form-control {
+                                    height: 40px;
+                                    width: 40px;
+                                    flex: 0 0 auto;
+                                    text-align: center;
+                                    outline: none;
+                                    font-size: 14px;
+                                    &::-webkit-outer-spin-button,
+                                    &::-webkit-inner-spin-button {
+                                        -webkit-appearance: none;
+                                        margin: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
     }

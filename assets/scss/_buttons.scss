@@ -27,17 +27,28 @@
     right: 25px;
     padding: 10px !important;
     opacity: 0;
-    transition: ease-in-out .5s;
-    &.active {
+    transition: ease-in-out .4s;
+    animation-name: newani;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    &.clickToTop {
         top: 90%;
         opacity: 1;
-    }
-    &:hover {
-        
     }
     & img {
         transform: rotate(-90deg);
         filter: invert(1);
+        transition: ease-in-out .5s;
+    }
+    @keyframes newani {
+        50%{
+            transform: translateY(-15px);
+        }
+    }
+    &:hover {
+        & img {
+            margin-top: -5px;
+        }
     }
 }
 @media (max-width: 991px){

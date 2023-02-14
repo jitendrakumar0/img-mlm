@@ -80,8 +80,180 @@
         <div id="myHeader"></div>
         <!-- Header End -->
     
-        <div class="loginPage" page-name="loginPage">
-            
+        <div class="loginPage position-relative vw-100 vh-100 align-items-center d-flex justify-content-center" page-name="loginPage">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-10">
+                        <div class="loginOuter z-1 position-relative rounded-5 shadow overflow-hidden bg-white createPass">
+                            <div class="row align-items-center loginPart d-none">
+                                <div class="col-6">
+                                    <div class="card border-0 p-4 px-5 shadow-none bg-transparent">
+                                        <form action="" class="form needs-validation" novalidate>
+                                            <div class="row g-4">
+                                                <div class="col-12">
+                                                    <div class="fs-4 fw-bold text-center text-theme2">Login</div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="input-group has-validation">
+                                                    <input type="text" class="form-control ps-3 shadow-none" id="loginDistributorId"  placeholder="Distributor Id *" required>
+                                                    <div class="invalid-feedback text-danger">
+                                                        Please Enter Your Id.
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="input-group has-validation">
+                                                    <input type="password" class="form-control passwordInput ps-3 shadow-none z-0" id="passInput"  placeholder="Password *" required>
+                                                    <span class="passBtn position-absolute align-items-center d-flex justify-content-center z-1"><img class="w-100 passImg" src="assets/img/icons/eyeIconHide.svg" alt=""></span>
+                                                    <div class="invalid-feedback text-danger">
+                                                        Please Enter Your password.
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto mt-4 align-self-center">
+                                                    <button type="button" class="text-theme2 text-decoration-none forgotTxt border-0 bg-transparent p-0 shadow-none" id="forgotTxt">Forgot Password?</button>
+                                                </div>
+                                                <div class="col mt-4">
+                                                    <button type="submit" class="btn btn-theme2 btnStyle1 rounded-pill px-4 text-white ms-auto">
+                                                    <span class="spinner-border spinner-border-sm afterText d-none me-2" role="status" aria-hidden="true"></span>
+                                                    <span class="visually-showw afterText d-none ps-1">Please Wait...</span>
+                                                    <span class="d-inline-flex me-2 icon beforeText"><img class="w-100" src="assets/img/icons/loginWhitebold.svg" alt=""></span>
+                                                    <span class="beforeText">Login</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                          </form>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="rightPart position-relative">
+                                        <div class="imgOuter">
+                                            <img class="w-100 h-100" src="assets/img/bgImg/loginBg.jpg" alt="">
+                                        </div>
+                                        <div class="detail position-absolute top-0 bottom-0 start-0 end-0 m-auto text-center d-flex align-items-center justify-content-center">
+                                            <div class="txt text-white"><span class="fs-1 fw-bold">Welcome</span><br>to Demo. Digital.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center forgotPassPart d-none">
+                                <div class="col-6">
+                                    <div class="card border-0 p-4 px-5 shadow-none bg-transparent">
+                                        <form action="" class="form needs-validation" novalidate>
+                                            <div class="row g-4">
+                                                <div class="col-12">
+                                                    <div class="fs-4 fw-bold text-center text-theme2">Forgot Password</div>
+                                                </div>
+                                              <div class="col-lg-12">
+                                                <div class="input-group has-validation">
+                                                  <input type="text" class="form-control ps-3 shadow-none" id="loginDistributorId"  placeholder="Distributor Id *" required>
+                                                  <div class="invalid-feedback text-danger">
+                                                    Please Enter Your Id.
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="col mt-4 d-flex gap-3 justify-content-end">
+                                                <button type="submit" class="btn btn-theme2 btnStyle1 otpSend rounded-pill px-4 text-white">Send</button>
+                                                <button type="submit" class="btn btn-dark btnStyle1 cancelBtn rounded-pill px-4 text-white">Cancel</button>
+                                              </div>
+                                            </div>
+                                          </form>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="rightPart position-relative">
+                                        <div class="imgOuter">
+                                            <img class="w-100 h-100" src="assets/img/bgImg/forgotPassBg.jpg" alt="">
+                                        </div>
+                                        <div class="detail position-absolute top-0 bottom-0 start-0 end-0 m-auto text-center d-flex align-items-center justify-content-center">
+                                            <div class="txt text-white"><span class="fs-1 fw-bold">Reset</span><br> Your Account Password.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center otpPart d-none">
+                                <div class="col-6">
+                                    <div class="card border-0 p-4 px-5 shadow-none bg-transparent">
+                                        <form action="" class="form needs-validation" novalidate>
+                                            <div class="row g-4">
+                                                <div class="col-12">
+                                                    <div class="fs-4 fw-bold text-center text-theme2">OTP</div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="text-center text-success mb-2 miniTxt">An otp has been sent to XXXXX43210</div>
+                                                    <div class="input-group has-validation gap-4 justify-content-center">
+                                                        <input class="form-control shadow-none otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(1)' maxlength="1" required>
+                                                        <input class="form-control shadow-none otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(2)' maxlength="1" required>
+                                                        <input class="form-control shadow-none otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(3)' maxlength="1" required>
+                                                        <input class="form-control shadow-none otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(4)' maxlength="1" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col mt-4 d-flex gap-3 justify-content-end">
+                                                    <button type="submit" class="btn btn-theme2 btnStyle1 otpSubmit rounded-pill px-4 text-white">Submit</button>
+                                                </div>
+                                            </div>
+                                          </form>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="rightPart position-relative">
+                                        <div class="imgOuter">
+                                            <img class="w-100 h-100" src="assets/img/bgImg/otpBg.jpg" alt="">
+                                        </div>
+                                        <div class="detail position-absolute top-0 bottom-0 start-0 end-0 m-auto text-center d-flex align-items-center justify-content-center">
+                                            <div class="txt text-white"><span class="fs-1 fw-bold">Please</span><br> enter the OTP to verify your account.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center createPasswordPart d-none">
+                                <div class="col-6">
+                                    <div class="card border-0 p-4 px-5 shadow-none bg-transparent">
+                                        <form action="" class="form needs-validation" novalidate>
+                                            <div class="row g-4">
+                                                <div class="col-12">
+                                                    <div class="fs-4 fw-bold text-center text-theme2">Create New Password</div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="input-group has-validation">
+                                                        <input type="password" class="form-control passwordInput ps-3 shadow-none z-0" id="createPass" placeholder="New Password *" required>
+                                                        <span class="passBtn position-absolute align-items-center d-flex justify-content-center z-1"><img class="w-100 passImg" src="assets/img/icons/eyeIconHide.svg" alt=""></span>
+                                                        <div class="invalid-feedback text-danger">
+                                                            Please Create New Password.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="input-group has-validation">
+                                                        <input type="password" class="form-control passwordInput ps-3 shadow-none z-0" id="confirmPass"  placeholder="Confirm Password *" required>
+                                                        <span class="passBtn position-absolute align-items-center d-flex justify-content-center z-1"><img class="w-100 passImg" src="assets/img/icons/eyeIconHide.svg" alt=""></span>
+                                                        <div class="invalid-feedback text-danger">
+                                                            Please Enter Confirm Password.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col mt-4 d-flex gap-3 justify-content-end">
+                                                    <button type="submit" class="btn btn-theme2 btnStyle1 passwordSubmit rounded-pill px-4 text-white">Submit</button>
+                                                </div>
+                                            </div>
+                                          </form>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="rightPart position-relative">
+                                        <div class="imgOuter">
+                                            <img class="w-100 h-100" src="assets/img/bgImg/loginBg.jpg" alt="">
+                                        </div>
+                                        <div class="detail position-absolute top-0 bottom-0 start-0 end-0 m-auto text-center d-flex align-items-center justify-content-center">
+                                            <div class="txt text-white"><span class="fs-1 fw-bold">Please</span><br>create password that you remember.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Footer Start -->
@@ -102,6 +274,8 @@
     
     <!-- Justified Gallery Js  -->
     <script src="assets/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     
     <!-- Custom Js -->

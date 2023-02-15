@@ -152,7 +152,10 @@ if ($("[page-name=loginPage]").length) {
                     swal("Successfully", "your new password is created.", "success");
                     sectionOuter.classList.replace('createPass', 'login');
                     var newBtn = document.querySelector('.swal-button');
-                    newBtn.setAttribute('class', 'btn btn-theme2 btnStyle1 rounded-pill px-4 text-white')
+                    newBtn.setAttribute('class', 'btn btn-theme2 btnStyle1 rounded-pill px-4 text-white');
+                    newBtn.addEventListener('click', ()=>{
+                        window.location.reload();
+                    })
                 }
           
                 form.classList.add('was-validated')

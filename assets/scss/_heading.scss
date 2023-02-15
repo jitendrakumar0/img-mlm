@@ -52,6 +52,11 @@
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    &.products {
+        background-image: linear-gradient(90deg, rgba($dark, 0.5) 30%, rgba($dark, 0.3) 100%), url(../img/bgImg/aaurvedhaBg.png);
+        background-position: bottom;
+    }
     & .mainHeading {
         height: 20vh;
         align-items: center;

@@ -584,7 +584,27 @@ font-size: 12px;
 
 //? ###################################### Gallery Page Start ######################################
 [page-name=loginPage] {
-    &.loginPage {
+    & .navbar {
+        & .navbar-collapse {
+            & .navbar-nav {
+                & .nav-item {
+                    & .nav-link {
+                        color: $dark;
+                        &.active, &:hover {
+                            color: $theme1;
+                            &:after {
+                            }
+                        }
+                    }
+                    &.dropdown{
+                        & .nav-link {
+                        }
+                    }
+                }
+            }
+        }
+    }
+    & .loginPage {
         min-height: 500px;
         &:before, &:after {
             content: '';
@@ -728,18 +748,344 @@ font-size: 12px;
 
 // X-Small devices (portrait phones, less than 576px)
 @mixin loginPage-mixin-max-xs() {
+    [page-name=loginPage] {
+        & .loginPage {
+            &:before, &:after {
+            }
+            &:before {
+            }
+            &:after {
+            }
+    
+            & .loginOuter {
+                &.login {
+                    & .loginPart {
+                    }
+                }
+                &.forgotPass {
+                    & .forgotPassPart {
+                        & .rightPart {
+                            & .imgOuter {
+                                &:before{
+                                }
+                                & img {
+                                }
+                            }
+                        }
+                    }
+                }
+                &.enterOtp {
+                    & .otpPart {
+                        & .rightPart {
+                            & .imgOuter {
+                                &:before{
+                                }
+                                & img {
+                                }
+                            }
+                        }
+                    }
+                }
+                &.createPass {
+                    & .createPasswordPart {
+                    }
+                }
+                & .card {
+                    & form {
+                        &.form {
+                            & .forgotTxt, & .miniTxt {
+                            }
+                        }
+                    }
+                }
+                & .rightPart {
+                    height: 180px;
+                    & .imgOuter {
+                        &:before{
+                        }
+                        & img {
+                        }
+                    }
+                }
+                & .otpPart{
+                    & .card {
+                        & form {
+                            &.form {
+                                & .input-group {
+                                    & .form-control {
+                                        &::-webkit-outer-spin-button,
+                                        &::-webkit-inner-spin-button {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    
+        }
+    }
 }
 
 // Small devices (landscape phones, less than 768px)
 @mixin loginPage-mixin-max-sm() {
+    [page-name=loginPage] {
+        & .loginPage {
+            &:before, &:after {
+                display: none;
+            }
+            &:before {
+            }
+            &:after {
+            }
+    
+            & .loginOuter {
+                height: 100%;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                &.login {
+                    & .loginPart {
+                    }
+                }
+                &.forgotPass {
+                    & .forgotPassPart {
+                        & .rightPart {
+                            & .imgOuter {
+                                &:before{
+                                }
+                                & img {
+                                }
+                            }
+                        }
+                    }
+                }
+                &.enterOtp {
+                    & .otpPart {
+                        & .rightPart {
+                            & .imgOuter {
+                                &:before{
+                                }
+                                & img {
+                                }
+                            }
+                        }
+                    }
+                }
+                &.createPass {
+                    & .createPasswordPart {
+                    }
+                }
+                & .card {
+                    max-width: 430px;
+                    & form {
+                        &.form {
+                            & .forgotTxt, & .miniTxt {
+                            }
+                        }
+                    }
+                }
+                & .rightPart {
+                    background-image: url(../img/bgImg/loginMobileBg.png);
+                    background-size: cover;
+                    background-position: bottom center;
+                    height: 240px;
+                    & .imgOuter {
+                        height: 0;
+                        &:before{
+                            display: none;
+                        }
+                        & img {
+                        }
+                    }
+                }
+                & .otpPart{
+                    & .card {
+                        & form {
+                            &.form {
+                                & .input-group {
+                                    & .form-control {
+                                        &::-webkit-outer-spin-button,
+                                        &::-webkit-inner-spin-button {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    
+        }
+    }
 }
 
 // Medium devices (tablets, less than 992px)
 @mixin loginPage-mixin-max-md() {
+    [page-name=loginPage] {
+        & .loginPage {
+            &:before, &:after {
+            }
+            &:before {
+                width: 470px;
+                width: 450px;
+            }
+            &:after {
+                width: 415px;
+                height: 339px;
+            }
+    
+            & .loginOuter {
+                &.login {
+                    & .loginPart {
+                    }
+                }
+                &.forgotPass {
+                    & .forgotPassPart {
+                        & .rightPart {
+                            & .imgOuter {
+                                &:before{
+                                }
+                                & img {
+                                }
+                            }
+                        }
+                    }
+                }
+                &.enterOtp {
+                    & .otpPart {
+                        & .rightPart {
+                            & .imgOuter {
+                                &:before{
+                                }
+                                & img {
+                                }
+                            }
+                        }
+                    }
+                }
+                &.createPass {
+                    & .createPasswordPart {
+                    }
+                }
+                & .card {
+                    & form {
+                        &.form {
+                            & .forgotTxt, & .miniTxt {
+                            }
+                        }
+                    }
+                }
+                & .rightPart {
+                    & .imgOuter {
+                        height: 300px;
+                        &:before{
+                        }
+                        & img {
+                        }
+                    }
+                }
+                & .otpPart{
+                    & .card {
+                        & form {
+                            &.form {
+                                & .input-group {
+                                    & .form-control {
+                                        &::-webkit-outer-spin-button,
+                                        &::-webkit-inner-spin-button {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    
+        }
+    }
 }
 
 // Large devices (desktops, less than 1200px)
 @mixin loginPage-mixin-max-lg() {
+    [page-name=loginPage] {
+        & .loginPage {
+            &:before, &:after {
+            }
+            &:before {
+            }
+            &:after {
+            }
+    
+            & .loginOuter {
+                &.login {
+                    & .loginPart {
+                    }
+                }
+                &.forgotPass {
+                    & .forgotPassPart {
+                        & .rightPart {
+                            & .imgOuter {
+                                &:before{
+                                }
+                                & img {
+                                }
+                            }
+                        }
+                    }
+                }
+                &.enterOtp {
+                    & .otpPart {
+                        & .rightPart {
+                            & .imgOuter {
+                                &:before{
+                                }
+                                & img {
+                                }
+                            }
+                        }
+                    }
+                }
+                &.createPass {
+                    & .createPasswordPart {
+                    }
+                }
+                & .card {
+                    & form {
+                        &.form {
+                            & .forgotTxt, & .miniTxt {
+                            }
+                        }
+                    }
+                }
+                & .rightPart {
+                    & .imgOuter {
+                        height: 300px;
+                        &:before{
+                        }
+                        & img {
+                        }
+                    }
+                }
+                & .otpPart{
+                    & .card {
+                        & form {
+                            &.form {
+                                & .input-group {
+                                    & .form-control {
+                                        &::-webkit-outer-spin-button,
+                                        &::-webkit-inner-spin-button {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    
+        }
+    }
 }
 
 // X-Large devices (large desktops, less than 1400px)
@@ -986,7 +1332,7 @@ font-size: 12px;
 
         // Our Brands Section Start
         & .ourBrands {
-            padding: 40px 0 80px;
+            padding: 80px 0 80px;
             background: url(../img/bgImg/brands.png);
             background-repeat: no-repeat;
             background-position: left bottom;
@@ -6920,3 +7266,57 @@ font-size: 12px;
 }
 
 //! ###################################### Contact Us Page End ######################################
+
+
+//? ###################################### Product Page Start ######################################
+[page-name=productPage] {
+    &.productPage {
+        & .mainSection {
+            padding: 60px 0;
+        }
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@mixin productPage-mixin-min-sm() {
+}
+
+// Medium devices (tablets, 768px and up)
+@mixin productPage-mixin-min-md() {
+}
+
+// Large devices (desktops, 992px and up)
+@mixin productPage-mixin-min-lg() {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@mixin productPage-mixin-min-xl() {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@mixin productPage-mixin-min-xxl() {
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@mixin productPage-mixin-max-xs() {
+}
+
+// Small devices (landscape phones, less than 768px)
+@mixin productPage-mixin-max-sm() {
+}
+
+// Medium devices (tablets, less than 992px)
+@mixin productPage-mixin-max-md() {
+}
+
+// Large devices (desktops, less than 1200px)
+@mixin productPage-mixin-max-lg() {
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@mixin productPage-mixin-max-xl() {
+}
+@media (max-width: 360px) {
+}
+
+//! ###################################### Product Page End ######################################

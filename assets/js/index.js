@@ -573,9 +573,9 @@ if ($("[page-name=careerPage]").length) {
         dots:true,
         nav:true,
         navText: ["<img class='' src='assets/img/icons/leftArrow.svg'>","<img class='' src='assets/img/icons/rightArrow.svg''>"],
-        // autoplay:true,
-        // autoplayTimeout:3000,
-        // autoplayHoverPause:false,
+        autoplay:true,
+        autoplayTimeout:3000,
+        autoplayHoverPause:false,
         responsive: {
         0: {
             items: 1,
@@ -654,6 +654,80 @@ if ($("[page-name=contactUsPage]").length) {
         allowEmptyOption: false,
         create: false
     }); 
+
+}
+//! ###################################### Contact Us Page JS ######################################
+
+//? ###################################### Contact Us Page JS ######################################
+if ($("[page-name=productPage]").length) {
+
+    var owl = $('.productImgSlider');
+    owl.owlCarousel({
+        margin: 10,
+        loop: true,
+        dots:true,
+        nav:true,
+        navText: ["<img class='' src='assets/img/icons/leftArrow.svg'>","<img class='' src='assets/img/icons/rightArrow.svg''>"],
+        // autoplay:true,
+        // autoplayTimeout:3000,
+        // autoplayHoverPause:false,
+        responsive: {
+        0: {
+            items: 1,
+            nav: false,
+        },
+        576: {
+            items: 1,
+            nav: false,
+        },
+        768: {
+            items: 1,
+            dots: false
+        },
+        1000: {
+            items: 1,
+            dots:false
+        }
+        }
+    })
+
+    let productOuter = document.querySelectorAll('.productOuter');
+    let viewMore = document.querySelectorAll('.viewMore');
+    
+    viewMore.forEach(viewMoreinner =>{
+        viewMoreinner.addEventListener('click', (e)=>{
+            var a = e.currentTarget.getAttribute('view-more');
+            var b = document.getElementById(a);
+            console.log(b)
+            if(b.classList.contains('showDetail')){
+                b.classList.remove('showDetail');
+            }
+            else{
+                for(z=0; z<productOuter.length; z++){
+                    productOuter[z].classList.remove('showDetail');
+                };
+                b.classList.add('showDetail');
+            }
+        });
+    });
+    for(x=0; x<productOuter.length; x++){
+        productOuter[x].addEventListener('click', (f)=>{
+            productOuter[x].classList.remove('showDetail');
+        });
+    }
+    // productOuter.forEach(productOuters =>{
+    //     productOuters.addEventListener('click', (e)=>{
+    //         if(e.currentTarget.classList.contains('showDetail')){
+    //             e.currentTarget.classList.remove('showDetail');
+    //         }
+    //         else{
+    //             for(i=0; i<productOuter.length; i++){
+    //                 productOuter[i].classList.remove('showDetail');
+    //             };
+    //             e.currentTarget.classList.add('showDetail');
+    //         }
+    //     });
+    // });
 
 }
 //! ###################################### Contact Us Page JS ######################################

@@ -7273,6 +7273,124 @@ font-size: 12px;
     &.productPage {
         & .mainSection {
             padding: 60px 0;
+            & .productsMainOuter {
+                & .card {
+                    cursor: pointer;
+                    & .viewMore {
+                        top: 10px;
+                        right: -50px;
+                        width: 40px;
+                        height: 40px;
+                        padding: 10px;
+                        cursor: pointer;
+                        background-color: rgba($dark, 0.6);
+                        transition: ease-in-out .3s;
+                        & img {
+                            filter: brightness(10);
+                        }
+                    }
+                    &.productOuter {
+                    }
+                    & .cadrFront{
+                        transition: ease-in-out .3s;
+                        & .productImg {
+                            height: 240px;
+                            & img {
+                                object-fit: cover;
+                                object-position: center;
+                            }
+                        }
+                        & .productMiniDetail {
+                            & .title {
+                                font-size: 14px;
+                            }
+                            & .price, & .quantity {
+                                font-size: 12px;
+                            }
+                        }
+                        & .owl-nav{
+                            justify-content: space-between;
+                            display: flex;
+                            padding: 0;
+                            opacity: 0;
+                            transition: ease-in-out .3s;
+                            & .owl-prev, & .owl-next{
+                                outline: none;
+                                width: 24px;
+                                height: 24px;
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                margin: auto;
+                                transition: ease-in-out .3s;
+                                background: $dark;
+                                & img {
+                                    width: 40%;
+                                    transition: ease-in-out .3s;
+                                }
+                            }
+                            & .owl-prev {
+                                left: -0;
+                                &:hover {
+                                    & img {
+                                        transform: translateX(-3px);
+                                    }
+                                }
+                            }
+                            & .owl-next {
+                                right: -0;
+                                &:hover {
+                                    & img {
+                                        transform: translateX(3px);
+                                    }
+                                }
+                            }
+                        }
+                        &:hover {
+                            & .owl-nav {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    & .productDec {
+                        transform: rotateY(180deg);
+                        transition: ease-in-out .3s;
+                        inset: 0;
+                        // color: $white;
+                        & .mainInner{
+                            overflow: hidden auto;
+                            & .title {
+                                font-size: 14px;
+                            }
+                            & .dec {
+                                color: $gray-500;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                    &:hover {
+                        & .viewMore {
+                            right: 10px;
+                        }
+                    }
+                    &.showDetail {
+                        &:before {
+                            opacity: 0;
+                            z-index: -1 !important;
+                        }
+                        & .cadrFront{
+                            opacity: 0 !important;
+                            z-index: -1 !important;
+                            transform: rotateY(180deg);
+                        }
+                        & .productDec {
+                            transform: rotateY(0);
+                            opacity: 1 !important;
+                            z-index: 1 !important;
+                        }
+                    }
+                }
+            }
         }
     }
 }

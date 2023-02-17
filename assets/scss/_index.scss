@@ -70,6 +70,7 @@
             }
         }
     }
+
 }
 .tab-content {
     & .tab-pane {
@@ -585,6 +586,7 @@ font-size: 12px;
 //? ###################################### Gallery Page Start ######################################
 [page-name=loginPage] {
     & .navbar {
+        background-color: transparent;
         & .navbar-collapse {
             & .navbar-nav {
                 & .nav-item {
@@ -1108,20 +1110,9 @@ font-size: 12px;
             background-image:  linear-gradient(90deg, rgba($black, 0.4) 40%, rgba($light, 0.3) 100%), url(../img/bgImg/mainBg1.jpg);
             background-repeat: no-repeat;
             background-size: cover;
-            min-height: 350px;
+            min-height: 450px;
             height: 100vh;
             & .mainCarousel {
-                &:after {
-                    // content: '';
-                    // background-image: url(../img/bgImg/mlmImage.svg);
-                    // background-repeat: no-repeat;
-                    // position: absolute;
-                    // background-size: contain;
-                    // left: 0;
-                    // bottom: 222px;
-                    // width: 267px;
-                    // height: 532px;
-                }
             }
             .item {
                 &.header-text {
@@ -1366,6 +1357,13 @@ font-size: 12px;
                         transition: ease-in-out .3s;
                         left: 0;
                     }
+                    @-moz-document url-prefix() {
+                        &::after{
+                            background-image: url(../img/bgImg/brandsBg.svg);
+                            background-size: cover;
+                            background-position: center;
+                        }
+                    }
                     &:hover {
                         border-color: $theme1;
                         // backdrop-filter: blur(8px);
@@ -1534,7 +1532,7 @@ font-size: 12px;
                 // margin-left: -100px;
                 position: relative;
                 z-index: 2;
-                background-image: url(../images/contact-form-bg.png);
+                background-image: url(../img/bgImg/contact-form-bg.png);
                 background-repeat: no-repeat;
                 background-position: center center;
                 background-size: cover;
@@ -1944,7 +1942,7 @@ font-size: 12px;
     
             // About us Section Start
             & .aboutUs{
-                padding: 50px 0;
+                padding: 60px 0;
                 & .bgImg{
                     right: -150px!important;
                     & img {
@@ -1970,7 +1968,7 @@ font-size: 12px;
     
             // Event Section Start
             & .mainEvents {
-                padding-bottom: 50px;
+                padding-bottom: 60px;
                 & .mainEventSlider {
                     & .owl-stage-outer{
                     }
@@ -2005,7 +2003,7 @@ font-size: 12px;
     
             // Our Brands Section Start
             & .ourBrands {
-                padding: 25px 0 50px;
+                padding: 60px 0;
                 background-size: 40%;
                 & .bransOuter{
                     & .brands {
@@ -2028,7 +2026,7 @@ font-size: 12px;
     
             // Our Videos Section Start
             & .ourVideo { 
-                padding-bottom: 50px;
+                padding: 60px 0;
                 background-size: 30%;
                 & .videos {
                     & .playBtn{
@@ -2084,7 +2082,7 @@ font-size: 12px;
     
             // Get in Touch Section Start
             & .getInTouch {
-                padding: 50px 0; 
+                padding: 60px 0; 
                 & .section-heading{
                     & .subHeading {
                         font-size: 18px;
@@ -6752,7 +6750,7 @@ font-size: 12px;
                 & .form {
                     position: relative;
                     z-index: 2;
-                    background-image: url(../images/contact-form-bg.png);
+                    background-image: url(../img/bgImg/contact-form-bg.png);
                     background-repeat: no-repeat;
                     background-position: center center;
                     background-size: cover;
@@ -7323,7 +7321,10 @@ font-size: 12px;
                                 bottom: 0;
                                 margin: auto;
                                 transition: ease-in-out .3s;
-                                background: $dark;
+                                background: lighten($dark, 30);
+                                &:hover {
+                                    background: lighten($dark, 0);
+                                }
                                 & img {
                                     width: 40%;
                                     transition: ease-in-out .3s;
@@ -7331,18 +7332,14 @@ font-size: 12px;
                             }
                             & .owl-prev {
                                 left: -0;
-                                &:hover {
-                                    & img {
-                                        transform: translateX(-3px);
-                                    }
+                                &.disabled {
+                                    left: -30px;
                                 }
                             }
                             & .owl-next {
                                 right: -0;
-                                &:hover {
-                                    & img {
-                                        transform: translateX(3px);
-                                    }
+                                &.disabled {
+                                    right: -30px;
                                 }
                             }
                         }
@@ -7425,6 +7422,80 @@ font-size: 12px;
 
 // Medium devices (tablets, less than 992px)
 @mixin productPage-mixin-max-md() {
+    [page-name=productPage] {
+        &.productPage {
+            & .mainSection {
+                & .productsMainOuter {
+                    & .card {
+                        cursor: pointer;
+                        & .viewMore {
+                            width: 32px;
+                            height: 32px;
+                            padding: 7px;
+                            right: 10px;
+                            & img {
+                            }
+                        }
+                        &.productOuter {
+                        }
+                        & .cadrFront{
+                            & .productImg {
+                                & img {
+                                }
+                            }
+                            & .productMiniDetail {
+                                & .title {
+                                }
+                                & .price, & .quantity {
+                                }
+                            }
+                            & .owl-nav{
+                                opacity: 1;
+                                & .owl-prev, & .owl-next{
+                                    & img {
+                                    }
+                                }
+                                & .owl-prev {
+                                    &:hover {
+                                        & img {
+                                        }
+                                    }
+                                }
+                                & .owl-next {
+                                    &:hover {
+                                        & img {
+                                        }
+                                    }
+                                }
+                            }
+                            &:hover {
+                                & .owl-nav {
+                                }
+                            }
+                        }
+                        & .productDec {
+                            & .mainInner{
+                                & .title {
+                                }
+                                & .dec {
+                                }
+                            }
+                        }
+                        &:hover {
+                        }
+                        &.showDetail {
+                            &:before {
+                            }
+                            & .cadrFront{
+                            }
+                            & .productDec {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 // Large devices (desktops, less than 1200px)
@@ -7434,7 +7505,228 @@ font-size: 12px;
 // X-Large devices (large desktops, less than 1400px)
 @mixin productPage-mixin-max-xl() {
 }
+@media (max-width: 460px) {
+    [page-name=productPage] {
+        &.productPage {
+            & .mainSection {
+                & .productsMainOuter {
+                    & .card {
+                        & .viewMore {
+                            & img {
+                            }
+                        }
+                        &.productOuter {
+                        }
+                        & .cadrFront{
+                            & .productImg {
+                                height: 200px !important;
+                                & img {
+                                }
+                            }
+                            & .productMiniDetail {
+                                padding: 12px !important;
+                                & .title {
+                                    font-size: 12px !important;
+                                }
+                                & .price, & .quantity {
+                                    font-size: 10px !important;
+                                }
+                            }
+                            & .owl-nav{
+                                & .owl-prev, & .owl-next{
+                                    & img {
+                                    }
+                                }
+                                & .owl-prev {
+                                    &:hover {
+                                        & img {
+                                        }
+                                    }
+                                }
+                                & .owl-next {
+                                    &:hover {
+                                        & img {
+                                        }
+                                    }
+                                }
+                            }
+                            &:hover {
+                                & .owl-nav {
+                                }
+                            }
+                        }
+                        & .productDec {
+                            & .mainInner{
+                                & .title {
+                                    font-size: 12px !important;
+                                }
+                                & .dec {
+                                    font-size: 10px !important;
+                                }
+                            }
+                        }
+                        &:hover {
+                        }
+                        &.showDetail {
+                            &:before {
+                            }
+                            & .cadrFront{
+                            }
+                            & .productDec {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 420px) {
+    [page-name=productPage] {
+        &.productPage {
+            & .mainSection {
+                & .productsMainOuter {
+                    & .card {
+                        & .viewMore {
+                            & img {
+                            }
+                        }
+                        &.productOuter {
+                        }
+                        & .cadrFront{
+                            & .productImg {
+                                height: 160px !important;
+                                & img {
+                                }
+                            }
+                            & .productMiniDetail {
+                                & .title {
+                                }
+                                & .price, & .quantity {
+                                }
+                            }
+                            & .owl-nav{
+                                & .owl-prev, & .owl-next{
+                                    & img {
+                                    }
+                                }
+                                & .owl-prev {
+                                    &:hover {
+                                        & img {
+                                        }
+                                    }
+                                }
+                                & .owl-next {
+                                    &:hover {
+                                        & img {
+                                        }
+                                    }
+                                }
+                            }
+                            &:hover {
+                                & .owl-nav {
+                                }
+                            }
+                        }
+                        & .productDec {
+                            & .mainInner{
+                                & .title {
+                                }
+                                & .dec {
+                                }
+                            }
+                        }
+                        &:hover {
+                        }
+                        &.showDetail {
+                            &:before {
+                            }
+                            & .cadrFront{
+                            }
+                            & .productDec {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 @media (max-width: 360px) {
+    [page-name=productPage] {
+        &.productPage {
+            & .mainSection {
+                & .productsMainOuter {
+                    max-width: 260px;
+                    & .mobileCard {
+                        flex: 0 0 auto;
+                        width: 100%;
+                    }
+                    & .card {
+                        & .viewMore {
+                            & img {
+                            }
+                        }
+                        &.productOuter {
+                        }
+                        & .cadrFront{
+                            & .productImg {
+                                height: 260px !important;
+                                & img {
+                                }
+                            }
+                            & .productMiniDetail {
+                                & .title {
+                                }
+                                & .price, & .quantity {
+                                }
+                            }
+                            & .owl-nav{
+                                & .owl-prev, & .owl-next{
+                                    & img {
+                                    }
+                                }
+                                & .owl-prev {
+                                    &:hover {
+                                        & img {
+                                        }
+                                    }
+                                }
+                                & .owl-next {
+                                    &:hover {
+                                        & img {
+                                        }
+                                    }
+                                }
+                            }
+                            &:hover {
+                                & .owl-nav {
+                                }
+                            }
+                        }
+                        & .productDec {
+                            & .mainInner{
+                                & .title {
+                                }
+                                & .dec {
+                                }
+                            }
+                        }
+                        &:hover {
+                        }
+                        &.showDetail {
+                            &:before {
+                            }
+                            & .cadrFront{
+                            }
+                            & .productDec {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 //! ###################################### Product Page End ######################################

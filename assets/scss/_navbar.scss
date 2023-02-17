@@ -2,6 +2,7 @@
     height: 80px;
     transition: ease-in-out .3s;
     z-index: 999;
+    background: rgba($dark, .2);
     & .navbar-brand {
         width: 130px;
         & img {
@@ -81,8 +82,8 @@
                                 }
                             }
                             &:active {
-                                background: $theme1;
-                                color: $white;
+                                background: var(--bs-dropdown-link-hover-bg);
+                                color: $theme1;
                                 &:before {
                                     width: 10px;
                                 }
@@ -170,36 +171,57 @@
                }
             }
             & .offcanvas-body {
-               & .mobileMenu {
-                   & .navbar-nav {
-                       & .nav-item {
-                           & .nav-link {
-                               font-size: 14px;
-                               font-weight: 500;
-                               color: $dark;
-                               text-transform: uppercase;
-                               position: relative;
-                               letter-spacing: 1px;
-                               transition: ease-in-out .3s;
-                               padding-right: 16px;
-                               display: flex;
-                               align-items: center;
-                               gap: 5px;
-           
-                               &:before {
-                                   content: '';
-                                   display: block;
-                                   width: 0;
-                                   border-top: 2px solid $theme1;
-                                   transition: ease-in-out .3s;
-                               }
-                               &.active, &:hover {
-                                   color: $theme1;
-                                   &:before {
-                                       width: 20px;
-                                   }
-                               }
-                           }
+                & .mobileMenu {
+                    & .navbar-nav {
+                        & .nav-item {
+                            & .nav-link {
+                                font-size: 12px;
+                                font-weight: 500;
+                                color: $dark;
+                                text-transform: uppercase;
+                                position: relative;
+                                letter-spacing: 1px;
+                                transition: ease-in-out .3s;
+                                padding-right: 16px;
+                                display: flex;
+                                align-items: center;
+                                gap: 5px;
+                                &:before {
+                                    content: '';
+                                    display: block;
+                                    width: 0;
+                                    border-top: 2px solid $theme1;
+                                    transition: ease-in-out .3s;
+                                }
+                                &[data-bs-toggle=collapse]{
+                                    &:after {
+                                    content: '';
+                                    display: block;
+                                    width: 8px;
+                                    height: 8px;
+                                    border: 2px solid transparent;
+                                    border-left: 2px solid $gray-600;
+                                    border-bottom: 2px solid $gray-600;
+                                    transform: rotate(-45deg);
+                                    position: absolute;
+                                    right: 5px;
+                                    transition: ease-in-out .3s;
+                                    }
+                                }
+                                &.active {
+                                &:after {
+                                    border-top: 2px solid $gray-600 !important;
+                                    border-right: 2px solid $gray-600 !important;
+                                    border-color: transparent;
+                                    }
+                                }
+                                &.active, &:hover {
+                                    color: $theme1;
+                                    &:before {
+                                        width: 15px;
+                                    }
+                                }
+                            }
                             & .collapseOuter {
                                 & .collapseItem {
                                     font-size: 12px;
@@ -229,10 +251,10 @@
                                     }
                                 }
                             }
-                           }
+                            }    
                     //    }
-                   }
-               }
+                    }
+                }
             }
         }
     }

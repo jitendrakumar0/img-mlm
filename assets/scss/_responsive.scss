@@ -16,6 +16,7 @@
   @include careerPage-mixin-min-sm();
   @include contactUsPage-mixin-min-sm();
   @include loginPage-mixin-min-sm();
+  @include productPage-mixin-min-sm();
 }
 
 // Medium devices (tablets, 768px and up)
@@ -33,6 +34,7 @@
   @include careerPage-mixin-min-md();
   @include contactUsPage-mixin-min-md();
   @include loginPage-mixin-min-md();
+  @include productPage-mixin-min-md();
 }
 
 // Large devices (desktops, 992px and up)
@@ -50,6 +52,7 @@
   @include careerPage-mixin-min-lg();
   @include contactUsPage-mixin-min-lg();
   @include loginPage-mixin-min-lg();
+  @include productPage-mixin-min-lg();
 }
 
 // X-Large devices (large desktops, 1200px and up)
@@ -67,6 +70,7 @@
   @include careerPage-mixin-min-xl();
   @include contactUsPage-mixin-min-xl();
   @include loginPage-mixin-min-xl();
+  @include productPage-mixin-min-xl();
 }
 
 // XX-Large devices (larger desktops, 1400px and up)
@@ -84,6 +88,7 @@
   @include careerPage-mixin-min-xxl();
   @include contactUsPage-mixin-min-xxl();
   @include loginPage-mixin-min-xxl();
+  @include productPage-mixin-min-xxl();
 }
 
 // X-Large devices (large desktops, less than 1400px)
@@ -101,6 +106,7 @@
   @include careerPage-mixin-max-xl();
   @include contactUsPage-mixin-max-xl();
   @include loginPage-mixin-max-xl();
+  @include productPage-mixin-max-xl();
 }
 
 // Large devices (desktops, less than 1200px)
@@ -118,6 +124,7 @@
   @include careerPage-mixin-max-lg();
   @include contactUsPage-mixin-max-lg();
   @include loginPage-mixin-max-lg();
+  @include productPage-mixin-max-lg();
 }
 
 // Medium devices (tablets, less than 992px)
@@ -135,6 +142,7 @@
   @include careerPage-mixin-max-md();
   @include contactUsPage-mixin-max-md();
   @include loginPage-mixin-max-md();
+  @include productPage-mixin-max-md();
 }
 
 // Small devices (landscape phones, less than 768px)
@@ -152,6 +160,7 @@
   @include careerPage-mixin-max-sm();
   @include contactUsPage-mixin-max-sm();
   @include loginPage-mixin-max-sm();
+  @include productPage-mixin-max-sm();
 }
 
 // X-Small devices (portrait phones, less than 576px)
@@ -169,6 +178,7 @@
   @include careerPage-mixin-max-xs();
   @include contactUsPage-mixin-max-xs();
   @include loginPage-mixin-max-xs();
+  @include productPage-mixin-max-xs();
 }
 
 // XX-Large devices (larger desktops)

@@ -1,9 +1,9 @@
 
-(function($){
-    $(window).on("load",function(){
-        $(".content").mCustomScrollbar();
-    });
-})(jQuery);
+// (function($){
+//     $(window).on("load",function(){
+//         $(".content").mCustomScrollbar();
+//     });
+// })(jQuery);
 
 // Header & Footer include js
 $(function(){
